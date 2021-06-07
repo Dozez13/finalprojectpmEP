@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG">
+    <Appenders>
+        <RollingFile
+                name="rollingFile"
+                fileName="logs/log.log"
+                filePattern="logs/log%i.log"
+                ignoreExceptions="false"
+                immediateFlush="true"
+                append="true">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm} %p   %c{1}   %M   - - - - - %m%n" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="5MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="10" />
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="rollingFile" />
+        </Root>
+    </Loggers>
+</Configuration>

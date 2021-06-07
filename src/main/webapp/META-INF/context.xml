@@ -1,0 +1,21 @@
+<Context>
+
+    <!-- Default set of monitored resources. If one of these changes, the    -->
+    <!-- web application will be reloaded.                                   -->
+
+    <!--
+    <Manager pathname="" />
+    -->
+    <Resource
+            name="jdbc/UsersDB"
+            auth="Container"
+            type="javax.sql.DataSource"
+            maxTotal="30"
+            maxIdle="15"
+            driverClassName="com.mysql.cj.jdbc.Driver"
+            url="jdbc:mysql://localhost:3306/taksi_online"
+            username="Bruce"
+            password="givanchy"
+            defaultAutoCommit="false"
+    />
+</Context>
