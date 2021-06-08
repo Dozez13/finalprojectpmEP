@@ -41,7 +41,7 @@ public class MySQLCarDao implements CarDao {
             LOGGER.error(e);
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         }finally {
-            ConnectionUtil.oneMethodToCloseThemAll(null,statement,null);
+            ConnectionUtil.closeResources(null,statement,null);
             LOGGER.debug("Close all resources");
         }
         return rowNum>0;
@@ -64,7 +64,7 @@ public class MySQLCarDao implements CarDao {
             LOGGER.error(e);
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         }finally {
-            ConnectionUtil.oneMethodToCloseThemAll(null,statement,null);
+            ConnectionUtil.closeResources(null,statement,null);
             LOGGER.debug("Close all resources");
         }
         return rowNum > 0;
@@ -97,7 +97,7 @@ public class MySQLCarDao implements CarDao {
             LOGGER.error(e);
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         }finally {
-            ConnectionUtil.oneMethodToCloseThemAll(resultSet,statement,null);
+            ConnectionUtil.closeResources(resultSet,statement,null);
             LOGGER.debug("Close all resources");
         }
         return foundCar;
@@ -129,7 +129,7 @@ public class MySQLCarDao implements CarDao {
             LOGGER.error(e);
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         }finally {
-            ConnectionUtil.oneMethodToCloseThemAll(resultSet,statement,null);
+            ConnectionUtil.closeResources(resultSet,statement,null);
             LOGGER.debug("Close all resources");
         }
         return foundCar;
@@ -155,7 +155,7 @@ public class MySQLCarDao implements CarDao {
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         }finally {
 
-            ConnectionUtil.oneMethodToCloseThemAll(null,statement,null);
+            ConnectionUtil.closeResources(null,statement,null);
             LOGGER.debug("Close all resources");
 
         }
@@ -189,7 +189,7 @@ public class MySQLCarDao implements CarDao {
             LOGGER.error(e);
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         }finally {
-            ConnectionUtil.oneMethodToCloseThemAll(resultSet,statement,null);
+            ConnectionUtil.closeResources(resultSet,statement,null);
             LOGGER.debug("Close all resources");
         }
         return cars;
@@ -213,7 +213,7 @@ public class MySQLCarDao implements CarDao {
             LOGGER.error(e);
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         }finally {
-            ConnectionUtil.oneMethodToCloseThemAll(resultSet,statement,null);
+            ConnectionUtil.closeResources(resultSet,statement,null);
             LOGGER.debug("Close all resources");
         }
         return counts;

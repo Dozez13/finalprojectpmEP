@@ -50,4 +50,9 @@ public class MySQLDAOFactory extends DAOFactory {
     public CarCategoryDao getCarCategoryDao() {
         return new MySQLCarCategoryDao();
     }
+
+    @Override
+    public ProfileDao getProfileDao() {
+        return new MySQLProfileDao();
+    }
 }

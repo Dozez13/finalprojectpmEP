@@ -39,7 +39,7 @@ public class MySQLCarCategoryDao implements CarCategoryDao {
             LOGGER.error(e);
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         }finally {
-            ConnectionUtil.oneMethodToCloseThemAll(null,statement,null);
+            ConnectionUtil.closeResources(null,statement,null);
             LOGGER.debug("Close all resources");
         }
         return rowNum > 0;
@@ -62,7 +62,7 @@ public class MySQLCarCategoryDao implements CarCategoryDao {
             LOGGER.error(e);
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         }finally {
-            ConnectionUtil.oneMethodToCloseThemAll(null,statement,null);
+            ConnectionUtil.closeResources(null,statement,null);
             LOGGER.debug("Close all resources");
         }
         return rowNum > 0;
@@ -93,7 +93,7 @@ public class MySQLCarCategoryDao implements CarCategoryDao {
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
 
         } finally {
-            ConnectionUtil.oneMethodToCloseThemAll(resultSet,statement,null);
+            ConnectionUtil.closeResources(resultSet,statement,null);
             LOGGER.debug("Close all resources");
         }
         return foundCarCategory;
@@ -117,7 +117,7 @@ public class MySQLCarCategoryDao implements CarCategoryDao {
             LOGGER.error(e);
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         }finally {
-            ConnectionUtil.oneMethodToCloseThemAll(null,statement,null);
+            ConnectionUtil.closeResources(null,statement,null);
             LOGGER.debug("Close all resources");
         }
         return rowNum>0;
@@ -147,7 +147,7 @@ public class MySQLCarCategoryDao implements CarCategoryDao {
             LOGGER.error(e);
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         } finally {
-            ConnectionUtil.oneMethodToCloseThemAll(resultSet, statement, null);
+            ConnectionUtil.closeResources(resultSet, statement, null);
             LOGGER.debug("Close all resources");
         }
         return carCategories;
@@ -177,7 +177,7 @@ public class MySQLCarCategoryDao implements CarCategoryDao {
             LOGGER.error(e);
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         }finally {
-            ConnectionUtil.oneMethodToCloseThemAll(resultSet,statement,null);
+            ConnectionUtil.closeResources(resultSet,statement,null);
             LOGGER.debug("Close all resources");
         }
         return carCategories;

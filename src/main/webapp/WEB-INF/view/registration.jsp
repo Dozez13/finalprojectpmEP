@@ -57,6 +57,28 @@
                         filled
                         debounce="300"
                         type="text"
+                        :hint="firstNameHint"
+                        v-model="firstName"
+                        label="<fmt:localeValue key="dialogFirstName"/>"
+                        name="firstName"
+                        class="q-ma-md"
+                        :rules="[ val => val.match(/(^([a-z-а-яА-ЯЇЄЁЭїєёэ]{5,25})$)/ig)!=null || '<fmt:localeValue key="loginValidation" />']"
+                ></q-input>
+                    <q-input
+                            filled
+                            debounce="300"
+                            type="text"
+                            :hint="surNameHint"
+                            v-model="surName"
+                            label="<fmt:localeValue key="dialogSurName"/>"
+                            name="surName"
+                            class="q-ma-md"
+                            :rules="[ val => val.match(/(^([a-z-а-яА-ЯЇЄЁЭїєёэ]{5,25})$)/ig)!=null || '<fmt:localeValue key="loginValidation" />']"
+                    ></q-input>
+                <q-input
+                        filled
+                        debounce="300"
+                        type="text"
                         :hint="LogHint"
                         v-model="login"
                         label="<fmt:localeValue key="dialogLogin"/>"
@@ -112,12 +134,16 @@
         data () {
             return {
                 model: '',
+                firstName:'',
+                surName:'',
                 password: '',
                 login:'',
                 isPwd: true,
                 LogHint:'<fmt:localeValue key="LogHintD"/>',
                 EmailHint:'<fmt:localeValue key="EmailHint"/>',
                 PasswordHint:'<fmt:localeValue key="PasswordHintD"/>',
+                firstNameHint:'<fmt:localeValue key="firstNameHint"/>',
+                surNameHint:'<fmt:localeValue key="surNameHint"/>',
                 passwordD: '',
                 loginD:'',
                 isPwdD: true,

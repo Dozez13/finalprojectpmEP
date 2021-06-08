@@ -47,7 +47,7 @@ public class MySQLUserDao implements UserDao {
             }
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution", e);
         } finally {
-            ConnectionUtil.oneMethodToCloseThemAll(keys, statement, null);
+            ConnectionUtil.closeResources(keys, statement, null);
             LOGGER.debug("Close all resources");
         }
         return rowNum > 0;
@@ -69,7 +69,7 @@ public class MySQLUserDao implements UserDao {
             LOGGER.error(e);
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         }finally {
-            ConnectionUtil.oneMethodToCloseThemAll(null ,statement,null);
+            ConnectionUtil.closeResources(null ,statement,null);
             LOGGER.debug("Close all resources");
         }
         return rowNum > 0;
@@ -102,7 +102,7 @@ public class MySQLUserDao implements UserDao {
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
 
         }finally {
-            ConnectionUtil.oneMethodToCloseThemAll(resultSet ,statement,null);
+            ConnectionUtil.closeResources(resultSet ,statement,null);
             LOGGER.debug("Close all resources");
         }
         return foundUser;
@@ -128,7 +128,7 @@ public class MySQLUserDao implements UserDao {
             LOGGER.error(e);
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         }finally {
-            ConnectionUtil.oneMethodToCloseThemAll(resultSet ,statement,null);
+            ConnectionUtil.closeResources(resultSet ,statement,null);
             LOGGER.debug("Close all resources");
         }
         return false;
@@ -150,7 +150,7 @@ public class MySQLUserDao implements UserDao {
             LOGGER.error(e);
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         }finally {
-            ConnectionUtil.oneMethodToCloseThemAll(null ,statement,null);
+            ConnectionUtil.closeResources(null ,statement,null);
             LOGGER.debug("Close all resources");
         }
         return rowNum>0;
@@ -181,7 +181,7 @@ public class MySQLUserDao implements UserDao {
             LOGGER.error(e);
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         }finally {
-            ConnectionUtil.oneMethodToCloseThemAll(resultSet ,statement,null);
+            ConnectionUtil.closeResources(resultSet ,statement,null);
             LOGGER.debug("Close all resources");
         }
         return users;

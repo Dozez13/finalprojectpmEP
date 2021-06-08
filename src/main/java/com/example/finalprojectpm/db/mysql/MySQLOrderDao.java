@@ -46,7 +46,7 @@ public class MySQLOrderDao implements OrderDao {
             }
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         }finally {
-            ConnectionUtil.oneMethodToCloseThemAll(keys,statement,null);
+            ConnectionUtil.closeResources(keys,statement,null);
             LOGGER.debug("Close all resources");
         }
         return rowNum>0;
@@ -76,7 +76,7 @@ public class MySQLOrderDao implements OrderDao {
             LOGGER.error(e);
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         }finally {
-            ConnectionUtil.oneMethodToCloseThemAll(null,statement,null);
+            ConnectionUtil.closeResources(null,statement,null);
             LOGGER.debug("Close all resources");
         }
         return rowNum!=null;
@@ -98,7 +98,7 @@ public class MySQLOrderDao implements OrderDao {
             LOGGER.error(e);
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         }finally {
-            ConnectionUtil.oneMethodToCloseThemAll(null,statement,null);
+            ConnectionUtil.closeResources(null,statement,null);
             LOGGER.debug("Close all resources");
         }
         return rowNum > 0;
@@ -132,7 +132,7 @@ public class MySQLOrderDao implements OrderDao {
             LOGGER.error(e);
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         }finally {
-            ConnectionUtil.oneMethodToCloseThemAll(resultSet,statement,null);
+            ConnectionUtil.closeResources(resultSet,statement,null);
             LOGGER.debug("Close all resources");
         }
         return foundOrder;
@@ -155,7 +155,7 @@ public class MySQLOrderDao implements OrderDao {
             LOGGER.error(e);
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         }finally {
-            ConnectionUtil.oneMethodToCloseThemAll(null,statement,null);
+            ConnectionUtil.closeResources(null,statement,null);
             LOGGER.debug("Close all resources");
         }
         return rowNum>0;
@@ -189,7 +189,7 @@ public class MySQLOrderDao implements OrderDao {
             LOGGER.error(e);
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         }finally {
-            ConnectionUtil.oneMethodToCloseThemAll(resultSet,statement,null);
+            ConnectionUtil.closeResources(resultSet,statement,null);
             LOGGER.debug("Close all resources");
         }
         return orders;
@@ -215,7 +215,7 @@ public class MySQLOrderDao implements OrderDao {
             LOGGER.error(e);
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         }finally {
-            ConnectionUtil.oneMethodToCloseThemAll(resultSet,statement,null);
+            ConnectionUtil.closeResources(resultSet,statement,null);
             LOGGER.debug("Close all resources");
         }
         return count;
@@ -289,7 +289,7 @@ public class MySQLOrderDao implements OrderDao {
             LOGGER.error(e);
             throw new MySQLEXContainer.MySQLDBExecutionException("Bad execution",e);
         }finally {
-            ConnectionUtil.oneMethodToCloseThemAll(resultSet,statement,null);
+            ConnectionUtil.closeResources(resultSet,statement,null);
             LOGGER.debug("Close all resources");
         }
         return orders;

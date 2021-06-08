@@ -25,6 +25,7 @@ public class ActionFactory {
         actions.put("GET/admin/orders", new OrdersCountAction());
         actions.put("GET/admin/ordersJson", new OrdersGetAction());
         actions.put("noSuchPage", new NoSuchAction());
+        actions.put("GET/user/profile",new ProfileAction());
     }
     public Action getAction(HttpServletRequest request) {
         Action action;

@@ -2,9 +2,11 @@ package com.example.finalprojectpm.web.command;
 
 
 import com.example.finalprojectpm.db.DAOFactory;
+import com.example.finalprojectpm.db.ProfileDao;
 import com.example.finalprojectpm.db.UserDao;
 import com.example.finalprojectpm.db.entity.User;
 import com.example.finalprojectpm.db.mysql.MySQLDAOFactory;
+import com.example.finalprojectpm.db.service.TaxiServiceProfile;
 import com.example.finalprojectpm.db.service.TaxiServiceUser;
 import com.example.finalprojectpm.web.view.View;
 import org.apache.logging.log4j.LogManager;
@@ -21,7 +23,9 @@ public class LoginAction implements Action{
         HttpServletRequest request = view.getRequest();
         DAOFactory dao =(MySQLDAOFactory)request.getServletContext().getAttribute("MySQLFactory");
         UserDao userDao = dao.getUserDao();
+        ProfileDao profileDao = dao.getProfileDao();
         TaxiServiceUser taxiServiceUser = new TaxiServiceUser(userDao);
+        TaxiServiceProfile taxiServiceProfile = new TaxiServiceProfile(profileDao);
         String login = request.getParameter("login");
         String psw = request.getParameter("psw");
         User user = taxiServiceUser.findUser(login);

@@ -11,7 +11,7 @@ import java.sql.Statement;
 public class ConnectionUtil {
     private static final Logger LOGGER = LogManager.getLogger(ConnectionUtil.class);
     private ConnectionUtil(){}
-    public static void oneMethodToCloseThemAll(ResultSet resultSet, Statement statement, Connection connection) throws SQLException {
+    public static void closeResources(ResultSet resultSet, Statement statement, Connection connection) throws SQLException {
         if (resultSet != null&&!resultSet.isClosed()) {
             resultSet.close();
             LOGGER.info("Result set Is closed");

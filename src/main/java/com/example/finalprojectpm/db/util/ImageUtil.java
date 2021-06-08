@@ -6,10 +6,7 @@ import org.apache.logging.log4j.Logger;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.Base64;
 
 public class ImageUtil {
@@ -40,4 +37,5 @@ public class ImageUtil {
         byte[] encoded = Base64.getEncoder().encode(bytes);
         return new String(encoded);  // Outputs "SGVsbG8="
     }
+
 }

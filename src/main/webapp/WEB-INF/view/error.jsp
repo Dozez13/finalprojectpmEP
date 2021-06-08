@@ -7,6 +7,6 @@
     <title>Title</title>
 </head>
 <body>
-<c:out value="${param.errorMessage}"/>
+error page
 </body>
 </html>

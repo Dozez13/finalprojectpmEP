@@ -35,7 +35,7 @@ class MySQLUserDaoTest {
     @Test
     void deleteUser() throws SQLException, MySQLEXContainer.MySQLDBExecutionException {
         String login = "Login";
-        when(connection.prepareStatement(anyString()).executeUpdate()).thenReturn(1);
+        when(preparedStatement.executeUpdate()).thenReturn(1);
         boolean result = userDao.deleteUser(connection,login);
         assertTrue(result);
     }

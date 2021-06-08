@@ -1,5 +1,6 @@
 package com.example.finalprojectpm.web;
 
+
 import com.example.finalprojectpm.web.command.Action;
 import com.example.finalprojectpm.web.command.ActionFactory;
 import com.example.finalprojectpm.web.view.View;
@@ -11,6 +12,7 @@ import java.io.IOException;
 
 
 @WebServlet(name = "FrontController", value = "/pages/*")
+@MultipartConfig
 public class FrontController extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,7 +27,7 @@ public class FrontController extends HttpServlet {
             action.execute(view);
             view.navigate();
         } catch (Exception e) {
-            req.getRequestDispatcher("/WEB-INF/view/error.jsp?errorMessage="+error);
+            req.getRequestDispatcher("/WEB-INF/view/error.jsp?errorMessage="+e.getMessage());
         }
     }
 }

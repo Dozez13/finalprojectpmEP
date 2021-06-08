@@ -179,6 +179,9 @@
             CheckOrders(){
                 window.location.href='${pageContext.request.contextPath}'+'/pages/admin/orders?lang=${sessionScope.lang}';
             },
+            profilePage(){
+                window.location.href ='${pageContext.request.contextPath}'+'/pages/user/profile?lang=${sessionScope.lang}';
+            },
             ChangeToEng(){
                 window.location.href = window.location.href+'?lang=en'
             },

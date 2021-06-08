@@ -2,7 +2,6 @@
 <q-toolbar  class="bg-primary text-white shadow-2 q-pa-md">
     <q-separator dark vertical inset></q-separator>
     <span class="q-ml-md text-h5"><fmt:localeValue key="headerCompanyName"/></span>
-    <q-btn size="md" flat round dense icon="menu" class="q-mr-sm"></q-btn>
     <q-separator dark vertical inset></q-separator>
     <q-btn size="md" @click="goHome()" stretch flat label="<fmt:localeValue key="headerHomePage"/>"></q-btn>
     <q-space></q-space>
@@ -75,12 +74,12 @@
             <c:if test="${sessionScope.Login!=null}">
                 <div class="column justify-center">
                     <div class="text-h6"><fmt:localeValue key="indexSettings"/></div>
-                    <q-btn  color="primary"stretch flat label="<fmt:localeValue key="loggedProfile"/>"></q-btn>
+                    <q-btn  color="primary" @click="profilePage()" stretch flat label="<fmt:localeValue key="loggedProfile"/>"></q-btn>
                 </div>
 
                 <q-separator vertical inset class="q-mx-lg"></q-separator>
                 <div class="column items-center">
-                    <q-avatar size="72px" icon="portrait"></q-avatar>
+                        <q-avatar size="72px" icon="portrait"></q-avatar>
                     <div class="text-subtitle1 q-mt-md q-mb-xs">${sessionScope.Login}</div>
                     <div class="text-subtitle1 q-mt-md q-mb-xs"> ${sessionScope.userType}</div>
                     <q-form

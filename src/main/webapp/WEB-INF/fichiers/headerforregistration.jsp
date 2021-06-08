@@ -2,7 +2,6 @@
 <q-toolbar  class="bg-primary text-white shadow-2 q-pa-md">
     <q-separator dark vertical inset></q-separator>
     <span class="q-ml-md text-h5"><fmt:localeValue key="headerCompanyName"/></span>
-    <q-btn size="md" flat round dense icon="menu" class="q-mr-sm"></q-btn>
     <q-separator dark vertical inset></q-separator>
     <q-btn size="md" @click="goHome()" stretch flat label="<fmt:localeValue key="headerHomePage"/>"></q-btn>
     <q-space></q-space>
