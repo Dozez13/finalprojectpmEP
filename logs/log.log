@@ -1424,3 +1424,7 @@
 2021-06-09 00:43 ERROR   TaxiServiceUser   insertUser   - - - - - Login or Email is already in database
 2021-06-09 00:43 ERROR   TaxiServiceUser   findAllUser   - - - - - can't close some resources
 2021-06-09 00:43 ERROR   TaxiServiceUser   findUser   - - - - - can't close some resources
+2021-06-09 00:56 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Find, Filter, Sort Orders Is started
+2021-06-09 00:56 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 00:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 00:56 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Close all resources

@@ -103,8 +103,6 @@ k
 ;src/main/java/com/example/finalprojectpm/web/view/View.java,2\1\21f02b65e0088424fa1130ce7af60b38dd064cfd
 ~
 Nsrc/test/java/com/example/finalprojectpm/db/mysql/MySQLCarCategoryDaoTest.java,5\a\5ab09aac673a7aa5ca000d76f0a8a4abf3db6e35
-x
-Hsrc/test/java/com/example/finalprojectpm/db/mysql/MySQLOrderDaoTest.java,8\0\80151fe16ffdca00c271df47c5f7ec4b28b72817
 }
 Msrc/test/java/com/example/finalprojectpm/db/service/TaxiServiceOrderTest.java,9\2\92c155c8b2e712ea70f9aaa6a938fcb46cdb2ebb
 s

@@ -121,7 +121,7 @@ class MySQLOrderDaoTest {
         when(resultSet.next()).thenReturn(true).thenReturn(true).thenReturn(false);
         when(resultSet.getInt("orderId")).thenReturn(1);
         when(resultSet.getInt("userId")).thenReturn(1);
-        when(resultSet.getInt("carid")).thenReturn(1);
+        when(resultSet.getInt("carId")).thenReturn(1);
         when(resultSet.getString(anyString())).thenReturn("SomeAddress");
         when(resultSet.getDouble("orderCost")).thenReturn(15.0);
         when(resultSet.getTimestamp("orderDate")).thenReturn(Timestamp.valueOf(LocalDateTime.now()));
