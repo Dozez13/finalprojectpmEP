@@ -57,9 +57,9 @@
                     padding
             >
 
-                <c:forEach items="${Categories}" var="categories" varStatus="loop">
+                <c:forEach items="${categories}" var="categories" varStatus="loop">
                     <q-carousel-slide :name="${loop.index+1}">
-                        <c:forEach items="${Cars}" var="car" >
+                        <c:forEach items="${cars}" var="car" >
 
                             <c:if test="${car.carCategory.equals(categories.carCategoryName)}">
                                 <q-img
@@ -109,7 +109,7 @@
 
             >
 
-                <c:forEach items="${Categories}" var="categories" varStatus="loop">
+                <c:forEach items="${categories}" var="categories" varStatus="loop">
                     <q-carousel-slide :name="${loop.index+1}" class="row justify-center" >
                         <q-card class="q-ma-xs col-5 bg-primary" dark bordered>
                             <q-card-section>

@@ -122,12 +122,12 @@
                                   name="categories"
                                   color="amber-7"
                                   size="md"
-                                  :options='${requestScope.CarCategoriesButtons}'
+                                  :options='${requestScope.carCategoriesButtons}'
                           >
-                              <c:forEach items="${CarCategories}" var="carCategory" varStatus="loop">
+                              <c:forEach items="${carCategories}" var="carCategory" varStatus="loop">
                                   <template v-slot:${loop.index+1}>
                                       <div class="text-center">
-                                          <fmt:localeValue key="${carCategory.carCategory}"/>
+                                          <fmt:localeValue key="${carCategory.carCategoryName}"/>
                                       </div>
                                   </template>
                               </c:forEach>
@@ -163,7 +163,7 @@
                 items:[
                     {
                         numOfPas:0,
-                        categories:'${CarCategories[0].carCategory}'
+                        categories:'${carCategories[0].carCategoryName}'
                     }
                 ],
 
@@ -194,7 +194,7 @@
             addNewItemForm(){
                 this.items.push({
                     numOfPas:0,
-                    categories:'${CarCategories[0].carCategory}'
+                    categories:'${carCategories[0].carCategoryName}'
                 })},
             deleteItemForm(index){
                     this.items.splice(index,1)

@@ -31,9 +31,9 @@ public class HomeAction implements Action{
         List<Car> cars = taxiServiceCar.findAllCars();
         LOGGER.debug("Get All Cars , Car number Is {}",cars.size());
         List<Integer> counts = taxiServiceCar.findNumberCarByCat();
-        request.setAttribute("Cars",cars);
-        request.setAttribute("Categories",carCategories);
-        request.setAttribute("Counts",counts);
+        request.setAttribute("cars",cars);
+        request.setAttribute("categories",carCategories);
+        request.setAttribute("counts",counts);
         view.setView(request.getPathInfo());
     }
 }

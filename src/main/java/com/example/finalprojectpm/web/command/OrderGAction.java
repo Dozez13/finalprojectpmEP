@@ -40,8 +40,8 @@ public class OrderGAction implements Action {
                 .collect(Collectors.toList());
         LOGGER.debug("Creating List of Toggle Buttons");
         ObjectMapper mapper = new ObjectMapper();
-        request.setAttribute("CarCategories",carCategories);
-        request.setAttribute("CarCategoriesButtons",mapper.writeValueAsString(buttons));
+        request.setAttribute("carCategories",carCategories);
+        request.setAttribute("carCategoriesButtons",mapper.writeValueAsString(buttons));
         view.setView(request.getPathInfo());
     }
 }
