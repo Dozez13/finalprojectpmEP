@@ -28,6 +28,7 @@ public class MySQLProfileDao implements ProfileDao {
             statement.setTimestamp(2, Timestamp.valueOf(profile.getUserRegistrationDate()));
             statement.setString(3,profile.getUserFirstName());
             statement.setString(4,profile.getUserSurName());
+            statement.setDouble(5,profile.getAccountBalance());
             rowNum = statement.executeUpdate();
             keys = statement.getGeneratedKeys();
             if(keys.next()){
@@ -63,15 +64,15 @@ public class MySQLProfileDao implements ProfileDao {
     }
 
     @Override
-    public boolean updateProfile(Connection connection,int userId, String userFirstName) throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
+    public boolean updateProfileAddBalance(Connection connection, int userId, double accountBalance) throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
         int rowNum ;
         Connection con;
         PreparedStatement statement = null;
         try{
-            String query = QueriesUtil.getQuery("updateProfile");
+            String query = QueriesUtil.getQuery("updateProfileAddBalance");
             con = connection;
             statement = con.prepareStatement(query);
-            statement.setString(1,userFirstName);
+            statement.setDouble(1,accountBalance);
             statement.setInt(2,userId);
             rowNum = statement.executeUpdate();
         }catch (SQLException e){
@@ -82,7 +83,29 @@ public class MySQLProfileDao implements ProfileDao {
         }
         return rowNum>0;
     }
-
+    @Override
+    public boolean updateProfileSWithdrawBalance(Connection connection, int userId, double accountBalance) throws MySQLEXContainer.MySQLDBExecutionException, SQLException, MySQLEXContainer.MySQLDBAccountAmountLessThenNul {
+        int rowNum ;
+        Connection con;
+        PreparedStatement statement = null;
+        try{
+            String query = QueriesUtil.getQuery("updateProfileSWithdrawBalance");
+            con = connection;
+            statement = con.prepareStatement(query);
+            statement.setDouble(1,accountBalance);
+            statement.setInt(2,userId);
+            rowNum = statement.executeUpdate();
+        }catch (SQLException e){
+            LOGGER.error(e.getMessage());
+            if(e.getErrorCode()==3819){
+                throw new MySQLEXContainer.MySQLDBAccountAmountLessThenNul("Account doesnt have money for order",e);
+            }
+            throw new MySQLEXContainer.MySQLDBExecutionException(e.getMessage(),e);
+        }finally {
+            ConnectionUtil.closeResources(null,statement,null);
+        }
+        return rowNum>0;
+    }
     @Override
     public Profile findProfile(Connection connection,int profileId) throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
         ResultSet resultSet = null;
@@ -102,6 +125,7 @@ public class MySQLProfileDao implements ProfileDao {
                 profile.setUserRegistrationDate(resultSet.getTimestamp("userRegistrationDate").toLocalDateTime());
                 profile.setUserFirstName(resultSet.getString("userFirstName"));
                 profile.setUserSurName(resultSet.getString("userSurName"));
+                profile.setAccountBalance(resultSet.getDouble("accountBalance"));
             }
         }catch (SQLException e){
             LOGGER.error(e.getMessage());
@@ -120,7 +144,7 @@ public class MySQLProfileDao implements ProfileDao {
         Profile profile;
         List<Profile> profiles = new ArrayList<>();
         try{
-            String query = QueriesUtil.getQuery("findProfile");
+            String query = QueriesUtil.getQuery("findAllProfiles");
             con = connection;
             statement = con.prepareStatement(query);
             resultSet = statement.executeQuery();
@@ -131,6 +155,7 @@ public class MySQLProfileDao implements ProfileDao {
                 profile.setUserRegistrationDate(resultSet.getTimestamp("userRegistrationDate").toLocalDateTime());
                 profile.setUserFirstName(resultSet.getString("userFirstName"));
                 profile.setUserSurName(resultSet.getString("userSurName"));
+                profile.setAccountBalance(resultSet.getDouble("accountBalance"));
                 profiles.add(profile);
             }
         }catch (SQLException e){

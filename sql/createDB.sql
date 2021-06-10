@@ -1,5 +1,5 @@
 CREATE
-DATABASE taksi_online;
+database taksi_online;
 
 CREATE TABLE `user_info`
 (

@@ -4,7 +4,7 @@ package com.example.finalprojectpm.db.service;
 import com.example.finalprojectpm.db.ProfileDao;
 import com.example.finalprojectpm.db.entity.Profile;
 import com.example.finalprojectpm.db.exception.ApplicationEXContainer;
-import com.example.finalprojectpm.db.exception.MySQLEXContainer;
+import com.example.finalprojectpm.db.exception.DBException;
 import hthurow.tomcatjndi.TomcatJNDI;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -41,36 +41,42 @@ class TaxiServiceProfileTest {
         tomcatJNDI.tearDown();
     }
     @Test
-    void insertProfile() throws MySQLEXContainer.MySQLDBExecutionException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
+    void insertProfile() throws DBException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
         Profile profile = new Profile();
         when(profileDao.insertProfile(any(Connection.class),any(Profile.class))).thenReturn(true);
         assertTrue(taxiServiceProfile.insertProfile(profile));
     }
 
     @Test
-    void deleteProfile() throws MySQLEXContainer.MySQLDBExecutionException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
+    void deleteProfile() throws DBException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
         Profile profile = new Profile();
         when(profileDao.deleteProfile(any(Connection.class),any(Profile.class))).thenReturn(true);
         assertTrue(taxiServiceProfile.deleteProfile(profile));
     }
 
     @Test
-    void updateProfile() throws MySQLEXContainer.MySQLDBExecutionException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
+    void updateProfileAddBalance() throws DBException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
        int userId = 5;
-       String newFirstName = "new";
-        when(profileDao.updateProfile(any(Connection.class),anyInt(),anyString())).thenReturn(true);
-        assertTrue(taxiServiceProfile.updateProfile(userId,newFirstName));;
+       double newAmount = 15.0;
+        when(profileDao.updateProfileAddBalance(any(Connection.class),anyInt(),anyDouble())).thenReturn(true);
+        assertTrue(taxiServiceProfile.updateProfileAddBalance(userId,newAmount));
     }
-
     @Test
-    void findProfile() throws MySQLEXContainer.MySQLDBExecutionException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
+    void updateProfileSWithdrawBalance() throws DBException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException, ApplicationEXContainer.ApplicationCanChangeException {
+        int userId = 5;
+        double newAmount = 15.0;
+        when(profileDao.updateProfileSWithdrawBalance(any(Connection.class),anyInt(),anyDouble())).thenReturn(true);
+        assertTrue(taxiServiceProfile.updateProfileSWithdrawBalance(userId,newAmount));
+    }
+    @Test
+    void findProfile() throws DBException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
         int profileId = 5;
         when(profileDao.findProfile(any(Connection.class),anyInt())).thenReturn(new Profile());
         assertNotNull(taxiServiceProfile.findProfile(profileId));
     }
 
     @Test
-    void findAllProfiles() throws MySQLEXContainer.MySQLDBExecutionException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
+    void findAllProfiles() throws DBException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
         when(profileDao.findAllProfiles(any(Connection.class))).thenReturn(new ArrayList<>());
         assertNotNull(taxiServiceProfile.findAllProfiles());
     }

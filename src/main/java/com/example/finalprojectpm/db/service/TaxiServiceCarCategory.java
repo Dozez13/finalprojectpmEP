@@ -5,6 +5,7 @@ import com.example.finalprojectpm.db.AutoRollback;
 import com.example.finalprojectpm.db.CarCategoryDao;
 import com.example.finalprojectpm.db.entity.CarCategory;
 import com.example.finalprojectpm.db.exception.ApplicationEXContainer;
+import com.example.finalprojectpm.db.exception.DBException;
 import com.example.finalprojectpm.db.exception.MySQLEXContainer;
 import com.example.finalprojectpm.db.mysql.MySQLDAOFactory;
 import org.apache.logging.log4j.LogManager;
@@ -27,7 +28,7 @@ public class TaxiServiceCarCategory {
             AutoRollback autoRollback = new AutoRollback(connection)){
             result = categoryDao.insertCarCategory(connection,carCategory);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }
@@ -39,7 +40,7 @@ public class TaxiServiceCarCategory {
             AutoRollback autoRollback = new AutoRollback(connection)){
             result= categoryDao.deleteCarCategory(connection,carCategory);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }
@@ -51,7 +52,7 @@ public class TaxiServiceCarCategory {
             AutoRollback autoRollback = new AutoRollback(connection)){
             foundCarCategory = categoryDao.findCarCategory(connection,carCategory);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }
@@ -63,7 +64,7 @@ public class TaxiServiceCarCategory {
             AutoRollback autoRollback = new AutoRollback(connection)){
             result= categoryDao.updateCarCategory(connection,carCategory,newPrice);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }
@@ -76,7 +77,7 @@ public class TaxiServiceCarCategory {
             AutoRollback autoRollback = new AutoRollback(connection)){
             carCategoryList= categoryDao.findAllCarC(connection);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }
@@ -89,7 +90,7 @@ public class TaxiServiceCarCategory {
             AutoRollback autoRollback = new AutoRollback(connection)){
             existingCarC = categoryDao.findExistingCarC(connection);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }

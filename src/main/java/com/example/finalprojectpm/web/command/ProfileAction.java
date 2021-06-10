@@ -36,6 +36,7 @@ public class ProfileAction implements Action{
         LOGGER.info("User has profileSurName : {}",profile.getUserSurName());
         request.setAttribute("profileRegistrationDate",profile.getUserRegistrationDate().toString());
         LOGGER.info("User has registration date : {}",profile.getUserRegistrationDate());
+        request.setAttribute("profileAccountBalance",profile.getAccountBalance());
         view.setView(request.getPathInfo());
     }
 }

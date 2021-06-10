@@ -5,6 +5,7 @@ import com.example.finalprojectpm.db.AutoRollback;
 import com.example.finalprojectpm.db.OrderDao;
 import com.example.finalprojectpm.db.entity.Order;
 import com.example.finalprojectpm.db.exception.ApplicationEXContainer;
+import com.example.finalprojectpm.db.exception.DBException;
 import com.example.finalprojectpm.db.exception.MySQLEXContainer;
 import com.example.finalprojectpm.db.mysql.MySQLDAOFactory;
 import org.apache.logging.log4j.LogManager;
@@ -28,7 +29,7 @@ public class TaxiServiceOrder {
             AutoRollback autoRollback = new AutoRollback(connection)){
             result = orderDao.insertOrder(connection,order);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBLargeDataException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }
@@ -43,7 +44,7 @@ public class TaxiServiceOrder {
             AutoRollback autoRollback = new AutoRollback(connection)){
             result= orderDao.insertOrders(connection,orders);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }
@@ -57,7 +58,7 @@ public class TaxiServiceOrder {
             AutoRollback autoRollback = new AutoRollback(connection)){
             result= orderDao.deleteOrder(connection,order);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }
@@ -71,7 +72,7 @@ public class TaxiServiceOrder {
             AutoRollback autoRollback = new AutoRollback(connection)){
             foundOrder = orderDao.findOrder(connection,order);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }
@@ -86,7 +87,7 @@ public class TaxiServiceOrder {
             AutoRollback autoRollback = new AutoRollback(connection)){
             result = orderDao.updateOrder(connection,order,newCarId);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }
@@ -100,7 +101,7 @@ public class TaxiServiceOrder {
             AutoRollback autoRollback = new AutoRollback(connection)){
             orders =orderDao.findAllOrders(connection);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }
@@ -114,7 +115,7 @@ public class TaxiServiceOrder {
             AutoRollback autoRollback = new AutoRollback(connection)){
             count = orderDao.orderCount(connection);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }
@@ -129,7 +130,7 @@ public class TaxiServiceOrder {
             AutoRollback autoRollback = new AutoRollback(connection)){
             orders = orderDao.findFilSortOrders(connection,filters,sortedColumn,descending,startRow,rowsPerPage);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }

@@ -5,6 +5,7 @@ import com.example.finalprojectpm.db.AutoRollback;
 import com.example.finalprojectpm.db.CarDao;
 import com.example.finalprojectpm.db.entity.Car;
 import com.example.finalprojectpm.db.exception.ApplicationEXContainer;
+import com.example.finalprojectpm.db.exception.DBException;
 import com.example.finalprojectpm.db.exception.MySQLEXContainer;
 import com.example.finalprojectpm.db.mysql.MySQLDAOFactory;
 import org.apache.logging.log4j.LogManager;
@@ -27,7 +28,7 @@ public class TaxiServiceCar {
             AutoRollback autoRollback = new AutoRollback(connection)){
             result =  carDao.insertCar(connection,car);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }
@@ -42,7 +43,7 @@ public class TaxiServiceCar {
             AutoRollback autoRollback = new AutoRollback(connection)){
             result =  carDao.deleteCar(connection,carId);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }
@@ -56,7 +57,7 @@ public class TaxiServiceCar {
             AutoRollback autoRollback = new AutoRollback(connection)){
             car = carDao.findCar(connection,carId);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }
@@ -70,7 +71,7 @@ public class TaxiServiceCar {
             AutoRollback autoRollback = new AutoRollback(connection)){
             car = carDao.findCar(connection,numOfPas,carCategory);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }
@@ -84,7 +85,7 @@ public class TaxiServiceCar {
             AutoRollback autoRollback = new AutoRollback(connection)){
             result = carDao.updateCar(connection,carId,newCarCategory);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }
@@ -98,7 +99,7 @@ public class TaxiServiceCar {
             AutoRollback autoRollback = new AutoRollback(connection)){
             carList= carDao.findAllCars(connection);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }
@@ -112,7 +113,7 @@ public class TaxiServiceCar {
             AutoRollback autoRollback = new AutoRollback(connection)){
             categoryNumbers = carDao.findNumberCarByCat(connection);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }

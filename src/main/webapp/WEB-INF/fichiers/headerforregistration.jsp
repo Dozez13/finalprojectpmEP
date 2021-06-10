@@ -13,7 +13,7 @@
                 <q-dialog v-model="showDialogD" no-backdrop-dismiss>
                     <div>
                         <q-form
-                                action="${pageContext.request.contextPath}/guest/login" method="post"
+                                action="${pageContext.request.contextPath}/pages/guest/login" method="post"
                         >
                             <q-card style="width: 400px;">
                                 <q-toolbar class="bg-primary text-white">
@@ -63,7 +63,7 @@
             </div>
         </div>
     </q-btn-dropdown>
-    <q-btn size="md" :color="Eng" @click="ChangeToEng()"  label="EN"></q-btn>
-    <q-btn size="md" :color="Ua" @click="ChangeToUa()"  label="UA"></q-btn>
-    <q-btn size="md" :color="Ru" @click="ChangeToRu()"  label="RU"></q-btn>
+    <q-btn size="md" :color="Eng" @click="changeToEng()"  label="EN"></q-btn>
+    <q-btn size="md" :color="Ua" @click="changeToUa()"  label="UA"></q-btn>
+    <q-btn size="md" :color="Ru" @click="changeToRu()"  label="RU"></q-btn>
 </q-toolbar>

@@ -6,6 +6,7 @@ import com.example.finalprojectpm.db.UserDao;
 import com.example.finalprojectpm.db.entity.Profile;
 import com.example.finalprojectpm.db.entity.User;
 import com.example.finalprojectpm.db.exception.ApplicationEXContainer;
+import com.example.finalprojectpm.db.exception.DBException;
 import com.example.finalprojectpm.db.exception.MySQLEXContainer;
 import com.example.finalprojectpm.db.mysql.MySQLDAOFactory;
 import org.apache.logging.log4j.LogManager;
@@ -44,7 +45,7 @@ public class TaxiServiceRegistration {
         } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
-        }catch (MySQLEXContainer.MySQLDBLargeDataException | MySQLEXContainer.MySQLDBNotUniqueException mySQLDBExceptionCanChange) {
+        }catch (DBException mySQLDBExceptionCanChange) {
             LOGGER.error(mySQLDBExceptionCanChange.getMessage());
             throw new ApplicationEXContainer.ApplicationCanChangeException(mySQLDBExceptionCanChange.getMessage(),mySQLDBExceptionCanChange);
         }

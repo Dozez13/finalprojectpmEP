@@ -2,6 +2,7 @@ package com.example.finalprojectpm.db.mysql;
 
 import com.example.finalprojectpm.db.OrderDao;
 import com.example.finalprojectpm.db.entity.Order;
+import com.example.finalprojectpm.db.exception.DBException;
 import com.example.finalprojectpm.db.exception.MySQLEXContainer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -34,7 +35,7 @@ class MySQLOrderDaoTest {
 
 
     @Test
-    void deleteOrder() throws SQLException, MySQLEXContainer.MySQLDBExecutionException {
+    void deleteOrder() throws SQLException, DBException {
         Order order = new Order();
         order.setOrderId(1);
         order.setUserDestination("dest");
@@ -49,7 +50,7 @@ class MySQLOrderDaoTest {
     }
 
     @Test
-    void findOrder() throws SQLException, MySQLEXContainer.MySQLDBExecutionException {
+    void findOrder() throws SQLException, DBException {
         Order order = new Order();
         order.setOrderId(1);
         order.setUserDestination("dest");
@@ -71,7 +72,7 @@ class MySQLOrderDaoTest {
     }
 
     @Test
-    void updateOrder() throws SQLException, MySQLEXContainer.MySQLDBExecutionException {
+    void updateOrder() throws SQLException, DBException {
         Order order = new Order();
         order.setOrderId(1);
         order.setUserDestination("dest");
@@ -87,7 +88,7 @@ class MySQLOrderDaoTest {
     }
 
     @Test
-    void findAllOrders() throws SQLException, MySQLEXContainer.MySQLDBExecutionException {
+    void findAllOrders() throws SQLException, DBException {
         when(preparedStatement.executeQuery()).thenReturn(resultSet);
         when(resultSet.next()).thenReturn(true).thenReturn(true).thenReturn(false);
         when(resultSet.getInt("orderId")).thenReturn(1);
@@ -101,7 +102,7 @@ class MySQLOrderDaoTest {
     }
 
     @Test
-    void orderCount() throws SQLException, MySQLEXContainer.MySQLDBExecutionException {
+    void orderCount() throws SQLException, DBException {
         when(preparedStatement.executeQuery()).thenReturn(resultSet);
         when(resultSet.next()).thenReturn(true);
         when(resultSet.getInt(1)).thenReturn(1);
@@ -111,7 +112,7 @@ class MySQLOrderDaoTest {
     }
 
     @Test
-    void findFilSortOrders() throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
+    void findFilSortOrders() throws DBException, SQLException {
         Map<String,String> filters= new HashMap<>();
         filters.put("columnName","str");
         String sortedColumn = "columnName";

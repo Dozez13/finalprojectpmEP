@@ -67,12 +67,17 @@
                 <q-card :class="{col:hasError, 'text-h6': hasError, 'bg-amber-10': hasError }">
                     <q-card-section class="text-center">
                         <c:if test="${param.orderData!=null}">
-                    <fmt:LValueParam checkParam="true" message="orderFailMessage" params="${param.orderData}"/>
+                            <c:if test="${param.orderData.equals('Account doesnt have money for order')}">
+                                <fmt:localeValue key="AccountMoneyFail"/>
+                            </c:if>
+                            <c:if test="${!param.orderData.equals('Account doesnt have money for order')}">
+                                <fmt:LValueParam checkParam="true" message="orderFailMessage" params="${param.orderData}"/>
+                            </c:if>
                         </c:if>
                     </q-card-section>
                 </q-card>
             </div>
-            <q-form action="doOrder" method="post">
+            <q-form action="${pageContext.request.contextPath}/pages/user/doOrder" method="post">
                 <q-input
                         filled
                         outlined
@@ -173,22 +178,22 @@
             goHome(){
                 window.location.href ='${pageContext.request.contextPath}'+'/pages/index?lang=${sessionScope.lang}';
             },
-            MakeOrder(){
+            makeOrder(){
                 window.location.href='${pageContext.request.contextPath}'+'/pages/user/order?lang=${sessionScope.lang}';
             },
-            CheckOrders(){
+            checkOrders(){
                 window.location.href='${pageContext.request.contextPath}'+'/pages/admin/orders?lang=${sessionScope.lang}';
             },
             profilePage(){
                 window.location.href ='${pageContext.request.contextPath}'+'/pages/user/profile?lang=${sessionScope.lang}';
             },
-            ChangeToEng(){
+            changeToEng(){
                 window.location.href = window.location.href+'?lang=en'
             },
-            ChangeToUa(){
+            changeToUa(){
                 window.location.href = window.location.href+'?lang=ua'
             },
-            ChangeToRu(){
+            changeToRu(){
                 window.location.href = window.location.href+'?lang=ru'
             },
             addNewItemForm(){

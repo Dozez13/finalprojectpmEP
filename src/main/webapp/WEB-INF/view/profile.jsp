@@ -39,8 +39,8 @@
     <div>
         <%@include file="../fichiers/headerHome.jsp"%>
     </div>
-    <div class="q-pa-md row justify-center">
-        <div class="col-4">
+    <div class="q-pa-md row justify-begin">
+        <div class="col-6">
             <q-card  class="q-ma-md col">
                 <q-card-section class="text-center text-h5 q-pt-none">
                     <fmt:localeValue key="profileInfo"/>
@@ -68,7 +68,24 @@
                 <q-card-section class="text-center text-h5 q-pt-none">
                     ${requestScope.profileRegistrationDate}
                 </q-card-section>
+                <q-card-section class="text-center bg-primary text-white">
+                    <fmt:localeValue key="profileRegistrationDate"/>
+                </q-card-section>
+                <q-separator></q-separator>
+                <q-card-section class="text-center text-h5 q-pt-none">
+                    ${requestScope.profileRegistrationDate}
+                </q-card-section>
+                <q-card-section class="text-center bg-primary text-white">
+                    <fmt:localeValue key="profileAccountBalance"/>
+                </q-card-section>
+                <q-separator></q-separator>
+                <q-card-section class="text-center text-h5 q-pt-none">
+                    ${requestScope.profileAccountBalance}
+                </q-card-section>
+
+                <q-btn label="<fmt:localeValue key="addMoneyToAccount"/>" @click="addMoney()"></q-btn>
             </q-card>
+
         </div>
 
     </div>
@@ -79,7 +96,6 @@
         el: '#q-app',
         data () {
             return {
-                file: '',
                 Eng:'',
                 Ua:'',
                 Ru:''
@@ -90,31 +106,33 @@
             goHome(){
                 window.location.replace('${pageContext.request.contextPath}'+'/pages/index?lang=${sessionScope.lang}');
             },
-            RegistrationPage(){
+            registrationPage(){
                 window.location.href ='${pageContext.request.contextPath}'+'/pages/guest/registration?lang=${sessionScope.lang}';
 
+            },
+            addMoney(){
+                window.location.href ='${pageContext.request.contextPath}'+'/pages/user/addMoney?lang=${sessionScope.lang}';
             },
             profilePage(){
                 window.location.href ='${pageContext.request.contextPath}'+'/pages/user/profile?lang=${sessionScope.lang}';
             },
-            MakeOrder(){
+            makeOrder(){
                 window.location.href='${pageContext.request.contextPath}'+'/pages/user/order?lang=${sessionScope.lang}';
             },
-            CheckOrders(){
+            checkOrders(){
                 window.location.href='${pageContext.request.contextPath}'+'/pages/admin/orders?lang=${sessionScope.lang}';
             },
-            ChangeToEng(){
+            changeToEng(){
                 window.location.href = window.location.href+'?lang=en'
             },
-            ChangeToUa(){
+            changeToUa(){
                 window.location.href = window.location.href+'?lang=ua'
             },
-            ChangeToRu(){
+            changeToRu(){
                 window.location.href = window.location.href+'?lang=ru'
             }
         },
         mounted: function(){
-
             window.history.pushState({}, document.title,window.location.href.split(/[?#]/)[0]);
             switch ('${sessionScope.lang}'){
                 case 'en':{

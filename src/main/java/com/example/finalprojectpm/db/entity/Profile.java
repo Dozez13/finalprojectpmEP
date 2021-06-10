@@ -11,6 +11,15 @@ public class Profile implements Serializable {
     private String userFirstName;
     private String userSurName;
     private LocalDateTime userRegistrationDate;
+    private double accountBalance;
+
+    public double getAccountBalance() {
+        return accountBalance;
+    }
+
+    public void setAccountBalance(double accountBalance) {
+        this.accountBalance = accountBalance;
+    }
 
     public LocalDateTime getUserRegistrationDate() {
         return userRegistrationDate;
@@ -74,6 +83,7 @@ public class Profile implements Serializable {
         sb.append(", userFirstName='").append(userFirstName).append('\'');
         sb.append(", userSurName='").append(userSurName).append('\'');
         sb.append(", userRegistrationDate=").append(userRegistrationDate);
+        sb.append(", accountBalance=").append(accountBalance);
         sb.append('}');
         return sb.toString();
     }

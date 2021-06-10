@@ -1428,3 +1428,1490 @@
 2021-06-09 00:56 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
 2021-06-09 00:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
 2021-06-09 00:56 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Starting initialize datasource
+2021-06-09 19:09 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Ended initialize datasource
+2021-06-09 19:09 ERROR   TaxiServiceOrder   findOrder   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceOrder   orderCount   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceOrder   insertOrder   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceOrder   findAllOrders   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceOrder   updateOrder   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceOrder   insertOrders   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceOrder   deleteOrder   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceOrder   findFilSortOrders   - - - - - can't close some resources
+2021-06-09 19:09 DEBUG   MySQLOrderDao   deleteOrder   - - - - - Delete Order Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLOrderDao   deleteOrder   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLOrderDao   updateOrder   - - - - - Update Order Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLOrderDao   updateOrder   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLOrderDao   findAllOrders   - - - - - Find All Orders Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLOrderDao   findAllOrders   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Find, Filter, Sort Orders Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLOrderDao   findOrder   - - - - - Find Order Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLOrderDao   findOrder   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLOrderDao   orderCount   - - - - - Order Count Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLOrderDao   orderCount   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLUserDao   findUser   - - - - - Find User Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLUserDao   findUser   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLUserDao   updateUser   - - - - - Update user is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLUserDao   updateUser   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLUserDao   findAllUser   - - - - - Find All User is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLUserDao   findAllUser   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLUserDao   validateUser   - - - - - Validate User Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLUserDao   validateUser   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLUserDao   deleteUser   - - - - - Delete User Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLUserDao   deleteUser   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarDao   updateCar   - - - - - Update Car method Is started
+2021-06-09 19:09 DEBUG   MySQLCarDao   updateCar   - - - - - Car Is updated
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarDao   updateCar   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarDao   findCar   - - - - - Find Car method by carId Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarDao   findCar   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarDao   findCar   - - - - - Find Car method Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarDao   findCar   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarDao   deleteCar   - - - - - Delete Car method Is started
+2021-06-09 19:09 DEBUG   MySQLCarDao   deleteCar   - - - - - Car Is deleted
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarDao   deleteCar   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarDao   findNumberCarByCat   - - - - - Find number Car By CarCategory method Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarDao   findNumberCarByCat   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarDao   findAllCars   - - - - - Find All Cars method Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarDao   findAllCars   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarDao   insertCar   - - - - - Insert Car method Is started
+2021-06-09 19:09 DEBUG   MySQLCarDao   insertCar   - - - - - Car Is inserted
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarDao   insertCar   - - - - - Close all resources
+2021-06-09 19:09 INFO   TaxiServiceMakeOrder   makeOrder   - - - - - Car with  5 number of passenger and category Business Is not found
+2021-06-09 19:09 ERROR   TaxiServiceMakeOrder   makeOrder   - - - - - Business 5
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Find CarCategory method Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - Insert CarCategory method Is started
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - CarCategory Is Inserted
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - Update CarCategory method Is started
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - CarCategory Is updated
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   findAllCarC   - - - - - Find All CarCategory method Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   findAllCarC   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   findExistingCarC   - - - - - Find Existing CarCategory method Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   findExistingCarC   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - Delete CarCategory method Is started
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - CarCategory Is deleted
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Find CarCategory method Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Close all resources
+2021-06-09 19:09 ERROR   TaxiServiceCar   deleteCar   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceCar   findCar   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceCar   insertCar   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceCar   updateCar   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceCar   findCar   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceCar   findNumberCarByCat   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceCar   findAllCars   - - - - - can't close some resources
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 ERROR   TaxiServiceCarCategory   updateCarCategory   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceCarCategory   deleteCarCategory   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceCarCategory   findCarCategory   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceCarCategory   insertCarCategory   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceCarCategory   findExistingCarC   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceCarCategory   findAllCarC   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceUser   deleteUser   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceUser   validateUser   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceUser   updateUser   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceUser   insertUser   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceUser   insertUser   - - - - - Login or Email is already in database
+2021-06-09 19:09 ERROR   TaxiServiceUser   findAllUser   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceUser   findUser   - - - - - can't close some resources
+2021-06-09 19:09 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Starting initialize datasource
+2021-06-09 19:09 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Ended initialize datasource
+2021-06-09 19:09 ERROR   TaxiServiceOrder   findOrder   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceOrder   orderCount   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceOrder   insertOrder   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceOrder   findAllOrders   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceOrder   updateOrder   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceOrder   insertOrders   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceOrder   deleteOrder   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceOrder   findFilSortOrders   - - - - - can't close some resources
+2021-06-09 19:09 DEBUG   MySQLOrderDao   deleteOrder   - - - - - Delete Order Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLOrderDao   deleteOrder   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLOrderDao   updateOrder   - - - - - Update Order Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLOrderDao   updateOrder   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLOrderDao   findAllOrders   - - - - - Find All Orders Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLOrderDao   findAllOrders   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Find, Filter, Sort Orders Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLOrderDao   findOrder   - - - - - Find Order Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLOrderDao   findOrder   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLOrderDao   orderCount   - - - - - Order Count Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLOrderDao   orderCount   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLUserDao   findUser   - - - - - Find User Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLUserDao   findUser   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLUserDao   updateUser   - - - - - Update user is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLUserDao   updateUser   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLUserDao   findAllUser   - - - - - Find All User is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLUserDao   findAllUser   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLUserDao   validateUser   - - - - - Validate User Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLUserDao   validateUser   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLUserDao   deleteUser   - - - - - Delete User Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLUserDao   deleteUser   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarDao   updateCar   - - - - - Update Car method Is started
+2021-06-09 19:09 DEBUG   MySQLCarDao   updateCar   - - - - - Car Is updated
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarDao   updateCar   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarDao   findCar   - - - - - Find Car method by carId Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarDao   findCar   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarDao   findCar   - - - - - Find Car method Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarDao   findCar   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarDao   deleteCar   - - - - - Delete Car method Is started
+2021-06-09 19:09 DEBUG   MySQLCarDao   deleteCar   - - - - - Car Is deleted
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarDao   deleteCar   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarDao   findNumberCarByCat   - - - - - Find number Car By CarCategory method Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarDao   findNumberCarByCat   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarDao   findAllCars   - - - - - Find All Cars method Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarDao   findAllCars   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarDao   insertCar   - - - - - Insert Car method Is started
+2021-06-09 19:09 DEBUG   MySQLCarDao   insertCar   - - - - - Car Is inserted
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarDao   insertCar   - - - - - Close all resources
+2021-06-09 19:09 INFO   TaxiServiceMakeOrder   makeOrder   - - - - - Car with  5 number of passenger and category Business Is not found
+2021-06-09 19:09 ERROR   TaxiServiceMakeOrder   makeOrder   - - - - - Business 5
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Find CarCategory method Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - Insert CarCategory method Is started
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - CarCategory Is Inserted
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - Update CarCategory method Is started
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - CarCategory Is updated
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   findAllCarC   - - - - - Find All CarCategory method Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   findAllCarC   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   findExistingCarC   - - - - - Find Existing CarCategory method Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   findExistingCarC   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - Delete CarCategory method Is started
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - CarCategory Is deleted
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - Close all resources
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Find CarCategory method Is started
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Close all resources
+2021-06-09 19:09 ERROR   TaxiServiceCar   deleteCar   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceCar   findCar   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceCar   insertCar   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceCar   updateCar   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceCar   findCar   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceCar   findNumberCarByCat   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceCar   findAllCars   - - - - - can't close some resources
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-09 19:09 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-09 19:09 ERROR   TaxiServiceCarCategory   updateCarCategory   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceCarCategory   deleteCarCategory   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceCarCategory   findCarCategory   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceCarCategory   insertCarCategory   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceCarCategory   findExistingCarC   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceCarCategory   findAllCarC   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceUser   deleteUser   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceUser   validateUser   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceUser   updateUser   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceUser   insertUser   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceUser   insertUser   - - - - - Login or Email is already in database
+2021-06-09 19:09 ERROR   TaxiServiceUser   findAllUser   - - - - - can't close some resources
+2021-06-09 19:09 ERROR   TaxiServiceUser   findUser   - - - - - can't close some resources
+2021-06-10 20:35 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Starting initialize datasource
+2021-06-10 20:35 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Ended initialize datasource
+2021-06-10 20:35 ERROR   TaxiServiceOrder   findOrder   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceOrder   orderCount   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceOrder   insertOrder   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceOrder   findAllOrders   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceOrder   updateOrder   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceOrder   insertOrders   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceOrder   deleteOrder   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceOrder   findFilSortOrders   - - - - - can't close some resources
+2021-06-10 20:35 DEBUG   MySQLOrderDao   deleteOrder   - - - - - Delete Order Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLOrderDao   deleteOrder   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLOrderDao   updateOrder   - - - - - Update Order Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLOrderDao   updateOrder   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLOrderDao   findAllOrders   - - - - - Find All Orders Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLOrderDao   findAllOrders   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Find, Filter, Sort Orders Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLOrderDao   findOrder   - - - - - Find Order Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLOrderDao   findOrder   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLOrderDao   orderCount   - - - - - Order Count Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLOrderDao   orderCount   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLUserDao   findUser   - - - - - Find User Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLUserDao   findUser   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLUserDao   updateUser   - - - - - Update user is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLUserDao   updateUser   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLUserDao   findAllUser   - - - - - Find All User is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLUserDao   findAllUser   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLUserDao   validateUser   - - - - - Validate User Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLUserDao   validateUser   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLUserDao   deleteUser   - - - - - Delete User Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLUserDao   deleteUser   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLCarDao   updateCar   - - - - - Update Car method Is started
+2021-06-10 20:35 DEBUG   MySQLCarDao   updateCar   - - - - - Car Is updated
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLCarDao   updateCar   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLCarDao   findCar   - - - - - Find Car method by carId Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLCarDao   findCar   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLCarDao   findCar   - - - - - Find Car method Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLCarDao   findCar   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLCarDao   deleteCar   - - - - - Delete Car method Is started
+2021-06-10 20:35 DEBUG   MySQLCarDao   deleteCar   - - - - - Car Is deleted
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLCarDao   deleteCar   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLCarDao   findNumberCarByCat   - - - - - Find number Car By CarCategory method Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLCarDao   findNumberCarByCat   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLCarDao   findAllCars   - - - - - Find All Cars method Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLCarDao   findAllCars   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLCarDao   insertCar   - - - - - Insert Car method Is started
+2021-06-10 20:35 DEBUG   MySQLCarDao   insertCar   - - - - - Car Is inserted
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLCarDao   insertCar   - - - - - Close all resources
+2021-06-10 20:35 INFO   TaxiServiceMakeOrder   makeOrder   - - - - - Car with  5 number of passenger and category Business Is not found
+2021-06-10 20:35 ERROR   TaxiServiceMakeOrder   makeOrder   - - - - - Business 5
+2021-06-10 20:35 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Find CarCategory method Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - Insert CarCategory method Is started
+2021-06-10 20:35 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - CarCategory Is Inserted
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - Update CarCategory method Is started
+2021-06-10 20:35 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - CarCategory Is updated
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLCarCategoryDao   findAllCarC   - - - - - Find All CarCategory method Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLCarCategoryDao   findAllCarC   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLCarCategoryDao   findExistingCarC   - - - - - Find Existing CarCategory method Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLCarCategoryDao   findExistingCarC   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - Delete CarCategory method Is started
+2021-06-10 20:35 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - CarCategory Is deleted
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Find CarCategory method Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Close all resources
+2021-06-10 20:35 ERROR   TaxiServiceCar   deleteCar   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceCar   findCar   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceCar   insertCar   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceCar   updateCar   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceCar   findCar   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceCar   findNumberCarByCat   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceCar   findAllCars   - - - - - can't close some resources
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 ERROR   TaxiServiceCarCategory   updateCarCategory   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceCarCategory   deleteCarCategory   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceCarCategory   findCarCategory   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceCarCategory   insertCarCategory   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceCarCategory   findExistingCarC   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceCarCategory   findAllCarC   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceUser   deleteUser   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceUser   validateUser   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceUser   updateUser   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceUser   insertUser   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceUser   insertUser   - - - - - Login or Email is already in database
+2021-06-10 20:35 ERROR   TaxiServiceUser   findAllUser   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceUser   findUser   - - - - - can't close some resources
+2021-06-10 20:35 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Starting initialize datasource
+2021-06-10 20:35 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Ended initialize datasource
+2021-06-10 20:35 ERROR   TaxiServiceOrder   findOrder   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceOrder   orderCount   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceOrder   insertOrder   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceOrder   findAllOrders   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceOrder   updateOrder   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceOrder   insertOrders   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceOrder   deleteOrder   - - - - - can't close some resources
+2021-06-10 20:35 ERROR   TaxiServiceOrder   findFilSortOrders   - - - - - can't close some resources
+2021-06-10 20:35 DEBUG   MySQLOrderDao   deleteOrder   - - - - - Delete Order Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLOrderDao   deleteOrder   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLOrderDao   updateOrder   - - - - - Update Order Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLOrderDao   updateOrder   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLOrderDao   findAllOrders   - - - - - Find All Orders Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLOrderDao   findAllOrders   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Find, Filter, Sort Orders Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLOrderDao   findOrder   - - - - - Find Order Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLOrderDao   findOrder   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLOrderDao   orderCount   - - - - - Order Count Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLOrderDao   orderCount   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLUserDao   findUser   - - - - - Find User Is started
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:35 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:35 DEBUG   MySQLUserDao   findUser   - - - - - Close all resources
+2021-06-10 20:35 DEBUG   MySQLUserDao   updateUser   - - - - - Update user is started
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:36 DEBUG   MySQLUserDao   updateUser   - - - - - Close all resources
+2021-06-10 20:36 DEBUG   MySQLUserDao   findAllUser   - - - - - Find All User is started
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:36 DEBUG   MySQLUserDao   findAllUser   - - - - - Close all resources
+2021-06-10 20:36 DEBUG   MySQLUserDao   validateUser   - - - - - Validate User Is started
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:36 DEBUG   MySQLUserDao   validateUser   - - - - - Close all resources
+2021-06-10 20:36 DEBUG   MySQLUserDao   deleteUser   - - - - - Delete User Is started
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:36 DEBUG   MySQLUserDao   deleteUser   - - - - - Close all resources
+2021-06-10 20:36 DEBUG   MySQLCarDao   updateCar   - - - - - Update Car method Is started
+2021-06-10 20:36 DEBUG   MySQLCarDao   updateCar   - - - - - Car Is updated
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:36 DEBUG   MySQLCarDao   updateCar   - - - - - Close all resources
+2021-06-10 20:36 DEBUG   MySQLCarDao   findCar   - - - - - Find Car method by carId Is started
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:36 DEBUG   MySQLCarDao   findCar   - - - - - Close all resources
+2021-06-10 20:36 DEBUG   MySQLCarDao   findCar   - - - - - Find Car method Is started
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:36 DEBUG   MySQLCarDao   findCar   - - - - - Close all resources
+2021-06-10 20:36 DEBUG   MySQLCarDao   deleteCar   - - - - - Delete Car method Is started
+2021-06-10 20:36 DEBUG   MySQLCarDao   deleteCar   - - - - - Car Is deleted
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:36 DEBUG   MySQLCarDao   deleteCar   - - - - - Close all resources
+2021-06-10 20:36 DEBUG   MySQLCarDao   findNumberCarByCat   - - - - - Find number Car By CarCategory method Is started
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:36 DEBUG   MySQLCarDao   findNumberCarByCat   - - - - - Close all resources
+2021-06-10 20:36 DEBUG   MySQLCarDao   findAllCars   - - - - - Find All Cars method Is started
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:36 DEBUG   MySQLCarDao   findAllCars   - - - - - Close all resources
+2021-06-10 20:36 DEBUG   MySQLCarDao   insertCar   - - - - - Insert Car method Is started
+2021-06-10 20:36 DEBUG   MySQLCarDao   insertCar   - - - - - Car Is inserted
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:36 DEBUG   MySQLCarDao   insertCar   - - - - - Close all resources
+2021-06-10 20:36 INFO   TaxiServiceMakeOrder   makeOrder   - - - - - Car with  5 number of passenger and category Business Is not found
+2021-06-10 20:36 ERROR   TaxiServiceMakeOrder   makeOrder   - - - - - Business 5
+2021-06-10 20:36 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Find CarCategory method Is started
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:36 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Close all resources
+2021-06-10 20:36 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - Insert CarCategory method Is started
+2021-06-10 20:36 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - CarCategory Is Inserted
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:36 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - Close all resources
+2021-06-10 20:36 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - Update CarCategory method Is started
+2021-06-10 20:36 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - CarCategory Is updated
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:36 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - Close all resources
+2021-06-10 20:36 DEBUG   MySQLCarCategoryDao   findAllCarC   - - - - - Find All CarCategory method Is started
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:36 DEBUG   MySQLCarCategoryDao   findAllCarC   - - - - - Close all resources
+2021-06-10 20:36 DEBUG   MySQLCarCategoryDao   findExistingCarC   - - - - - Find Existing CarCategory method Is started
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:36 DEBUG   MySQLCarCategoryDao   findExistingCarC   - - - - - Close all resources
+2021-06-10 20:36 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - Delete CarCategory method Is started
+2021-06-10 20:36 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - CarCategory Is deleted
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:36 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - Close all resources
+2021-06-10 20:36 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Find CarCategory method Is started
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:36 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Close all resources
+2021-06-10 20:36 ERROR   TaxiServiceCar   deleteCar   - - - - - can't close some resources
+2021-06-10 20:36 ERROR   TaxiServiceCar   findCar   - - - - - can't close some resources
+2021-06-10 20:36 ERROR   TaxiServiceCar   insertCar   - - - - - can't close some resources
+2021-06-10 20:36 ERROR   TaxiServiceCar   updateCar   - - - - - can't close some resources
+2021-06-10 20:36 ERROR   TaxiServiceCar   findCar   - - - - - can't close some resources
+2021-06-10 20:36 ERROR   TaxiServiceCar   findNumberCarByCat   - - - - - can't close some resources
+2021-06-10 20:36 ERROR   TaxiServiceCar   findAllCars   - - - - - can't close some resources
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:36 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:36 ERROR   TaxiServiceCarCategory   updateCarCategory   - - - - - can't close some resources
+2021-06-10 20:36 ERROR   TaxiServiceCarCategory   deleteCarCategory   - - - - - can't close some resources
+2021-06-10 20:36 ERROR   TaxiServiceCarCategory   findCarCategory   - - - - - can't close some resources
+2021-06-10 20:36 ERROR   TaxiServiceCarCategory   insertCarCategory   - - - - - can't close some resources
+2021-06-10 20:36 ERROR   TaxiServiceCarCategory   findExistingCarC   - - - - - can't close some resources
+2021-06-10 20:36 ERROR   TaxiServiceCarCategory   findAllCarC   - - - - - can't close some resources
+2021-06-10 20:36 ERROR   TaxiServiceUser   deleteUser   - - - - - can't close some resources
+2021-06-10 20:36 ERROR   TaxiServiceUser   validateUser   - - - - - can't close some resources
+2021-06-10 20:36 ERROR   TaxiServiceUser   updateUser   - - - - - can't close some resources
+2021-06-10 20:36 ERROR   TaxiServiceUser   insertUser   - - - - - can't close some resources
+2021-06-10 20:36 ERROR   TaxiServiceUser   insertUser   - - - - - Login or Email is already in database
+2021-06-10 20:36 ERROR   TaxiServiceUser   findAllUser   - - - - - can't close some resources
+2021-06-10 20:36 ERROR   TaxiServiceUser   findUser   - - - - - can't close some resources
+2021-06-10 20:45 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Starting initialize datasource
+2021-06-10 20:45 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Ended initialize datasource
+2021-06-10 20:45 ERROR   TaxiServiceOrder   findOrder   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceOrder   orderCount   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceOrder   insertOrder   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceOrder   findAllOrders   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceOrder   updateOrder   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceOrder   insertOrders   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceOrder   deleteOrder   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceOrder   findFilSortOrders   - - - - - can't close some resources
+2021-06-10 20:45 DEBUG   MySQLOrderDao   deleteOrder   - - - - - Delete Order Is started
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLOrderDao   deleteOrder   - - - - - Close all resources
+2021-06-10 20:45 DEBUG   MySQLOrderDao   updateOrder   - - - - - Update Order Is started
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLOrderDao   updateOrder   - - - - - Close all resources
+2021-06-10 20:45 DEBUG   MySQLOrderDao   findAllOrders   - - - - - Find All Orders Is started
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLOrderDao   findAllOrders   - - - - - Close all resources
+2021-06-10 20:45 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Find, Filter, Sort Orders Is started
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Close all resources
+2021-06-10 20:45 DEBUG   MySQLOrderDao   findOrder   - - - - - Find Order Is started
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLOrderDao   findOrder   - - - - - Close all resources
+2021-06-10 20:45 DEBUG   MySQLOrderDao   orderCount   - - - - - Order Count Is started
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLOrderDao   orderCount   - - - - - Close all resources
+2021-06-10 20:45 DEBUG   MySQLUserDao   findUser   - - - - - Find User Is started
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLUserDao   findUser   - - - - - Close all resources
+2021-06-10 20:45 DEBUG   MySQLUserDao   updateUser   - - - - - Update user is started
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLUserDao   updateUser   - - - - - Close all resources
+2021-06-10 20:45 DEBUG   MySQLUserDao   findAllUser   - - - - - Find All User is started
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLUserDao   findAllUser   - - - - - Close all resources
+2021-06-10 20:45 DEBUG   MySQLUserDao   validateUser   - - - - - Validate User Is started
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLUserDao   validateUser   - - - - - Close all resources
+2021-06-10 20:45 DEBUG   MySQLUserDao   deleteUser   - - - - - Delete User Is started
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLUserDao   deleteUser   - - - - - Close all resources
+2021-06-10 20:45 DEBUG   MySQLCarDao   updateCar   - - - - - Update Car method Is started
+2021-06-10 20:45 DEBUG   MySQLCarDao   updateCar   - - - - - Car Is updated
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLCarDao   updateCar   - - - - - Close all resources
+2021-06-10 20:45 DEBUG   MySQLCarDao   findCar   - - - - - Find Car method by carId Is started
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLCarDao   findCar   - - - - - Close all resources
+2021-06-10 20:45 DEBUG   MySQLCarDao   findCar   - - - - - Find Car method Is started
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLCarDao   findCar   - - - - - Close all resources
+2021-06-10 20:45 DEBUG   MySQLCarDao   deleteCar   - - - - - Delete Car method Is started
+2021-06-10 20:45 DEBUG   MySQLCarDao   deleteCar   - - - - - Car Is deleted
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLCarDao   deleteCar   - - - - - Close all resources
+2021-06-10 20:45 DEBUG   MySQLCarDao   findNumberCarByCat   - - - - - Find number Car By CarCategory method Is started
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLCarDao   findNumberCarByCat   - - - - - Close all resources
+2021-06-10 20:45 DEBUG   MySQLCarDao   findAllCars   - - - - - Find All Cars method Is started
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLCarDao   findAllCars   - - - - - Close all resources
+2021-06-10 20:45 DEBUG   MySQLCarDao   insertCar   - - - - - Insert Car method Is started
+2021-06-10 20:45 DEBUG   MySQLCarDao   insertCar   - - - - - Car Is inserted
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLCarDao   insertCar   - - - - - Close all resources
+2021-06-10 20:45 INFO   TaxiServiceMakeOrder   makeOrder   - - - - - Car with  5 number of passenger and category Business Is not found
+2021-06-10 20:45 ERROR   TaxiServiceMakeOrder   makeOrder   - - - - - Business 5
+2021-06-10 20:45 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Find CarCategory method Is started
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Close all resources
+2021-06-10 20:45 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - Insert CarCategory method Is started
+2021-06-10 20:45 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - CarCategory Is Inserted
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - Close all resources
+2021-06-10 20:45 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - Update CarCategory method Is started
+2021-06-10 20:45 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - CarCategory Is updated
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - Close all resources
+2021-06-10 20:45 DEBUG   MySQLCarCategoryDao   findAllCarC   - - - - - Find All CarCategory method Is started
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLCarCategoryDao   findAllCarC   - - - - - Close all resources
+2021-06-10 20:45 DEBUG   MySQLCarCategoryDao   findExistingCarC   - - - - - Find Existing CarCategory method Is started
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLCarCategoryDao   findExistingCarC   - - - - - Close all resources
+2021-06-10 20:45 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - Delete CarCategory method Is started
+2021-06-10 20:45 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - CarCategory Is deleted
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - Close all resources
+2021-06-10 20:45 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Find CarCategory method Is started
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Close all resources
+2021-06-10 20:45 ERROR   TaxiServiceCar   deleteCar   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceCar   findCar   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceCar   insertCar   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceCar   updateCar   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceCar   findCar   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceCar   findNumberCarByCat   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceCar   findAllCars   - - - - - can't close some resources
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:45 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:45 ERROR   TaxiServiceCarCategory   updateCarCategory   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceCarCategory   deleteCarCategory   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceCarCategory   findCarCategory   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceCarCategory   insertCarCategory   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceCarCategory   findExistingCarC   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceCarCategory   findAllCarC   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceUser   deleteUser   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceUser   validateUser   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceUser   updateUser   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceUser   insertUser   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceUser   insertUser   - - - - - Login or Email is already in database
+2021-06-10 20:45 ERROR   TaxiServiceUser   findAllUser   - - - - - can't close some resources
+2021-06-10 20:45 ERROR   TaxiServiceUser   findUser   - - - - - can't close some resources
+2021-06-10 20:56 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Starting initialize datasource
+2021-06-10 20:56 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Ended initialize datasource
+2021-06-10 20:56 ERROR   TaxiServiceOrder   findOrder   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceOrder   orderCount   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceOrder   insertOrder   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceOrder   findAllOrders   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceOrder   updateOrder   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceOrder   insertOrders   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceOrder   deleteOrder   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceOrder   findFilSortOrders   - - - - - can't close some resources
+2021-06-10 20:56 DEBUG   MySQLOrderDao   deleteOrder   - - - - - Delete Order Is started
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLOrderDao   deleteOrder   - - - - - Close all resources
+2021-06-10 20:56 DEBUG   MySQLOrderDao   updateOrder   - - - - - Update Order Is started
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLOrderDao   updateOrder   - - - - - Close all resources
+2021-06-10 20:56 DEBUG   MySQLOrderDao   findAllOrders   - - - - - Find All Orders Is started
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLOrderDao   findAllOrders   - - - - - Close all resources
+2021-06-10 20:56 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Find, Filter, Sort Orders Is started
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Close all resources
+2021-06-10 20:56 DEBUG   MySQLOrderDao   findOrder   - - - - - Find Order Is started
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLOrderDao   findOrder   - - - - - Close all resources
+2021-06-10 20:56 DEBUG   MySQLOrderDao   orderCount   - - - - - Order Count Is started
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLOrderDao   orderCount   - - - - - Close all resources
+2021-06-10 20:56 DEBUG   MySQLUserDao   findUser   - - - - - Find User Is started
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLUserDao   findUser   - - - - - Close all resources
+2021-06-10 20:56 DEBUG   MySQLUserDao   updateUser   - - - - - Update user is started
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLUserDao   updateUser   - - - - - Close all resources
+2021-06-10 20:56 DEBUG   MySQLUserDao   findAllUser   - - - - - Find All User is started
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLUserDao   findAllUser   - - - - - Close all resources
+2021-06-10 20:56 DEBUG   MySQLUserDao   validateUser   - - - - - Validate User Is started
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLUserDao   validateUser   - - - - - Close all resources
+2021-06-10 20:56 DEBUG   MySQLUserDao   deleteUser   - - - - - Delete User Is started
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLUserDao   deleteUser   - - - - - Close all resources
+2021-06-10 20:56 DEBUG   MySQLCarDao   updateCar   - - - - - Update Car method Is started
+2021-06-10 20:56 DEBUG   MySQLCarDao   updateCar   - - - - - Car Is updated
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLCarDao   updateCar   - - - - - Close all resources
+2021-06-10 20:56 DEBUG   MySQLCarDao   findCar   - - - - - Find Car method by carId Is started
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLCarDao   findCar   - - - - - Close all resources
+2021-06-10 20:56 DEBUG   MySQLCarDao   findCar   - - - - - Find Car method Is started
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLCarDao   findCar   - - - - - Close all resources
+2021-06-10 20:56 DEBUG   MySQLCarDao   deleteCar   - - - - - Delete Car method Is started
+2021-06-10 20:56 DEBUG   MySQLCarDao   deleteCar   - - - - - Car Is deleted
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLCarDao   deleteCar   - - - - - Close all resources
+2021-06-10 20:56 DEBUG   MySQLCarDao   findNumberCarByCat   - - - - - Find number Car By CarCategory method Is started
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLCarDao   findNumberCarByCat   - - - - - Close all resources
+2021-06-10 20:56 DEBUG   MySQLCarDao   findAllCars   - - - - - Find All Cars method Is started
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLCarDao   findAllCars   - - - - - Close all resources
+2021-06-10 20:56 DEBUG   MySQLCarDao   insertCar   - - - - - Insert Car method Is started
+2021-06-10 20:56 DEBUG   MySQLCarDao   insertCar   - - - - - Car Is inserted
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLCarDao   insertCar   - - - - - Close all resources
+2021-06-10 20:56 INFO   TaxiServiceMakeOrder   makeOrder   - - - - - Car with  5 number of passenger and category Business Is not found
+2021-06-10 20:56 ERROR   TaxiServiceMakeOrder   makeOrder   - - - - - Business 5
+2021-06-10 20:56 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Find CarCategory method Is started
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Close all resources
+2021-06-10 20:56 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - Insert CarCategory method Is started
+2021-06-10 20:56 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - CarCategory Is Inserted
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - Close all resources
+2021-06-10 20:56 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - Update CarCategory method Is started
+2021-06-10 20:56 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - CarCategory Is updated
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - Close all resources
+2021-06-10 20:56 DEBUG   MySQLCarCategoryDao   findAllCarC   - - - - - Find All CarCategory method Is started
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLCarCategoryDao   findAllCarC   - - - - - Close all resources
+2021-06-10 20:56 DEBUG   MySQLCarCategoryDao   findExistingCarC   - - - - - Find Existing CarCategory method Is started
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLCarCategoryDao   findExistingCarC   - - - - - Close all resources
+2021-06-10 20:56 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - Delete CarCategory method Is started
+2021-06-10 20:56 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - CarCategory Is deleted
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - Close all resources
+2021-06-10 20:56 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Find CarCategory method Is started
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Close all resources
+2021-06-10 20:56 ERROR   TaxiServiceCar   deleteCar   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceCar   findCar   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceCar   insertCar   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceCar   updateCar   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceCar   findCar   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceCar   findNumberCarByCat   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceCar   findAllCars   - - - - - can't close some resources
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:56 ERROR   TaxiServiceCarCategory   updateCarCategory   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceCarCategory   deleteCarCategory   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceCarCategory   findCarCategory   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceCarCategory   insertCarCategory   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceCarCategory   findExistingCarC   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceCarCategory   findAllCarC   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceUser   deleteUser   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceUser   validateUser   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceUser   updateUser   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceUser   insertUser   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceUser   insertUser   - - - - - Login or Email is already in database
+2021-06-10 20:56 ERROR   TaxiServiceUser   findAllUser   - - - - - can't close some resources
+2021-06-10 20:56 ERROR   TaxiServiceUser   findUser   - - - - - can't close some resources
+2021-06-10 20:57 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Starting initialize datasource
+2021-06-10 20:57 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Ended initialize datasource
+2021-06-10 20:57 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:57 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Starting initialize datasource
+2021-06-10 20:57 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Ended initialize datasource
+2021-06-10 20:58 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Starting initialize datasource
+2021-06-10 20:58 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Ended initialize datasource
+2021-06-10 20:58 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Starting initialize datasource
+2021-06-10 20:58 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Ended initialize datasource
+2021-06-10 20:58 ERROR   TaxiServiceOrder   findOrder   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceOrder   orderCount   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceOrder   insertOrder   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceOrder   findAllOrders   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceOrder   updateOrder   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceOrder   insertOrders   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceOrder   deleteOrder   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceOrder   findFilSortOrders   - - - - - can't close some resources
+2021-06-10 20:58 DEBUG   MySQLOrderDao   deleteOrder   - - - - - Delete Order Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLOrderDao   deleteOrder   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLOrderDao   updateOrder   - - - - - Update Order Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLOrderDao   updateOrder   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLOrderDao   findAllOrders   - - - - - Find All Orders Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLOrderDao   findAllOrders   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Find, Filter, Sort Orders Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLOrderDao   findOrder   - - - - - Find Order Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLOrderDao   findOrder   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLOrderDao   orderCount   - - - - - Order Count Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLOrderDao   orderCount   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLUserDao   findUser   - - - - - Find User Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLUserDao   findUser   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLUserDao   updateUser   - - - - - Update user is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLUserDao   updateUser   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLUserDao   findAllUser   - - - - - Find All User is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLUserDao   findAllUser   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLUserDao   validateUser   - - - - - Validate User Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLUserDao   validateUser   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLUserDao   deleteUser   - - - - - Delete User Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLUserDao   deleteUser   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarDao   updateCar   - - - - - Update Car method Is started
+2021-06-10 20:58 DEBUG   MySQLCarDao   updateCar   - - - - - Car Is updated
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarDao   updateCar   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarDao   findCar   - - - - - Find Car method by carId Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarDao   findCar   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarDao   findCar   - - - - - Find Car method Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarDao   findCar   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarDao   deleteCar   - - - - - Delete Car method Is started
+2021-06-10 20:58 DEBUG   MySQLCarDao   deleteCar   - - - - - Car Is deleted
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarDao   deleteCar   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarDao   findNumberCarByCat   - - - - - Find number Car By CarCategory method Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarDao   findNumberCarByCat   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarDao   findAllCars   - - - - - Find All Cars method Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarDao   findAllCars   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarDao   insertCar   - - - - - Insert Car method Is started
+2021-06-10 20:58 DEBUG   MySQLCarDao   insertCar   - - - - - Car Is inserted
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarDao   insertCar   - - - - - Close all resources
+2021-06-10 20:58 INFO   TaxiServiceMakeOrder   makeOrder   - - - - - Car with  5 number of passenger and category Business Is not found
+2021-06-10 20:58 ERROR   TaxiServiceMakeOrder   makeOrder   - - - - - Business 5
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Find CarCategory method Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - Insert CarCategory method Is started
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - CarCategory Is Inserted
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - Update CarCategory method Is started
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - CarCategory Is updated
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   findAllCarC   - - - - - Find All CarCategory method Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   findAllCarC   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   findExistingCarC   - - - - - Find Existing CarCategory method Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   findExistingCarC   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - Delete CarCategory method Is started
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - CarCategory Is deleted
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Find CarCategory method Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Close all resources
+2021-06-10 20:58 ERROR   TaxiServiceCar   deleteCar   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceCar   findCar   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceCar   insertCar   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceCar   updateCar   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceCar   findCar   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceCar   findNumberCarByCat   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceCar   findAllCars   - - - - - can't close some resources
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 ERROR   TaxiServiceCarCategory   updateCarCategory   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceCarCategory   deleteCarCategory   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceCarCategory   findCarCategory   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceCarCategory   insertCarCategory   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceCarCategory   findExistingCarC   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceCarCategory   findAllCarC   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceUser   deleteUser   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceUser   validateUser   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceUser   updateUser   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceUser   insertUser   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceUser   insertUser   - - - - - Login or Email is already in database
+2021-06-10 20:58 ERROR   TaxiServiceUser   findAllUser   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceUser   findUser   - - - - - can't close some resources
+2021-06-10 20:58 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Starting initialize datasource
+2021-06-10 20:58 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Ended initialize datasource
+2021-06-10 20:58 ERROR   TaxiServiceOrder   findOrder   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceOrder   orderCount   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceOrder   insertOrder   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceOrder   findAllOrders   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceOrder   updateOrder   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceOrder   insertOrders   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceOrder   deleteOrder   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceOrder   findFilSortOrders   - - - - - can't close some resources
+2021-06-10 20:58 DEBUG   MySQLOrderDao   deleteOrder   - - - - - Delete Order Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLOrderDao   deleteOrder   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLOrderDao   updateOrder   - - - - - Update Order Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLOrderDao   updateOrder   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLOrderDao   findAllOrders   - - - - - Find All Orders Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLOrderDao   findAllOrders   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Find, Filter, Sort Orders Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLOrderDao   findOrder   - - - - - Find Order Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLOrderDao   findOrder   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLOrderDao   orderCount   - - - - - Order Count Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLOrderDao   orderCount   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLUserDao   findUser   - - - - - Find User Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLUserDao   findUser   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLUserDao   updateUser   - - - - - Update user is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLUserDao   updateUser   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLUserDao   findAllUser   - - - - - Find All User is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLUserDao   findAllUser   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLUserDao   validateUser   - - - - - Validate User Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLUserDao   validateUser   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLUserDao   deleteUser   - - - - - Delete User Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLUserDao   deleteUser   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarDao   updateCar   - - - - - Update Car method Is started
+2021-06-10 20:58 DEBUG   MySQLCarDao   updateCar   - - - - - Car Is updated
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarDao   updateCar   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarDao   findCar   - - - - - Find Car method by carId Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarDao   findCar   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarDao   findCar   - - - - - Find Car method Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarDao   findCar   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarDao   deleteCar   - - - - - Delete Car method Is started
+2021-06-10 20:58 DEBUG   MySQLCarDao   deleteCar   - - - - - Car Is deleted
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarDao   deleteCar   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarDao   findNumberCarByCat   - - - - - Find number Car By CarCategory method Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarDao   findNumberCarByCat   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarDao   findAllCars   - - - - - Find All Cars method Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarDao   findAllCars   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarDao   insertCar   - - - - - Insert Car method Is started
+2021-06-10 20:58 DEBUG   MySQLCarDao   insertCar   - - - - - Car Is inserted
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarDao   insertCar   - - - - - Close all resources
+2021-06-10 20:58 INFO   TaxiServiceMakeOrder   makeOrder   - - - - - Car with  5 number of passenger and category Business Is not found
+2021-06-10 20:58 ERROR   TaxiServiceMakeOrder   makeOrder   - - - - - Business 5
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Find CarCategory method Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - Insert CarCategory method Is started
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - CarCategory Is Inserted
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - Update CarCategory method Is started
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - CarCategory Is updated
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   findAllCarC   - - - - - Find All CarCategory method Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   findAllCarC   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   findExistingCarC   - - - - - Find Existing CarCategory method Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   findExistingCarC   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - Delete CarCategory method Is started
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - CarCategory Is deleted
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - Close all resources
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Find CarCategory method Is started
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Close all resources
+2021-06-10 20:58 ERROR   TaxiServiceCar   deleteCar   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceCar   findCar   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceCar   insertCar   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceCar   updateCar   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceCar   findCar   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceCar   findNumberCarByCat   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceCar   findAllCars   - - - - - can't close some resources
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 20:58 ERROR   TaxiServiceCarCategory   updateCarCategory   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceCarCategory   deleteCarCategory   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceCarCategory   findCarCategory   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceCarCategory   insertCarCategory   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceCarCategory   findExistingCarC   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceCarCategory   findAllCarC   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceUser   deleteUser   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceUser   validateUser   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceUser   updateUser   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceUser   insertUser   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceUser   insertUser   - - - - - Login or Email is already in database
+2021-06-10 20:58 ERROR   TaxiServiceUser   findAllUser   - - - - - can't close some resources
+2021-06-10 20:58 ERROR   TaxiServiceUser   findUser   - - - - - can't close some resources
+2021-06-10 21:39 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Starting initialize datasource
+2021-06-10 21:39 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Ended initialize datasource
+2021-06-10 21:39 ERROR   TaxiServiceOrder   findOrder   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceOrder   orderCount   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceOrder   insertOrder   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceOrder   findAllOrders   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceOrder   updateOrder   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceOrder   insertOrders   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceOrder   deleteOrder   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceOrder   findFilSortOrders   - - - - - can't close some resources
+2021-06-10 21:39 DEBUG   MySQLOrderDao   deleteOrder   - - - - - Delete Order Is started
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLOrderDao   deleteOrder   - - - - - Close all resources
+2021-06-10 21:39 DEBUG   MySQLOrderDao   updateOrder   - - - - - Update Order Is started
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLOrderDao   updateOrder   - - - - - Close all resources
+2021-06-10 21:39 DEBUG   MySQLOrderDao   findAllOrders   - - - - - Find All Orders Is started
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLOrderDao   findAllOrders   - - - - - Close all resources
+2021-06-10 21:39 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Find, Filter, Sort Orders Is started
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Close all resources
+2021-06-10 21:39 DEBUG   MySQLOrderDao   findOrder   - - - - - Find Order Is started
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLOrderDao   findOrder   - - - - - Close all resources
+2021-06-10 21:39 DEBUG   MySQLOrderDao   orderCount   - - - - - Order Count Is started
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLOrderDao   orderCount   - - - - - Close all resources
+2021-06-10 21:39 DEBUG   MySQLUserDao   findUser   - - - - - Find User Is started
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLUserDao   findUser   - - - - - Close all resources
+2021-06-10 21:39 DEBUG   MySQLUserDao   updateUser   - - - - - Update user is started
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLUserDao   updateUser   - - - - - Close all resources
+2021-06-10 21:39 DEBUG   MySQLUserDao   findAllUser   - - - - - Find All User is started
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLUserDao   findAllUser   - - - - - Close all resources
+2021-06-10 21:39 DEBUG   MySQLUserDao   validateUser   - - - - - Validate User Is started
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLUserDao   validateUser   - - - - - Close all resources
+2021-06-10 21:39 DEBUG   MySQLUserDao   deleteUser   - - - - - Delete User Is started
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLUserDao   deleteUser   - - - - - Close all resources
+2021-06-10 21:39 DEBUG   MySQLCarDao   updateCar   - - - - - Update Car method Is started
+2021-06-10 21:39 DEBUG   MySQLCarDao   updateCar   - - - - - Car Is updated
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLCarDao   updateCar   - - - - - Close all resources
+2021-06-10 21:39 DEBUG   MySQLCarDao   findCar   - - - - - Find Car method by carId Is started
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLCarDao   findCar   - - - - - Close all resources
+2021-06-10 21:39 DEBUG   MySQLCarDao   findCar   - - - - - Find Car method Is started
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLCarDao   findCar   - - - - - Close all resources
+2021-06-10 21:39 DEBUG   MySQLCarDao   deleteCar   - - - - - Delete Car method Is started
+2021-06-10 21:39 DEBUG   MySQLCarDao   deleteCar   - - - - - Car Is deleted
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLCarDao   deleteCar   - - - - - Close all resources
+2021-06-10 21:39 DEBUG   MySQLCarDao   findNumberCarByCat   - - - - - Find number Car By CarCategory method Is started
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLCarDao   findNumberCarByCat   - - - - - Close all resources
+2021-06-10 21:39 DEBUG   MySQLCarDao   findAllCars   - - - - - Find All Cars method Is started
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLCarDao   findAllCars   - - - - - Close all resources
+2021-06-10 21:39 DEBUG   MySQLCarDao   insertCar   - - - - - Insert Car method Is started
+2021-06-10 21:39 DEBUG   MySQLCarDao   insertCar   - - - - - Car Is inserted
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLCarDao   insertCar   - - - - - Close all resources
+2021-06-10 21:39 INFO   TaxiServiceMakeOrder   makeOrder   - - - - - Car with  5 number of passenger and category Business Is not found
+2021-06-10 21:39 ERROR   TaxiServiceMakeOrder   makeOrder   - - - - - Business 5
+2021-06-10 21:39 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Find CarCategory method Is started
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Close all resources
+2021-06-10 21:39 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - Insert CarCategory method Is started
+2021-06-10 21:39 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - CarCategory Is Inserted
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - Close all resources
+2021-06-10 21:39 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - Update CarCategory method Is started
+2021-06-10 21:39 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - CarCategory Is updated
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - Close all resources
+2021-06-10 21:39 DEBUG   MySQLCarCategoryDao   findAllCarC   - - - - - Find All CarCategory method Is started
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLCarCategoryDao   findAllCarC   - - - - - Close all resources
+2021-06-10 21:39 DEBUG   MySQLCarCategoryDao   findExistingCarC   - - - - - Find Existing CarCategory method Is started
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLCarCategoryDao   findExistingCarC   - - - - - Close all resources
+2021-06-10 21:39 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - Delete CarCategory method Is started
+2021-06-10 21:39 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - CarCategory Is deleted
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - Close all resources
+2021-06-10 21:39 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Find CarCategory method Is started
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Close all resources
+2021-06-10 21:39 ERROR   TaxiServiceCar   deleteCar   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceCar   findCar   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceCar   insertCar   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceCar   updateCar   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceCar   findCar   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceCar   findNumberCarByCat   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceCar   findAllCars   - - - - - can't close some resources
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-10 21:39 ERROR   TaxiServiceCarCategory   updateCarCategory   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceCarCategory   deleteCarCategory   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceCarCategory   findCarCategory   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceCarCategory   insertCarCategory   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceCarCategory   findExistingCarC   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceCarCategory   findAllCarC   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceUser   deleteUser   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceUser   validateUser   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceUser   updateUser   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceUser   insertUser   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceUser   insertUser   - - - - - Login or Email is already in database
+2021-06-10 21:39 ERROR   TaxiServiceUser   findAllUser   - - - - - can't close some resources
+2021-06-10 21:39 ERROR   TaxiServiceUser   findUser   - - - - - can't close some resources
+2021-06-11 00:49 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Starting initialize datasource
+2021-06-11 00:49 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Ended initialize datasource
+2021-06-11 00:49 ERROR   TaxiServiceOrder   findOrder   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceOrder   orderCount   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceOrder   insertOrder   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceOrder   findAllOrders   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceOrder   updateOrder   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceOrder   insertOrders   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceOrder   deleteOrder   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceOrder   findFilSortOrders   - - - - - can't close some resources
+2021-06-11 00:49 DEBUG   MySQLOrderDao   deleteOrder   - - - - - Delete Order Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLOrderDao   deleteOrder   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLOrderDao   updateOrder   - - - - - Update Order Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLOrderDao   updateOrder   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLOrderDao   findAllOrders   - - - - - Find All Orders Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLOrderDao   findAllOrders   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Find, Filter, Sort Orders Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLOrderDao   findOrder   - - - - - Find Order Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLOrderDao   findOrder   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLOrderDao   orderCount   - - - - - Order Count Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLOrderDao   orderCount   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLUserDao   findUser   - - - - - Find User Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLUserDao   findUser   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLUserDao   updateUser   - - - - - Update user is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLUserDao   updateUser   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLUserDao   findAllUser   - - - - - Find All User is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLUserDao   findAllUser   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLUserDao   validateUser   - - - - - Validate User Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLUserDao   validateUser   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLUserDao   deleteUser   - - - - - Delete User Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLUserDao   deleteUser   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLCarDao   updateCar   - - - - - Update Car method Is started
+2021-06-11 00:49 DEBUG   MySQLCarDao   updateCar   - - - - - Car Is updated
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLCarDao   updateCar   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLCarDao   findCar   - - - - - Find Car method by carId Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLCarDao   findCar   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLCarDao   findCar   - - - - - Find Car method Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLCarDao   findCar   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLCarDao   deleteCar   - - - - - Delete Car method Is started
+2021-06-11 00:49 DEBUG   MySQLCarDao   deleteCar   - - - - - Car Is deleted
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLCarDao   deleteCar   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLCarDao   findNumberCarByCat   - - - - - Find number Car By CarCategory method Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLCarDao   findNumberCarByCat   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLCarDao   findAllCars   - - - - - Find All Cars method Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLCarDao   findAllCars   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLCarDao   insertCar   - - - - - Insert Car method Is started
+2021-06-11 00:49 DEBUG   MySQLCarDao   insertCar   - - - - - Car Is inserted
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLCarDao   insertCar   - - - - - Close all resources
+2021-06-11 00:49 INFO   TaxiServiceMakeOrder   makeOrder   - - - - - Car with  5 number of passenger and category Business Is not found
+2021-06-11 00:49 ERROR   TaxiServiceMakeOrder   makeOrder   - - - - - Business 5
+2021-06-11 00:49 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Find CarCategory method Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - Insert CarCategory method Is started
+2021-06-11 00:49 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - CarCategory Is Inserted
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - Update CarCategory method Is started
+2021-06-11 00:49 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - CarCategory Is updated
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLCarCategoryDao   findAllCarC   - - - - - Find All CarCategory method Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLCarCategoryDao   findAllCarC   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLCarCategoryDao   findExistingCarC   - - - - - Find Existing CarCategory method Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLCarCategoryDao   findExistingCarC   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - Delete CarCategory method Is started
+2021-06-11 00:49 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - CarCategory Is deleted
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Find CarCategory method Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Close all resources
+2021-06-11 00:49 ERROR   TaxiServiceCar   deleteCar   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceCar   findCar   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceCar   insertCar   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceCar   updateCar   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceCar   findCar   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceCar   findNumberCarByCat   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceCar   findAllCars   - - - - - can't close some resources
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 ERROR   TaxiServiceCarCategory   updateCarCategory   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceCarCategory   deleteCarCategory   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceCarCategory   findCarCategory   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceCarCategory   insertCarCategory   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceCarCategory   findExistingCarC   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceCarCategory   findAllCarC   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceUser   deleteUser   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceUser   validateUser   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceUser   updateUser   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceUser   insertUser   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceUser   insertUser   - - - - - Login or Email is already in database
+2021-06-11 00:49 ERROR   TaxiServiceUser   findAllUser   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceUser   findUser   - - - - - can't close some resources
+2021-06-11 00:49 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Starting initialize datasource
+2021-06-11 00:49 DEBUG   MySQLDAOFactory   dataSourceInit   - - - - - Ended initialize datasource
+2021-06-11 00:49 ERROR   TaxiServiceOrder   findOrder   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceOrder   orderCount   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceOrder   insertOrder   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceOrder   findAllOrders   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceOrder   updateOrder   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceOrder   insertOrders   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceOrder   deleteOrder   - - - - - can't close some resources
+2021-06-11 00:49 ERROR   TaxiServiceOrder   findFilSortOrders   - - - - - can't close some resources
+2021-06-11 00:49 DEBUG   MySQLOrderDao   deleteOrder   - - - - - Delete Order Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLOrderDao   deleteOrder   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLOrderDao   updateOrder   - - - - - Update Order Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLOrderDao   updateOrder   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLOrderDao   findAllOrders   - - - - - Find All Orders Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLOrderDao   findAllOrders   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Find, Filter, Sort Orders Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLOrderDao   findFilSortOrders   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLOrderDao   findOrder   - - - - - Find Order Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLOrderDao   findOrder   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLOrderDao   orderCount   - - - - - Order Count Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLOrderDao   orderCount   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLUserDao   findUser   - - - - - Find User Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLUserDao   findUser   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLUserDao   updateUser   - - - - - Update user is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLUserDao   updateUser   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLUserDao   findAllUser   - - - - - Find All User is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLUserDao   findAllUser   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLUserDao   validateUser   - - - - - Validate User Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLUserDao   validateUser   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLUserDao   deleteUser   - - - - - Delete User Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLUserDao   deleteUser   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLCarDao   updateCar   - - - - - Update Car method Is started
+2021-06-11 00:49 DEBUG   MySQLCarDao   updateCar   - - - - - Car Is updated
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLCarDao   updateCar   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLCarDao   findCar   - - - - - Find Car method by carId Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLCarDao   findCar   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLCarDao   findCar   - - - - - Find Car method Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLCarDao   findCar   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLCarDao   deleteCar   - - - - - Delete Car method Is started
+2021-06-11 00:49 DEBUG   MySQLCarDao   deleteCar   - - - - - Car Is deleted
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLCarDao   deleteCar   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLCarDao   findNumberCarByCat   - - - - - Find number Car By CarCategory method Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLCarDao   findNumberCarByCat   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLCarDao   findAllCars   - - - - - Find All Cars method Is started
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLCarDao   findAllCars   - - - - - Close all resources
+2021-06-11 00:49 DEBUG   MySQLCarDao   insertCar   - - - - - Insert Car method Is started
+2021-06-11 00:49 DEBUG   MySQLCarDao   insertCar   - - - - - Car Is inserted
+2021-06-11 00:49 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:49 DEBUG   MySQLCarDao   insertCar   - - - - - Close all resources
+2021-06-11 00:49 INFO   TaxiServiceMakeOrder   makeOrder   - - - - - Car with  5 number of passenger and category Business Is not found
+2021-06-11 00:49 ERROR   TaxiServiceMakeOrder   makeOrder   - - - - - Business 5
+2021-06-11 00:50 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Find CarCategory method Is started
+2021-06-11 00:50 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:50 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:50 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Close all resources
+2021-06-11 00:50 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - Insert CarCategory method Is started
+2021-06-11 00:50 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - CarCategory Is Inserted
+2021-06-11 00:50 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:50 DEBUG   MySQLCarCategoryDao   insertCarCategory   - - - - - Close all resources
+2021-06-11 00:50 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - Update CarCategory method Is started
+2021-06-11 00:50 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - CarCategory Is updated
+2021-06-11 00:50 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:50 DEBUG   MySQLCarCategoryDao   updateCarCategory   - - - - - Close all resources
+2021-06-11 00:50 DEBUG   MySQLCarCategoryDao   findAllCarC   - - - - - Find All CarCategory method Is started
+2021-06-11 00:50 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:50 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:50 DEBUG   MySQLCarCategoryDao   findAllCarC   - - - - - Close all resources
+2021-06-11 00:50 DEBUG   MySQLCarCategoryDao   findExistingCarC   - - - - - Find Existing CarCategory method Is started
+2021-06-11 00:50 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:50 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:50 DEBUG   MySQLCarCategoryDao   findExistingCarC   - - - - - Close all resources
+2021-06-11 00:50 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - Delete CarCategory method Is started
+2021-06-11 00:50 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - CarCategory Is deleted
+2021-06-11 00:50 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:50 DEBUG   MySQLCarCategoryDao   deleteCarCategory   - - - - - Close all resources
+2021-06-11 00:50 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Find CarCategory method Is started
+2021-06-11 00:50 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:50 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:50 DEBUG   MySQLCarCategoryDao   findCarCategory   - - - - - Close all resources
+2021-06-11 00:50 ERROR   TaxiServiceCar   deleteCar   - - - - - can't close some resources
+2021-06-11 00:50 ERROR   TaxiServiceCar   findCar   - - - - - can't close some resources
+2021-06-11 00:50 ERROR   TaxiServiceCar   insertCar   - - - - - can't close some resources
+2021-06-11 00:50 ERROR   TaxiServiceCar   updateCar   - - - - - can't close some resources
+2021-06-11 00:50 ERROR   TaxiServiceCar   findCar   - - - - - can't close some resources
+2021-06-11 00:50 ERROR   TaxiServiceCar   findNumberCarByCat   - - - - - can't close some resources
+2021-06-11 00:50 ERROR   TaxiServiceCar   findAllCars   - - - - - can't close some resources
+2021-06-11 00:50 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:50 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:50 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:50 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:50 INFO   ConnectionUtil   closeResources   - - - - - Result set Is closed
+2021-06-11 00:50 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:50 INFO   ConnectionUtil   closeResources   - - - - - Statement set Is closed
+2021-06-11 00:50 ERROR   TaxiServiceCarCategory   updateCarCategory   - - - - - can't close some resources
+2021-06-11 00:50 ERROR   TaxiServiceCarCategory   deleteCarCategory   - - - - - can't close some resources
+2021-06-11 00:50 ERROR   TaxiServiceCarCategory   findCarCategory   - - - - - can't close some resources
+2021-06-11 00:50 ERROR   TaxiServiceCarCategory   insertCarCategory   - - - - - can't close some resources
+2021-06-11 00:50 ERROR   TaxiServiceCarCategory   findExistingCarC   - - - - - can't close some resources
+2021-06-11 00:50 ERROR   TaxiServiceCarCategory   findAllCarC   - - - - - can't close some resources
+2021-06-11 00:50 ERROR   TaxiServiceUser   deleteUser   - - - - - can't close some resources
+2021-06-11 00:50 ERROR   TaxiServiceUser   validateUser   - - - - - can't close some resources
+2021-06-11 00:50 ERROR   TaxiServiceUser   updateUser   - - - - - can't close some resources
+2021-06-11 00:50 ERROR   TaxiServiceUser   insertUser   - - - - - can't close some resources
+2021-06-11 00:50 ERROR   TaxiServiceUser   insertUser   - - - - - Login or Email is already in database
+2021-06-11 00:50 ERROR   TaxiServiceUser   findAllUser   - - - - - can't close some resources
+2021-06-11 00:50 ERROR   TaxiServiceUser   findUser   - - - - - can't close some resources

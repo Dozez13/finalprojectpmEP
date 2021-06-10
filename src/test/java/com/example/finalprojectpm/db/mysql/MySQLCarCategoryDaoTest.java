@@ -2,6 +2,7 @@ package com.example.finalprojectpm.db.mysql;
 
 import com.example.finalprojectpm.db.CarCategoryDao;
 import com.example.finalprojectpm.db.entity.CarCategory;
+import com.example.finalprojectpm.db.exception.DBException;
 import com.example.finalprojectpm.db.exception.MySQLEXContainer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -37,7 +38,7 @@ class MySQLCarCategoryDaoTest {
         when(connection.prepareStatement(anyString())).thenReturn(preparedStatement);
     }
     @Test
-    void insertCarCategory() throws SQLException, MySQLEXContainer.MySQLDBExecutionException {
+    void insertCarCategory() throws SQLException, DBException {
         CarCategory carCategory = new CarCategory();
         carCategory.setCarCategoryName("Business");
         carCategory.setDiscount(15.0);
@@ -49,7 +50,7 @@ class MySQLCarCategoryDaoTest {
     }
 
     @Test
-    void deleteCarCategory() throws SQLException, MySQLEXContainer.MySQLDBExecutionException {
+    void deleteCarCategory() throws SQLException, DBException {
         String carCategory = "Business";
         when(preparedStatement.executeUpdate()).thenReturn(1);
         boolean result =carCategoryDao.deleteCarCategory(connection,carCategory);
@@ -57,7 +58,7 @@ class MySQLCarCategoryDaoTest {
     }
 
     @Test
-    void findCarCategory() throws SQLException, MySQLEXContainer.MySQLDBExecutionException, IOException {
+    void findCarCategory() throws SQLException, DBException, IOException {
         String carCategory = "Business";
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ImageIO.write(bufferedImage, "jpg", baos);
@@ -71,7 +72,7 @@ class MySQLCarCategoryDaoTest {
         assertNotNull(result);
     }
     @Test
-    void findCarCategoryWhenNull() throws SQLException, MySQLEXContainer.MySQLDBExecutionException{
+    void findCarCategoryWhenNull() throws SQLException, DBException {
         String carCategory = "Business";
         when(preparedStatement.executeQuery()).thenReturn(resultSet);
         when(resultSet.next()).thenReturn(false);
@@ -80,7 +81,7 @@ class MySQLCarCategoryDaoTest {
     }
 
     @Test
-    void updateCarCategory() throws SQLException, MySQLEXContainer.MySQLDBExecutionException {
+    void updateCarCategory() throws SQLException, DBException {
         String carCategory = "Business";
         double newPrice = 15.0;
         when(preparedStatement.executeUpdate()).thenReturn(1);
@@ -89,7 +90,7 @@ class MySQLCarCategoryDaoTest {
     }
 
     @Test
-    void findAllCarC() throws SQLException, IOException, MySQLEXContainer.MySQLDBExecutionException {
+    void findAllCarC() throws SQLException, IOException, DBException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ImageIO.write(bufferedImage, "jpg", baos);
         byte[] bytes = baos.toByteArray();
@@ -103,7 +104,7 @@ class MySQLCarCategoryDaoTest {
     }
 
     @Test
-    void findExistingCarC() throws IOException, SQLException, MySQLEXContainer.MySQLDBExecutionException {
+    void findExistingCarC() throws IOException, SQLException, DBException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ImageIO.write(bufferedImage, "jpg", baos);
         byte[] bytes = baos.toByteArray();

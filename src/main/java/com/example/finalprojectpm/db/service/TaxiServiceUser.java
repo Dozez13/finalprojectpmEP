@@ -5,6 +5,7 @@ import com.example.finalprojectpm.db.AutoRollback;
 import com.example.finalprojectpm.db.UserDao;
 import com.example.finalprojectpm.db.entity.User;
 import com.example.finalprojectpm.db.exception.ApplicationEXContainer;
+import com.example.finalprojectpm.db.exception.DBException;
 import com.example.finalprojectpm.db.exception.MySQLEXContainer;
 import com.example.finalprojectpm.db.mysql.MySQLDAOFactory;
 import org.apache.logging.log4j.LogManager;
@@ -30,7 +31,7 @@ public class TaxiServiceUser {
         } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
-        } catch (MySQLEXContainer.MySQLDBLargeDataException | MySQLEXContainer.MySQLDBNotUniqueException mySQLDBExceptionCanChange) {
+        } catch (DBException mySQLDBExceptionCanChange) {
             LOGGER.error(mySQLDBExceptionCanChange.getMessage());
             throw new ApplicationEXContainer.ApplicationCanChangeException(mySQLDBExceptionCanChange.getMessage(),mySQLDBExceptionCanChange);
         }
@@ -44,7 +45,7 @@ public class TaxiServiceUser {
             AutoRollback autoRollback = new AutoRollback(connection)){
             result = userDao.deleteUser(connection,login);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }
@@ -59,7 +60,7 @@ public class TaxiServiceUser {
             AutoRollback autoRollback = new AutoRollback(connection)){
             result = userDao.validateUser(connection,login,password);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }
@@ -73,7 +74,7 @@ public class TaxiServiceUser {
             AutoRollback autoRollback = new AutoRollback(connection)){
             user = userDao.findUser(connection,login);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }
@@ -88,7 +89,7 @@ public class TaxiServiceUser {
             AutoRollback autoRollback = new AutoRollback(connection)){
             result = userDao.updateUser(connection,login,newPassword);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }
@@ -102,7 +103,7 @@ public class TaxiServiceUser {
             AutoRollback autoRollback = new AutoRollback(connection)){
             users = userDao.findAllUser(connection);
             autoRollback.commit();
-        } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
+        } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
         }

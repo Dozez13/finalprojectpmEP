@@ -16,18 +16,15 @@ import java.io.IOException;
 public class FrontController extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ServletContext context = getServletContext();
-        String error = (String)context.getAttribute("Error");
-        if(error!=null){
-            req.getRequestDispatcher("/WEB-INF/view/error.jsp?errorMessage="+error);
-        }
+
         try {
             View view = new View(req, resp);
             Action action = ActionFactory.getInstance().getAction(req);
             action.execute(view);
             view.navigate();
         } catch (Exception e) {
-            req.getRequestDispatcher("/WEB-INF/view/error.jsp?errorMessage="+e.getMessage());
+            System.out.println("some exc"+e.getMessage());
+            req.getRequestDispatcher("/WEB-INF/view/error.jsp?errorMessage="+e.getMessage()).forward(req,resp);
         }
     }
 }

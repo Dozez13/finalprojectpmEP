@@ -5,6 +5,7 @@ import com.example.finalprojectpm.db.UserDao;
 import com.example.finalprojectpm.db.entity.Profile;
 import com.example.finalprojectpm.db.entity.User;
 
+import com.example.finalprojectpm.db.exception.DBException;
 import com.example.finalprojectpm.db.exception.MySQLEXContainer;
 import hthurow.tomcatjndi.TomcatJNDI;
 import org.junit.jupiter.api.AfterAll;
@@ -43,7 +44,7 @@ class TaxiServiceRegistrationTest {
         tomcatJNDI.tearDown();
     }
     @Test
-    void doRegistration() throws SQLException, MySQLEXContainer.MySQLDBExecutionException, MySQLEXContainer.MySQLDBLargeDataException, MySQLEXContainer.MySQLDBNotUniqueException {
+    void doRegistration() throws SQLException, DBException {
         String firstName = "firstName";
         String surName = "surName";
         String login = "Login" ;

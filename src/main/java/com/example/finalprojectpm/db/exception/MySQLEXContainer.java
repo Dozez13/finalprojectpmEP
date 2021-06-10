@@ -67,4 +67,20 @@ public class MySQLEXContainer {
             super(message, cause);
         }
     }
+    public static class MySQLDBAccountAmountLessThenNul extends DBException{
+
+        private static final long serialVersionUID = 9102526847470741311L;
+
+        public MySQLDBAccountAmountLessThenNul(String message) {
+            super(message);
+        }
+
+        public MySQLDBAccountAmountLessThenNul(Throwable cause) {
+            super(cause);
+        }
+
+        public MySQLDBAccountAmountLessThenNul(String message, Throwable cause) {
+            super(message, cause);
+        }
+    }
 }

@@ -7,6 +7,6 @@
     <title>Title</title>
 </head>
 <body>
-error page
+${param.errorMessage}
 </body>
 </html>

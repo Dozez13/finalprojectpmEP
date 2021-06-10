@@ -2,6 +2,7 @@ package com.example.finalprojectpm.db.mysql;
 
 import com.example.finalprojectpm.db.CarDao;
 import com.example.finalprojectpm.db.entity.Car;
+import com.example.finalprojectpm.db.exception.DBException;
 import com.example.finalprojectpm.db.exception.MySQLEXContainer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -37,7 +38,7 @@ class MySQLCarDaoTest {
         when(connection.prepareStatement(anyString())).thenReturn(preparedStatement);
     }
     @Test
-    void insertCarTrue() throws SQLException, MySQLEXContainer.MySQLDBExecutionException {
+    void insertCarTrue() throws SQLException, DBException {
         Car car = new Car();
         car.setCarState("ready");
         car.setCarId(1);
@@ -51,7 +52,7 @@ class MySQLCarDaoTest {
     }
 
     @Test
-    void deleteCar() throws SQLException, MySQLEXContainer.MySQLDBExecutionException {
+    void deleteCar() throws SQLException, DBException {
         int carId =15;
         when(preparedStatement.executeUpdate()).thenReturn(1);
         boolean result = carDao.deleteCar(connection,carId);
@@ -59,7 +60,7 @@ class MySQLCarDaoTest {
     }
 
     @Test
-    void findCar() throws IOException, SQLException, MySQLEXContainer.MySQLDBExecutionException {
+    void findCar() throws IOException, SQLException, DBException {
         int numOfPas = 5;
         String carCategory = "Business";
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -78,7 +79,7 @@ class MySQLCarDaoTest {
     }
 
     @Test
-    void testFindCar() throws SQLException, IOException, MySQLEXContainer.MySQLDBExecutionException {
+    void testFindCar() throws SQLException, IOException, DBException {
         int carId = 5;
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ImageIO.write(bufferedImage, "jpg", baos);
@@ -96,7 +97,7 @@ class MySQLCarDaoTest {
     }
 
     @Test
-    void updateCar() throws SQLException, MySQLEXContainer.MySQLDBExecutionException {
+    void updateCar() throws SQLException, DBException {
         int carId = 5;
         String newCarState = "on Order";
         when(preparedStatement.executeUpdate()).thenReturn(1);
@@ -105,7 +106,7 @@ class MySQLCarDaoTest {
     }
 
     @Test
-    void findAllCars() throws MySQLEXContainer.MySQLDBExecutionException, SQLException, IOException {
+    void findAllCars() throws DBException, SQLException, IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ImageIO.write(bufferedImage, "jpg", baos);
         byte[] bytes = baos.toByteArray();
@@ -122,7 +123,7 @@ class MySQLCarDaoTest {
     }
 
     @Test
-    void findNumberCarByCat() throws SQLException, MySQLEXContainer.MySQLDBExecutionException {
+    void findNumberCarByCat() throws SQLException, DBException {
         when(preparedStatement.executeQuery()).thenReturn(resultSet);
         when(resultSet.next()).thenReturn(true).thenReturn(true).thenReturn(false);
         when(resultSet.getInt(1)).thenReturn(1);

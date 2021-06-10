@@ -72,7 +72,16 @@ class ProfileTest {
         profile.setUserSurName("name");
         assertEquals("name",profile.getUserSurName());
     }
-
+   @Test
+   void testSetAccountBalance(){
+        profile.setAccountBalance(15);
+        assertEquals(15,profile.getAccountBalance());
+   }
+   @Test
+   void testGetAccountBalance(){
+       profile.setAccountBalance(15);
+       assertEquals(15,profile.getAccountBalance());
+   }
     @Test
     void testEquals() {
         Profile profile1 = new Profile();
@@ -96,6 +105,7 @@ class ProfileTest {
         profile.setUserSurName("surname");
         profile.setUserFirstName("firstname");
         profile.setUserRegistrationDate(LocalDateTime.of(2015,6,15,23,55,34));
-        assertEquals("Profile{userId=1, profileId=1, userFirstName='firstname', userSurName='surname', userRegistrationDate=2015-06-15T23:55:34}",profile.toString());
+        profile.setAccountBalance(15);
+        assertEquals("Profile{userId=1, profileId=1, userFirstName='firstname', userSurName='surname', userRegistrationDate=2015-06-15T23:55:34, accountBalance=15.0}",profile.toString());
     }
 }

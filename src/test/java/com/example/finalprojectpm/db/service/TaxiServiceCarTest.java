@@ -3,6 +3,7 @@ package com.example.finalprojectpm.db.service;
 import com.example.finalprojectpm.db.CarDao;
 import com.example.finalprojectpm.db.entity.Car;
 import com.example.finalprojectpm.db.exception.ApplicationEXContainer;
+import com.example.finalprojectpm.db.exception.DBException;
 import com.example.finalprojectpm.db.exception.MySQLEXContainer;
 import hthurow.tomcatjndi.TomcatJNDI;
 import org.junit.jupiter.api.*;
@@ -40,13 +41,13 @@ class TaxiServiceCarTest {
     }
 
     @Test
-    void insertCar() throws SQLException, MySQLEXContainer.MySQLDBExecutionException, ApplicationEXContainer.ApplicationCanNotChangeException {
+    void insertCar() throws SQLException, DBException, ApplicationEXContainer.ApplicationCanNotChangeException {
         Car car = new Car();
         when(carDao.insertCar(any(Connection.class), any(Car.class))).thenReturn(true);
         assertTrue(carService.insertCar(car));
     }
     @Test
-    void insertCarException() throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
+    void insertCarException() throws DBException, SQLException {
         Car car = new Car();
         when(carDao.insertCar(any(Connection.class), any(Car.class))).thenThrow(new SQLException("can't close some resources"));
         Throwable exception = assertThrows(ApplicationEXContainer.ApplicationCanNotChangeException.class,()-> carService.insertCar(car));
@@ -56,41 +57,41 @@ class TaxiServiceCarTest {
 
 
     @Test
-    void deleteCar() throws MySQLEXContainer.MySQLDBExecutionException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
+    void deleteCar() throws DBException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
         int carId = 5;
         when(carDao.deleteCar(any(Connection.class),anyInt())).thenReturn(true);
         assertTrue(carService.deleteCar(carId));
     }
 
     @Test
-    void deleteCarException() throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
+    void deleteCarException() throws DBException, SQLException {
         int carId = 5;
         when(carDao.deleteCar(any(Connection.class),anyInt())).thenThrow(new SQLException("can't close some resources"));
         Throwable exception = assertThrows(ApplicationEXContainer.ApplicationCanNotChangeException.class,()-> carService.deleteCar(carId));
         assertEquals("can't close some resources",exception.getMessage());
     }
     @Test
-    void findCar() throws MySQLEXContainer.MySQLDBExecutionException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
+    void findCar() throws DBException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
         int carId = 5;
         when(carDao.findCar(any(Connection.class), anyInt())).thenReturn(new Car());
         assertNotNull(carService.findCar(carId));
     }
     @Test
-    void findCarException() throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
+    void findCarException() throws DBException, SQLException {
         int carId = 5;
         when(carDao.findCar(any(Connection.class),anyInt())).thenThrow(new SQLException("can't close some resources"));
         Throwable exception = assertThrows(ApplicationEXContainer.ApplicationCanNotChangeException.class,()-> carService.findCar(carId));
         assertEquals("can't close some resources",exception.getMessage());
     }
     @Test
-    void testFindCar() throws MySQLEXContainer.MySQLDBExecutionException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
+    void testFindCar() throws DBException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
         int numOfPass = 5;
         String carCategory = "Business";
         when(carDao.findCar(any(Connection.class), anyInt(), anyString())).thenReturn(new Car());
         assertNotNull(carService.findCar(numOfPass, carCategory));
     }
     @Test
-    void testFindCarException() throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
+    void testFindCarException() throws DBException, SQLException {
         int numOfPass = 5;
         String carCategory = "Business";
         when(carDao.findCar(any(Connection.class), anyInt(), anyString())).thenThrow(new SQLException("can't close some resources"));
@@ -98,14 +99,14 @@ class TaxiServiceCarTest {
         assertEquals("can't close some resources",exception.getMessage());
     }
     @Test
-    void updateCar() throws MySQLEXContainer.MySQLDBExecutionException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
+    void updateCar() throws DBException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
         int numOfPass = 5;
         String carCategory = "Business";
         when(carDao.updateCar(any(Connection.class), anyInt(), anyString())).thenReturn(true);
         assertTrue(carService.updateCar(numOfPass, carCategory));
     }
     @Test
-    void updateCarException() throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
+    void updateCarException() throws DBException, SQLException {
         int numOfPass = 5;
         String carCategory = "Business";
         when(carDao.updateCar(any(Connection.class), anyInt(), anyString())).thenThrow(new SQLException("can't close some resources"));
@@ -113,23 +114,23 @@ class TaxiServiceCarTest {
         assertEquals("can't close some resources",exception.getMessage());
     }
     @Test
-    void findAllCars() throws MySQLEXContainer.MySQLDBExecutionException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
+    void findAllCars() throws DBException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
         when(carDao.findAllCars(any(Connection.class))).thenReturn(new ArrayList<>());
         assertNotNull(carService.findAllCars());
     }
     @Test
-    void findAllCarsException() throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
+    void findAllCarsException() throws DBException, SQLException {
         when(carDao.findAllCars(any(Connection.class))).thenThrow(new SQLException("can't close some resources"));
         Throwable exception = assertThrows(ApplicationEXContainer.ApplicationCanNotChangeException.class,()-> carService.findAllCars());
         assertEquals("can't close some resources",exception.getMessage());
     }
     @Test
-    void findNumberCarByCat() throws MySQLEXContainer.MySQLDBExecutionException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
+    void findNumberCarByCat() throws DBException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
         when(carDao.findNumberCarByCat(any(Connection.class))).thenReturn(new ArrayList<>());
         assertNotNull(carService.findNumberCarByCat());
     }
     @Test
-    void findNumberCarByCatException() throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
+    void findNumberCarByCatException() throws DBException, SQLException {
         when(carDao.findNumberCarByCat(any(Connection.class))).thenThrow(new SQLException("can't close some resources"));
         Throwable exception = assertThrows(ApplicationEXContainer.ApplicationCanNotChangeException.class,()-> carService.findNumberCarByCat());
         assertEquals("can't close some resources",exception.getMessage());

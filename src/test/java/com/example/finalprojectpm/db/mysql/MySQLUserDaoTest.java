@@ -2,6 +2,7 @@ package com.example.finalprojectpm.db.mysql;
 
 import com.example.finalprojectpm.db.UserDao;
 import com.example.finalprojectpm.db.entity.User;
+import com.example.finalprojectpm.db.exception.DBException;
 import com.example.finalprojectpm.db.exception.MySQLEXContainer;
 import com.example.finalprojectpm.db.util.PasswordUtil;
 import org.junit.jupiter.api.BeforeEach;
@@ -33,7 +34,7 @@ class MySQLUserDaoTest {
     }
 
     @Test
-    void deleteUser() throws SQLException, MySQLEXContainer.MySQLDBExecutionException {
+    void deleteUser() throws SQLException, DBException {
         String login = "Login";
         when(preparedStatement.executeUpdate()).thenReturn(1);
         boolean result = userDao.deleteUser(connection,login);
@@ -41,7 +42,7 @@ class MySQLUserDaoTest {
     }
 
     @Test
-    void findUser() throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
+    void findUser() throws DBException, SQLException {
         String login = "Login";
         when(preparedStatement.executeQuery()).thenReturn(resultSet);
         when(resultSet.next()).thenReturn(true);
@@ -55,7 +56,7 @@ class MySQLUserDaoTest {
     }
 
     @Test
-    void validateUser() throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
+    void validateUser() throws DBException, SQLException {
         String login = "Login";
         String password = "password";
         when(preparedStatement.executeQuery()).thenReturn(resultSet);
@@ -66,7 +67,7 @@ class MySQLUserDaoTest {
     }
 
     @Test
-    void updateUser() throws SQLException, MySQLEXContainer.MySQLDBExecutionException {
+    void updateUser() throws SQLException, DBException {
         String login = "Login";
         String newPassword = "newPassword";
         when(preparedStatement.executeUpdate()).thenReturn(1);
@@ -75,7 +76,7 @@ class MySQLUserDaoTest {
     }
 
     @Test
-    void findAllUser() throws SQLException, MySQLEXContainer.MySQLDBExecutionException {
+    void findAllUser() throws SQLException, DBException {
         when(preparedStatement.executeQuery()).thenReturn(resultSet);
         when(resultSet.next()).thenReturn(true).thenReturn(true).thenReturn(false);
         when(resultSet.getString("Login")).thenReturn("log");

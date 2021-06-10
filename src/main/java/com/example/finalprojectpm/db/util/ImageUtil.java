@@ -35,7 +35,7 @@ public class ImageUtil {
     }
     public static String getBase64String(byte[] bytes){
         byte[] encoded = Base64.getEncoder().encode(bytes);
-        return new String(encoded);  // Outputs "SGVsbG8="
+        return new String(encoded);
     }
 
 }

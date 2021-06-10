@@ -65,7 +65,7 @@
                     color="primary"
                     label="<fmt:localeValue key="headerSignUp"/>"
                     push
-                    @click="RegistrationPage()"
+                    @click="registrationPage()"
                     col="col-6"
                     size="md"
                     v-close-popup
@@ -98,15 +98,15 @@
             </c:if>
         </div>
     </q-btn-dropdown>
-    <c:if test="${sessionScope.Login!=null}">
-        <q-btn size="md" @click="MakeOrder()" stretch flat label="<fmt:localeValue key="headerMakeOrder"/>"></q-btn>
+    <c:if test="${sessionScope.Login!=null&&!sessionScope.Login.equals('administrator')}">
+        <q-btn size="md" @click="makeOrder()" stretch flat label="<fmt:localeValue key="headerMakeOrder"/>"></q-btn>
     </c:if>
     <q-separator dark vertical></q-separator>
-    <q-btn size="md" :color="Eng" @click="ChangeToEng()"  label="EN"></q-btn>
-    <q-btn size="md" :color="Ua" @click="ChangeToUa()"  label="UA"></q-btn>
-    <q-btn size="md" :color="Ru" @click="ChangeToRu()"  label="RU"></q-btn>
+    <q-btn size="md" :color="Eng" @click="changeToEng()"  label="EN"></q-btn>
+    <q-btn size="md" :color="Ua" @click="changeToUa()"  label="UA"></q-btn>
+    <q-btn size="md" :color="Ru" @click="changeToRu()"  label="RU"></q-btn>
     <c:if test="${'administrator'.equals(sessionScope.userType)}">
-        <q-btn size="md" @click="CheckOrders()" stretch flat label="<fmt:localeValue key="ClientsOrders"/>"></q-btn>
+        <q-btn size="md" @click="checkOrders()" stretch flat label="<fmt:localeValue key="ClientsOrders"/>"></q-btn>
     </c:if>
 
 </q-toolbar>

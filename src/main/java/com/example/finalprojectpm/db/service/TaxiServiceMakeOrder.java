@@ -7,6 +7,7 @@ import com.example.finalprojectpm.db.entity.CarCategory;
 import com.example.finalprojectpm.db.entity.Order;
 import com.example.finalprojectpm.db.entity.User;
 import com.example.finalprojectpm.db.exception.ApplicationEXContainer;
+import com.example.finalprojectpm.db.exception.DBException;
 import com.example.finalprojectpm.db.exception.MySQLEXContainer;
 import com.example.finalprojectpm.db.mysql.MySQLDAOFactory;
 import com.example.finalprojectpm.db.util.DistanceUtil;
@@ -25,11 +26,13 @@ public class TaxiServiceMakeOrder {
     private final OrderDao orderDao;
     private final CarCategoryDao categoryDao;
     private final UserDao userDao;
-    public TaxiServiceMakeOrder(CarDao carDao, OrderDao orderDao, CarCategoryDao categoryDao, UserDao userDao){
+    private final ProfileDao profileDao;
+    public TaxiServiceMakeOrder(CarDao carDao, OrderDao orderDao, CarCategoryDao categoryDao, UserDao userDao,ProfileDao profileDao){
         this.carDao = carDao;
         this.orderDao = orderDao;
         this.categoryDao = categoryDao;
         this.userDao = userDao;
+        this.profileDao =profileDao;
     }
 
     public String makeOrder(String[] stingNumbers, String[] categories, String userAddress, String userDestination, String login) throws ApplicationEXContainer.ApplicationCanChangeException, ApplicationEXContainer.ApplicationCanNotChangeException {
@@ -44,21 +47,14 @@ public class TaxiServiceMakeOrder {
                 if (foundCars[i] == null) {
                     LOGGER.info("Car with  {} number of passenger and category {} Is not found",numbers[i],categories[i]);
                     throw new MySQLEXContainer.MySQLDBCarNotFoundException(String.format("%s %d", categories[i], numbers[i]));
-
                 }
-
                 carDao.updateCar(connection,foundCars[i].getCarId(), "on Order");
-
-
                 double distance = DistanceUtil.getDistance(userAddress, userDestination);
-
-
                 CarCategory foundCarCategory = categoryDao.findCarCategory(connection,categories[i]);
-
                 double discount = foundCarCategory.getDiscount();
                 double costPerKilo = foundCarCategory.getCostPerOneKilometer();
                 int scale = (int) Math.pow(10, 1);
-                double orderCost = (double) Math.round((distance * costPerKilo) - ((distance * costPerKilo) * discount) * scale) / scale;
+                double orderCost = (double) Math.round(((distance * costPerKilo) - ((distance * costPerKilo) * discount)) * scale) / scale;
                 Order order = new Order();
                 order.setUserId(foundUser.getUserId());
                 order.setCarId(foundCars[i].getCarId());
@@ -66,6 +62,7 @@ public class TaxiServiceMakeOrder {
                 order.setUserAddress(userAddress);
                 order.setUserDestination(userDestination);
                 order.setOrderCost(orderCost);
+                profileDao.updateProfileSWithdrawBalance(connection,foundUser.getUserId(),orderCost);
                 orderDao.insertOrder(connection,order);
                 if (messageTakenTime == null) {
                     messageTakenTime = DistanceUtil.takenTime(distance);
@@ -75,7 +72,7 @@ public class TaxiServiceMakeOrder {
         } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException|MySQLEXContainer.MySQLDBLargeDataException throwables) {
             LOGGER.error(throwables.getMessage());
             throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables);
-        }catch (MySQLEXContainer.MySQLDBCarNotFoundException e){
+        }catch (DBException e){
             LOGGER.error(e.getMessage());
             throw new ApplicationEXContainer.ApplicationCanChangeException(e.getMessage(),e);
         }

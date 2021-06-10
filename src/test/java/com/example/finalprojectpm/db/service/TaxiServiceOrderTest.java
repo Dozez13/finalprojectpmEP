@@ -3,6 +3,7 @@ package com.example.finalprojectpm.db.service;
 import com.example.finalprojectpm.db.OrderDao;
 import com.example.finalprojectpm.db.entity.Order;
 import com.example.finalprojectpm.db.exception.ApplicationEXContainer;
+import com.example.finalprojectpm.db.exception.DBException;
 import com.example.finalprojectpm.db.exception.MySQLEXContainer;
 import hthurow.tomcatjndi.TomcatJNDI;
 import org.junit.jupiter.api.*;
@@ -41,13 +42,13 @@ class TaxiServiceOrderTest {
         tomcatJNDI.tearDown();
     }
     @Test
-    void insertOrder() throws MySQLEXContainer.MySQLDBLargeDataException, SQLException, MySQLEXContainer.MySQLDBExecutionException, ApplicationEXContainer.ApplicationCanNotChangeException {
+    void insertOrder() throws DBException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
         Order order = new Order();
         when(orderDao.insertOrder(any(Connection.class),any(Order.class))).thenReturn(true);
         assertTrue(taxiServiceOrder.insertOrder(order));
     }
     @Test
-    void insertOrderException() throws MySQLEXContainer.MySQLDBLargeDataException, SQLException, MySQLEXContainer.MySQLDBExecutionException {
+    void insertOrderException() throws DBException, SQLException {
         Order order = new Order();
         when(orderDao.insertOrder(any(Connection.class),any(Order.class))).thenThrow(new SQLException("can't close some resources"));
         Throwable thrown = assertThrows(ApplicationEXContainer.ApplicationCanNotChangeException.class,()-> taxiServiceOrder.insertOrder(order));
@@ -55,53 +56,53 @@ class TaxiServiceOrderTest {
     }
 
     @Test
-    void insertOrders() throws MySQLEXContainer.MySQLDBExecutionException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
+    void insertOrders() throws DBException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
         Order[]orders = new Order[5];
         when(orderDao.insertOrders(any(Connection.class),any())).thenReturn(true);
         assertTrue(taxiServiceOrder.insertOrders(orders));
     }
     @Test
-    void insertOrdersException() throws MySQLEXContainer.MySQLDBExecutionException, SQLException{
+    void insertOrdersException() throws DBException, SQLException{
         Order[]orders = new Order[5];
         when(orderDao.insertOrders(any(Connection.class),any())).thenThrow(new SQLException("can't close some resources"));
         Throwable thrown = assertThrows(ApplicationEXContainer.ApplicationCanNotChangeException.class,()->taxiServiceOrder.insertOrders(orders));
         assertEquals("can't close some resources",thrown.getMessage());
     }
     @Test
-    void deleteOrder() throws MySQLEXContainer.MySQLDBExecutionException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
+    void deleteOrder() throws DBException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
         Order order = new Order();
         when(orderDao.deleteOrder(any(Connection.class),any(Order.class))).thenReturn(true);
         assertTrue(taxiServiceOrder.deleteOrder(order));
     }
     @Test
-    void deleteOrderException() throws MySQLEXContainer.MySQLDBExecutionException, SQLException{
+    void deleteOrderException() throws DBException, SQLException{
         Order order = new Order();
         when(orderDao.deleteOrder(any(Connection.class),any(Order.class))).thenThrow(new SQLException("can't close some resources"));
         Throwable thrown = assertThrows(ApplicationEXContainer.ApplicationCanNotChangeException.class,()->taxiServiceOrder.deleteOrder(order));
         assertEquals("can't close some resources",thrown.getMessage());
     }
     @Test
-    void findOrder() throws ApplicationEXContainer.ApplicationCanNotChangeException, MySQLEXContainer.MySQLDBExecutionException, SQLException {
+    void findOrder() throws ApplicationEXContainer.ApplicationCanNotChangeException, DBException, SQLException {
         Order order = new Order();
         when(orderDao.findOrder(any(Connection.class),any(Order.class))).thenReturn(new Order());
         assertNotNull(taxiServiceOrder.findOrder(order));
     }
     @Test
-    void findOrderException() throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
+    void findOrderException() throws DBException, SQLException {
         Order order = new Order();
         when(orderDao.findOrder(any(Connection.class),any(Order.class))).thenThrow(new SQLException("can't close some resources"));
         Throwable thrown = assertThrows(ApplicationEXContainer.ApplicationCanNotChangeException.class,()->taxiServiceOrder.findOrder(order));
         assertEquals("can't close some resources",thrown.getMessage());
     }
     @Test
-    void updateOrder() throws MySQLEXContainer.MySQLDBExecutionException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
+    void updateOrder() throws DBException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
         Order order = new Order();
         int newCarId = 5;
         when(orderDao.updateOrder(any(Connection.class),any(Order.class),anyInt())).thenReturn(true);
         assertTrue(taxiServiceOrder.updateOrder(order,newCarId));
     }
     @Test
-    void updateOrderException() throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
+    void updateOrderException() throws DBException, SQLException {
         Order order = new Order();
         int newCarId = 5;
         when(orderDao.updateOrder(any(Connection.class),any(Order.class),anyInt())).thenThrow(new SQLException("can't close some resources"));
@@ -109,29 +110,29 @@ class TaxiServiceOrderTest {
         assertEquals("can't close some resources",thrown.getMessage());
     }
     @Test
-    void findAllOrders() throws MySQLEXContainer.MySQLDBExecutionException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
+    void findAllOrders() throws DBException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
         when(orderDao.findAllOrders(any(Connection.class))).thenReturn(new ArrayList<>());
         assertNotNull(taxiServiceOrder.findAllOrders());
     }
     @Test
-    void findAllOrdersException() throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
+    void findAllOrdersException() throws DBException, SQLException {
         when(orderDao.findAllOrders(any(Connection.class))).thenThrow(new SQLException("can't close some resources"));
         Throwable thrown = assertThrows(ApplicationEXContainer.ApplicationCanNotChangeException.class,()->taxiServiceOrder.findAllOrders());
         assertEquals("can't close some resources",thrown.getMessage());
     }
     @Test
-    void orderCount() throws MySQLEXContainer.MySQLDBExecutionException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
+    void orderCount() throws DBException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
         when(orderDao.orderCount(any(Connection.class))).thenReturn(1);
         assertEquals(1,taxiServiceOrder.orderCount());
     }
     @Test
-    void orderCountException() throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
+    void orderCountException() throws DBException, SQLException {
         when(orderDao.orderCount(any(Connection.class))).thenThrow(new SQLException("can't close some resources"));
         Throwable thrown = assertThrows(ApplicationEXContainer.ApplicationCanNotChangeException.class,()->taxiServiceOrder.orderCount());
         assertEquals("can't close some resources",thrown.getMessage());
     }
     @Test
-    void findFilSortOrders() throws MySQLEXContainer.MySQLDBExecutionException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
+    void findFilSortOrders() throws DBException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
         Map<String,String> columnsValues = new HashMap<>();
         String sortedColumn = "someColumn";
         int startRow = 1;
@@ -140,7 +141,7 @@ class TaxiServiceOrderTest {
         assertNotNull(taxiServiceOrder.findFilSortOrders(columnsValues,sortedColumn, true,startRow,rowsPerPage));
     }
     @Test
-    void findFilSortOrdersException() throws MySQLEXContainer.MySQLDBExecutionException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
+    void findFilSortOrdersException() throws DBException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException {
         Map<String,String> columnsValues = new HashMap<>();
         String sortedColumn = "someColumn";
         int startRow = 1;

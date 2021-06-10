@@ -3,7 +3,7 @@ package com.example.finalprojectpm.db.mysql;
 
 import com.example.finalprojectpm.db.ProfileDao;
 import com.example.finalprojectpm.db.entity.Profile;
-import com.example.finalprojectpm.db.exception.MySQLEXContainer;
+import com.example.finalprojectpm.db.exception.DBException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -33,7 +33,7 @@ class MySQLProfileDaoTest {
     }
 
     @Test
-    void deleteProfile() throws SQLException, MySQLEXContainer.MySQLDBExecutionException {
+    void deleteProfile() throws SQLException, DBException {
         Profile profile = new Profile();
         profile.setProfileId(1);
         when(preparedStatement.executeUpdate()).thenReturn(1);
@@ -42,16 +42,24 @@ class MySQLProfileDaoTest {
     }
 
     @Test
-    void updateProfile() throws SQLException, MySQLEXContainer.MySQLDBExecutionException {
+    void updateProfileAddBalance() throws SQLException, DBException {
         int userId = 5;
-        String newFirstName = "new";
+        double newAmount = 15.0;
         when(preparedStatement.executeUpdate()).thenReturn(1);
-        boolean result = profileDao.updateProfile(connection,userId,newFirstName);
+        boolean result = profileDao.updateProfileAddBalance(connection,userId,newAmount);
+        assertTrue(result);
+    }
+    @Test
+    void updateProfileSWithdrawBalance() throws SQLException, DBException {
+        int userId = 5;
+        double newAmount = 15.0;
+        when(preparedStatement.executeUpdate()).thenReturn(1);
+        boolean result = profileDao.updateProfileSWithdrawBalance(connection,userId,newAmount);
         assertTrue(result);
     }
 
     @Test
-    void findProfile() throws SQLException, MySQLEXContainer.MySQLDBExecutionException {
+    void findProfile() throws SQLException, DBException {
         int profileId = 5;
         when(preparedStatement.executeQuery()).thenReturn(resultSet);
         when(resultSet.next()).thenReturn(true);
@@ -60,12 +68,13 @@ class MySQLProfileDaoTest {
         when(resultSet.getTimestamp("userRegistrationDate")).thenReturn(Timestamp.valueOf(LocalDateTime.now()));
         when(resultSet.getString("userFirstName")).thenReturn("firstname");
         when(resultSet.getString("userSurName")).thenReturn("surname");
+        when(resultSet.getDouble("accountBalance")).thenReturn(15.0);
         Profile profile = profileDao.findProfile(connection,profileId);
         assertNotNull(profile);
     }
 
     @Test
-    void findAllProfiles() throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
+    void findAllProfiles() throws DBException, SQLException {
         when(preparedStatement.executeQuery()).thenReturn(resultSet);
         when(resultSet.next()).thenReturn(true).thenReturn(true).thenReturn(false);
         when(resultSet.getInt("profileId")).thenReturn(1);
@@ -73,6 +82,7 @@ class MySQLProfileDaoTest {
         when(resultSet.getTimestamp("userRegistrationDate")).thenReturn(Timestamp.valueOf(LocalDateTime.now()));
         when(resultSet.getString("userFirstName")).thenReturn("firstname");
         when(resultSet.getString("userSurName")).thenReturn("surname");
+        when(resultSet.getDouble("accountBalance")).thenReturn(15.0);
         List<Profile> profile = profileDao.findAllProfiles(connection);
         assertNotNull(profile);
     }

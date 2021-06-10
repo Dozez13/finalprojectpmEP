@@ -52,7 +52,7 @@
                     <fmt:localeValue key="registrationCreateAccount"/>
                 </q-card-section>
             </q-card>
-            <q-form action="doRegistration" method="post">
+            <q-form action="${pageContext.request.contextPath}/pages/guest/doRegistration" method="post">
                 <q-input
                         filled
                         debounce="300"
@@ -159,13 +159,13 @@
             goHome(){
                 window.location.replace('${pageContext.request.contextPath}'+'/pages/index?lang=${sessionScope.lang}');
             },
-            ChangeToEng(){
+            changeToEng(){
                 window.location.href = window.location.href+'?lang=en'
             },
-            ChangeToUa(){
+            changeToUa(){
                 window.location.href = window.location.href+'?lang=ua'
             },
-            ChangeToRu(){
+            changeToRu(){
                 window.location.href = window.location.href+'?lang=ru'
             }
         },

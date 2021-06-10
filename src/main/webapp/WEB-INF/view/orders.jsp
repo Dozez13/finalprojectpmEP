@@ -240,29 +240,29 @@
                 })
                return response.data
             },
-            ChangeToEng(){
+            changeToEng(){
                 window.location.href = window.location.href+'?lang=en'
             },
-            ChangeToUa(){
+            changeToUa(){
                 window.location.href = window.location.href+'?lang=ua'
             },
-            ChangeToRu(){
+            changeToRu(){
                 window.location.href = window.location.href+'?lang=ru'
             },
             goHome(){
                 window.location.replace('${pageContext.request.contextPath}'+'/pages/index?lang=${sessionScope.lang}');
             },
-            RegistrationPage(){
+            registrationPage(){
                 window.location.href ='${pageContext.request.contextPath}'+'/pages/guest/registration?lang=${sessionScope.lang}';
 
             },
             profilePage(){
                 window.location.href ='${pageContext.request.contextPath}'+'/pages/user/profile?lang=${sessionScope.lang}';
             },
-            MakeOrder(){
+            makeOrder(){
                 window.location.href='${pageContext.request.contextPath}'+'/pages/user/order?lang=${sessionScope.lang}';
             },
-            CheckOrders(){
+            checkOrders(){
                 window.location.href='${pageContext.request.contextPath}'+'/pages/admin/orders?lang=${sessionScope.lang}';
             }
 
