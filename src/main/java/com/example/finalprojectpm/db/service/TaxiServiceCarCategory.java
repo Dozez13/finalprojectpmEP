@@ -16,12 +16,27 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * Service layer for CarCategory entity
+ */
 public class TaxiServiceCarCategory {
     private static final Logger LOGGER = LogManager.getLogger(TaxiServiceCarCategory.class);
     private final CarCategoryDao categoryDao;
+
+    /**
+     * Sets dao
+     * @param carCategoryDao object which will be used
+     */
     public TaxiServiceCarCategory(CarCategoryDao carCategoryDao){
         this.categoryDao = carCategoryDao;
     }
+
+    /**
+     * Inserts CarCategory into table
+     * @param carCategory that object should be inserted into table
+     * @return true if insert operation went without exception and false otherwise
+     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     */
     public boolean insertCarCategory(CarCategory carCategory) throws ApplicationEXContainer.ApplicationCanNotChangeException {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
@@ -34,6 +49,13 @@ public class TaxiServiceCarCategory {
         }
         return result;
     }
+
+    /**
+     * Deletes CarCategory from table
+     * @param carCategory property by which entity will be found and deleted
+     * @return true if delete operation went without exception and false otherwise
+     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     */
     public boolean deleteCarCategory(String carCategory) throws ApplicationEXContainer.ApplicationCanNotChangeException {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
@@ -46,6 +68,13 @@ public class TaxiServiceCarCategory {
         }
         return result;
     }
+
+    /**
+     * Finds CarCategory in table
+     * @param carCategory property by which entity will be found and deleted
+     * @return CarCategory object if it exists in table and otherwise null
+     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     */
     public CarCategory findCarCategory(String carCategory) throws ApplicationEXContainer.ApplicationCanNotChangeException {
         CarCategory foundCarCategory;
         try(Connection connection = MySQLDAOFactory.getConnection();
@@ -58,6 +87,14 @@ public class TaxiServiceCarCategory {
         }
         return foundCarCategory;
     }
+
+    /**
+     * Update CarCategory by setting to it new price
+     * @param carCategory property by which entity will be found
+     * @param newPrice property that will be changed
+     * @return true if update operation went without exception and false otherwise
+     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     */
     public boolean updateCarCategory(String carCategory, double newPrice) throws ApplicationEXContainer.ApplicationCanNotChangeException {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
@@ -71,6 +108,11 @@ public class TaxiServiceCarCategory {
         return result;
     }
 
+    /**
+     * Returns all categories
+     * @return List of all CarCategories
+     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     */
     public List<CarCategory> findAllCarC() throws ApplicationEXContainer.ApplicationCanNotChangeException {
         List<CarCategory> carCategoryList;
         try(Connection connection = MySQLDAOFactory.getConnection();
@@ -84,6 +126,11 @@ public class TaxiServiceCarCategory {
         return carCategoryList;
     }
 
+    /**
+     * Returns existing categories
+     * @return List of existing Categories
+     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     */
     public List<CarCategory> findExistingCarC() throws ApplicationEXContainer.ApplicationCanNotChangeException {
         List<CarCategory> existingCarC;
         try(Connection connection = MySQLDAOFactory.getConnection();

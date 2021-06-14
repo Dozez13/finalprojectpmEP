@@ -4,6 +4,10 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+/**
+ * Profile entity
+ * @author Pavlo Manuilenko
+ */
 public class Profile implements Serializable {
     private static final long serialVersionUID = -1473879605284728654L;
     private int userId;

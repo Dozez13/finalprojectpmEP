@@ -1,5 +1,6 @@
 package com.example.finalprojectpm.db.mysql;
 
+import com.example.finalprojectpm.db.Fields;
 import com.example.finalprojectpm.db.ProfileDao;
 import com.example.finalprojectpm.db.entity.Profile;
 import com.example.finalprojectpm.db.exception.MySQLEXContainer;
@@ -11,9 +12,20 @@ import org.apache.logging.log4j.Logger;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Data access object for Profile related entities
+ */
 public class MySQLProfileDao implements ProfileDao {
     private static final Logger LOGGER = LogManager.getLogger(MySQLProfileDao.class);
+
+    /**
+     * Inserts Profile entity into database table
+     * @param connection object with database
+     * @param profile entity that should be inserted into table
+     * @return true if insert operation went without exception and false otherwise
+     * @throws MySQLEXContainer.MySQLDBExecutionException if SQLException at execution query arises
+     * @throws SQLException if resources can't be closed
+     */
     @Override
     public boolean insertProfile(Connection connection,Profile profile) throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
         int rowNum ;
@@ -39,10 +51,19 @@ public class MySQLProfileDao implements ProfileDao {
           throw new MySQLEXContainer.MySQLDBExecutionException(e.getMessage(),e);
         }finally {
             ConnectionUtil.closeResources(keys,statement,null);
+            LOGGER.debug(Fields.LOG_CLOSE_RESOURCES);
         }
         return rowNum>0;
     }
 
+    /**
+     * Deletes Profile entity from database table
+     * @param connection object with database
+     * @param profile entity that should be delete from table
+     * @return true if delete operation went without exception and false otherwise
+     * @throws SQLException if resources can't be closed
+     * @throws MySQLEXContainer.MySQLDBExecutionException if SQLException at execution query arises
+     */
     @Override
     public boolean deleteProfile(Connection connection,Profile profile) throws SQLException, MySQLEXContainer.MySQLDBExecutionException {
         int rowNum ;
@@ -59,10 +80,20 @@ public class MySQLProfileDao implements ProfileDao {
             throw new MySQLEXContainer.MySQLDBExecutionException(e.getMessage(),e);
         }finally {
             ConnectionUtil.closeResources(null,statement,null);
+            LOGGER.debug(Fields.LOG_CLOSE_RESOURCES);
         }
         return rowNum>0;
     }
 
+    /**
+     * Updates profile balance adding money to account
+     * @param connection object with database
+     * @param userId userId property by which Profile will be found
+     * @param accountBalance money to add
+     * @return true if update operation went without exception and false otherwise
+     * @throws MySQLEXContainer.MySQLDBExecutionException if SQLException at execution query arises
+     * @throws SQLException if resources can't be closed
+     */
     @Override
     public boolean updateProfileAddBalance(Connection connection, int userId, double accountBalance) throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
         int rowNum ;
@@ -80,9 +111,19 @@ public class MySQLProfileDao implements ProfileDao {
             throw new MySQLEXContainer.MySQLDBExecutionException(e.getMessage(),e);
         }finally {
             ConnectionUtil.closeResources(null,statement,null);
+            LOGGER.debug(Fields.LOG_CLOSE_RESOURCES);
         }
         return rowNum>0;
     }
+    /**
+     * Updates profile balance withdrawing money from account
+     * @param connection object with database
+     * @param userId userId property by which Profile will be found
+     * @param accountBalance money to withdraw
+     * @return true if update operation went without exception and false otherwise
+     * @throws MySQLEXContainer.MySQLDBExecutionException if SQLException at execution query arises
+     * @throws SQLException if resources can't be closed
+     */
     @Override
     public boolean updateProfileSWithdrawBalance(Connection connection, int userId, double accountBalance) throws MySQLEXContainer.MySQLDBExecutionException, SQLException, MySQLEXContainer.MySQLDBAccountAmountLessThenNul {
         int rowNum ;
@@ -103,9 +144,19 @@ public class MySQLProfileDao implements ProfileDao {
             throw new MySQLEXContainer.MySQLDBExecutionException(e.getMessage(),e);
         }finally {
             ConnectionUtil.closeResources(null,statement,null);
+            LOGGER.debug(Fields.LOG_CLOSE_RESOURCES);
         }
         return rowNum>0;
     }
+
+    /**
+     * Finds Profile by profile id in database table
+     * @param connection object with database
+     * @param profileId property by which Profile will be found
+     * @return Profile if it exists in table and otherwise null
+     * @throws MySQLEXContainer.MySQLDBExecutionException if SQLException at execution query arises
+     * @throws SQLException if resources can't be closed
+     */
     @Override
     public Profile findProfile(Connection connection,int profileId) throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
         ResultSet resultSet = null;
@@ -120,22 +171,30 @@ public class MySQLProfileDao implements ProfileDao {
             resultSet = statement.executeQuery();
             if(resultSet.next()){
                 profile = new Profile();
-                profile.setUserId(resultSet.getInt("userId"));
-                profile.setProfileId(resultSet.getInt("profileId"));
-                profile.setUserRegistrationDate(resultSet.getTimestamp("userRegistrationDate").toLocalDateTime());
-                profile.setUserFirstName(resultSet.getString("userFirstName"));
-                profile.setUserSurName(resultSet.getString("userSurName"));
-                profile.setAccountBalance(resultSet.getDouble("accountBalance"));
+                profile.setUserId(resultSet.getInt(Fields.PROFILE_USER_ID));
+                profile.setProfileId(resultSet.getInt(Fields.PROFILE_PROFILE_ID));
+                profile.setUserRegistrationDate(resultSet.getTimestamp(Fields.PROFILE_USER_REGISTRATION_DATE).toLocalDateTime());
+                profile.setUserFirstName(resultSet.getString(Fields.PROFILE_USER_FIRST_NAME));
+                profile.setUserSurName(resultSet.getString(Fields.PROFILE_USER_SUR_NAME));
+                profile.setAccountBalance(resultSet.getDouble(Fields.PROFILE_ACCOUNT_BALANCE));
             }
         }catch (SQLException e){
             LOGGER.error(e.getMessage());
             throw new MySQLEXContainer.MySQLDBExecutionException(e.getMessage(),e);
         }finally {
             ConnectionUtil.closeResources(resultSet,statement,null);
+            LOGGER.debug(Fields.LOG_CLOSE_RESOURCES);
         }
         return profile;
     }
 
+    /**
+     * Returns All profiles as a list
+     * @param connection object with database
+     * @return list of all profiles
+     * @throws MySQLEXContainer.MySQLDBExecutionException if SQLException at execution query arises
+     * @throws SQLException if resources can't be closed
+     */
     @Override
     public List<Profile> findAllProfiles(Connection connection) throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
         ResultSet resultSet = null;
@@ -150,12 +209,12 @@ public class MySQLProfileDao implements ProfileDao {
             resultSet = statement.executeQuery();
             if(resultSet.next()){
                 profile = new Profile();
-                profile.setUserId(resultSet.getInt("userId"));
-                profile.setProfileId(resultSet.getInt("profileId"));
-                profile.setUserRegistrationDate(resultSet.getTimestamp("userRegistrationDate").toLocalDateTime());
-                profile.setUserFirstName(resultSet.getString("userFirstName"));
-                profile.setUserSurName(resultSet.getString("userSurName"));
-                profile.setAccountBalance(resultSet.getDouble("accountBalance"));
+                profile.setUserId(resultSet.getInt(Fields.PROFILE_USER_ID));
+                profile.setProfileId(resultSet.getInt(Fields.PROFILE_PROFILE_ID));
+                profile.setUserRegistrationDate(resultSet.getTimestamp(Fields.PROFILE_USER_REGISTRATION_DATE).toLocalDateTime());
+                profile.setUserFirstName(resultSet.getString(Fields.PROFILE_USER_FIRST_NAME));
+                profile.setUserSurName(resultSet.getString(Fields.PROFILE_USER_SUR_NAME));
+                profile.setAccountBalance(resultSet.getDouble(Fields.PROFILE_ACCOUNT_BALANCE));
                 profiles.add(profile);
             }
         }catch (SQLException e){
@@ -163,6 +222,7 @@ public class MySQLProfileDao implements ProfileDao {
             throw new MySQLEXContainer.MySQLDBExecutionException(e.getMessage(),e);
         }finally {
             ConnectionUtil.closeResources(resultSet,statement,null);
+            LOGGER.debug(Fields.LOG_CLOSE_RESOURCES);
         }
         return profiles;
     }

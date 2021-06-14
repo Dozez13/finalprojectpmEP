@@ -19,7 +19,9 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.stream.Stream;
-
+/**
+ * Service layer for all entity
+ */
 public class TaxiServiceMakeOrder {
     private static final Logger LOGGER = LogManager.getLogger(TaxiServiceMakeOrder.class);
     private final CarDao carDao;
@@ -27,6 +29,15 @@ public class TaxiServiceMakeOrder {
     private final CarCategoryDao categoryDao;
     private final UserDao userDao;
     private final ProfileDao profileDao;
+
+    /**
+     * Set all dao
+     * @param carDao object which will be used to manipulate Car
+     * @param orderDao object which will be used to manipulate Order
+     * @param categoryDao object which will be used to manipulate CarCategory
+     * @param userDao object which will be used to manipulate User
+     * @param profileDao object which will be used to manipulate Profile
+     */
     public TaxiServiceMakeOrder(CarDao carDao, OrderDao orderDao, CarCategoryDao categoryDao, UserDao userDao,ProfileDao profileDao){
         this.carDao = carDao;
         this.orderDao = orderDao;
@@ -35,6 +46,16 @@ public class TaxiServiceMakeOrder {
         this.profileDao =profileDao;
     }
 
+    /**
+     * @param stingNumbers array that contains number of passenger of each car
+     * @param categories array that contains category of each car
+     * @param userAddress user location
+     * @param userDestination user destination
+     * @param login user login
+     * @return string message to client
+     * @throws ApplicationEXContainer.ApplicationCanChangeException if car not found
+     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if dao methods throw exception
+     */
     public String makeOrder(String[] stingNumbers, String[] categories, String userAddress, String userDestination, String login) throws ApplicationEXContainer.ApplicationCanChangeException, ApplicationEXContainer.ApplicationCanNotChangeException {
         String messageTakenTime = null;
         try(Connection connection = MySQLDAOFactory.getConnection();

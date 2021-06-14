@@ -3,6 +3,10 @@ package com.example.finalprojectpm.db.entity;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * User entity
+ * @author Pavlo Manuilenko
+ */
 public class User implements Serializable {
     private static final long serialVersionUID = 1789771068899105277L;
     private int userId;

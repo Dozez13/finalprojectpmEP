@@ -17,14 +17,34 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 
+/**
+ * Service layer for registration
+ */
 public class TaxiServiceRegistration {
     private static final Logger LOGGER = LogManager.getLogger(TaxiServiceRegistration.class);
     private UserDao userDao;
     private ProfileDao profileDao;
+
+    /**
+     * Sets dao
+     * @param userDao object which will be used to manipulate User
+     * @param profileDao object which will be used to manipulate Profile
+     */
     public TaxiServiceRegistration(UserDao userDao,ProfileDao profileDao){
         this.userDao = userDao;
         this.profileDao = profileDao;
     }
+
+    /**
+     * Insert profile and user into tables
+     * @param firstName first name of new account
+     * @param surName surname of new account
+     * @param login login of new account
+     * @param email email of new account
+     * @param psw password of new account
+     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if dao methods throw exception
+     * @throws ApplicationEXContainer.ApplicationCanChangeException if dao methods throw exception with 1062,1406 error code
+     */
     public void doRegistration(String firstName,String surName,String login , String email,String psw) throws ApplicationEXContainer.ApplicationCanNotChangeException, ApplicationEXContainer.ApplicationCanChangeException {
 
         try(Connection connection = MySQLDAOFactory.getConnection();

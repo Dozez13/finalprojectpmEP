@@ -4,6 +4,10 @@ import java.awt.image.BufferedImage;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * Car entity
+ * @author Pavlo Manuilenko
+ */
 public class Car implements Serializable {
     private static final long serialVersionUID = -1473879605284728654L;
     private int carId;

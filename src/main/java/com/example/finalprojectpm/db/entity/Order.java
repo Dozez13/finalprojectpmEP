@@ -6,7 +6,10 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
-
+/**
+ * Order entity
+ * @author Pavlo Manuilenko
+ */
 public class Order implements Serializable {
     private static final long serialVersionUID = -4577879200654802752L;
     private int orderId;
