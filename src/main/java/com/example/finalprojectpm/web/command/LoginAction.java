@@ -15,6 +15,10 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+/**
+ * Login action
+ * @author Pavlo Manuilenko
+ */
 public class LoginAction implements Action{
     private static final Logger LOGGER = LogManager.getLogger(LoginAction.class);
     @Override

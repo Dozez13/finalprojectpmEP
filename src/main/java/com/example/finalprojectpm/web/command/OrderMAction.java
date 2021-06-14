@@ -12,6 +12,10 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+/**
+ * Order make action that invokes after button click
+ * @author Pavlo Manuilenko
+ */
 public class OrderMAction implements Action{
     private static final Logger LOGGER = LogManager.getLogger(OrderMAction.class);
     @Override

@@ -4,6 +4,10 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Holder for all actions
+ * @author Pavlo Manuilenko
+ */
 public class ActionFactory {
     private static ActionFactory instance;
     private Map<String, Action> actions;

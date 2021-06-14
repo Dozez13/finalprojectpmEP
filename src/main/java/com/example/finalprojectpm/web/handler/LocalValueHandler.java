@@ -14,6 +14,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+/**
+ * Tag class to set key and return value obtained by resource bundle
+ * @author Pavlo Manuilenko
+ */
 public class LocalValueHandler extends SimpleTagSupport {
     private static final Logger LOGGER = LogManager.getLogger(LocalValueHandler.class);
     private String key;

@@ -8,10 +8,21 @@ import javax.servlet.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-
+/**
+ * Filter to logg request info
+ * @author Pavlo Manuilenko
+ */
 @WebFilter(filterName = "LoggerFilter")
 public class LoggerFilter implements Filter {
     private static final Logger LOGGER = LogManager.getLogger(LoggerFilter.class);
+
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+        LOGGER.debug("Filter initialization starts");
+        //do nothing
+        LOGGER.debug("Filter initialization ends");
+    }
+
     public String getRequestInfo(ServletRequest request){
         StringBuilder message = new StringBuilder();
         if(request instanceof HttpServletRequest){
@@ -27,5 +38,12 @@ public class LoggerFilter implements Filter {
         String message = getRequestInfo(request);
         LOGGER.info(message);
         chain.doFilter(request, response);
+    }
+
+    @Override
+    public void destroy() {
+        LOGGER.debug("Filter destruction starts");
+        //do nothing
+        LOGGER.debug("Filter destruction ends");
     }
 }

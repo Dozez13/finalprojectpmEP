@@ -15,6 +15,10 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
+/**
+ * HomeAction go to the main page
+ * @author Pavlo Manuilenko
+ */
 public class HomeAction implements Action{
     private static final Logger LOGGER = LogManager.getLogger(HomeAction.class);
     @Override

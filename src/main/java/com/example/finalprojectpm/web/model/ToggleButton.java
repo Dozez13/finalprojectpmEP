@@ -1,6 +1,13 @@
 package com.example.finalprojectpm.web.model;
 
-public class ToggleButton {
+import java.io.Serializable;
+
+/**
+ * Class that will be used as model for button
+ * @author Pavlo Manuilenko
+ */
+public class ToggleButton implements Serializable {
+    private static final long serialVersionUID = -4179236910442782245L;
     private String icon;
     private String value;
 

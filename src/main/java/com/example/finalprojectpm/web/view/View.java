@@ -8,6 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * View class
+ * @author Pavlo Manuilenko
+ */
 public class View {
     private HttpServletRequest request;
     private HttpServletResponse response;
@@ -31,6 +35,12 @@ public class View {
         this.request = request;
         this.response = response;
     }
+
+    /**
+     * Navigate to view page
+     * @throws IOException if some error occurs within execution
+     * @throws ServletException if some error occurs within execution
+     */
     public void navigate() throws IOException, ServletException {
         if (view.equals(request.getPathInfo())) {
             request.getRequestDispatcher("/WEB-INF/view/" + FilenameUtils.getName(view) + ".jsp").forward(request, response);

@@ -15,6 +15,10 @@ import java.util.Arrays;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+/**
+ * Tag class that works with compound Messages
+ * @author Pavlo Manuilenko
+ */
 public class LValueParamHandler extends SimpleTagSupport {
     private String params;
     private String message;

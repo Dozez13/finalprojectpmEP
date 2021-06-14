@@ -13,6 +13,10 @@ import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * Registration action that invoked after button click
+ * @author Pavlo Manuilenko
+ */
 public class DoRegistrationAction implements Action{
     private static final Logger LOGGER = LogManager.getLogger(DoRegistrationAction.class);
     @Override

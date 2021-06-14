@@ -18,6 +18,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+/**
+ * Order Action that add all needed information to request and forward to registration
+ * @author Pavlo Manuilenko
+ */
 public class OrderGAction implements Action {
     private static final Logger LOGGER = LogManager.getLogger(OrderGAction.class);
     @Override

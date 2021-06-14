@@ -6,13 +6,16 @@ import com.example.finalprojectpm.db.UserDao;
 import com.example.finalprojectpm.db.entity.User;
 import com.example.finalprojectpm.db.mysql.MySQLDAOFactory;
 import com.example.finalprojectpm.db.service.TaxiServiceProfile;
-import com.example.finalprojectpm.db.service.TaxiServiceRegistration;
 import com.example.finalprojectpm.db.service.TaxiServiceUser;
 import com.example.finalprojectpm.web.view.View;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+/**
+ * Add money make action that invoked after button click
+ * @author Pavlo Manuilenko
+ */
 public class AddMoneyMAction implements Action{
 
     @Override

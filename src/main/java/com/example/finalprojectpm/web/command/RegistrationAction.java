@@ -7,6 +7,10 @@ import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * Registration action that send us to registration page
+ * @author Pavlo Manuilenko
+ */
 public class RegistrationAction implements Action{
     private static final Logger LOGGER = LogManager.getLogger(RegistrationAction.class);
     @Override

@@ -15,6 +15,11 @@ import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
+/**
+ * Profile Action
+ * @author Pavlo Manuilenko
+ */
 public class ProfileAction implements Action{
     private static final Logger LOGGER = LogManager.getLogger(ProfileAction.class);
     @Override

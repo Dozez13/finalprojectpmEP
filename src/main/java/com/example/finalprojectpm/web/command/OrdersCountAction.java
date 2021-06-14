@@ -11,6 +11,10 @@ import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * Orders count action
+ * @author Pavlo Manuilenko
+ */
 public class OrdersCountAction implements Action{
     private static final Logger LOGGER = LogManager.getLogger(OrdersCountAction.class);
     @Override

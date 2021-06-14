@@ -6,6 +6,10 @@ import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * NoSuchAction is invoked if page doesn't exist
+ * @author Pavlo Manuilenko
+ */
 public class NoSuchAction implements Action{
     private static final Logger LOGGER = LogManager.getLogger(NoSuchAction.class);
     @Override

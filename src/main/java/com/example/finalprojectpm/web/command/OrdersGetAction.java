@@ -16,6 +16,10 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Orders get action that write List of orders in JSON format in view
+ * @author Pavlo Manuilenko
+ */
 public class OrdersGetAction implements Action{
     private static final Logger LOGGER = LogManager.getLogger(OrdersGetAction.class);
     @Override

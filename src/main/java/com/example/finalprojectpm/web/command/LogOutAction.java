@@ -8,6 +8,10 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+/**
+ * Log out action
+ * @author Pavlo Manuilenko
+ */
 public class LogOutAction implements Action{
     private static final Logger LOGGER = LogManager.getLogger(LogOutAction.class);
     @Override

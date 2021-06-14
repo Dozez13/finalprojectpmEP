@@ -6,6 +6,10 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
+/**
+ * Tag class for to set bundle name
+ * @author Pavlo Manuilenko
+ */
 public class BundleHandler extends SimpleTagSupport {
     private String basename;
 
