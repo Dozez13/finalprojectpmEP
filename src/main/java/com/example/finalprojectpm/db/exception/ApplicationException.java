@@ -1,17 +1,17 @@
 package com.example.finalprojectpm.db.exception;
 
 public abstract class ApplicationException extends Exception{
-    public ApplicationException(String message) {
+    protected ApplicationException(String message) {
         super (message);
 
 
     }
-    public ApplicationException(Throwable cause ) {
+    protected ApplicationException(Throwable cause ) {
         super (cause);
 
     }
 
-    public ApplicationException(String message, Throwable cause) {
+    protected ApplicationException(String message, Throwable cause) {
         super (message, cause);
     }
 }

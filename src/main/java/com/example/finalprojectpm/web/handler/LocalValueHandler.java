@@ -26,10 +26,7 @@ public class LocalValueHandler extends SimpleTagSupport {
     }
     @Override
     public void doTag()  {
-        /*This is just to display a message, when
-         * we will use our custom tag. This message
-         * would be displayed
-         */
+
         JspWriter out = getJspContext().getOut();
         PageContext pageContext = (PageContext)getJspContext();
         HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();

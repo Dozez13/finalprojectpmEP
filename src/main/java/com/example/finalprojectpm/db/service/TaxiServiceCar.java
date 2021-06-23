@@ -6,7 +6,6 @@ import com.example.finalprojectpm.db.CarDao;
 import com.example.finalprojectpm.db.entity.Car;
 import com.example.finalprojectpm.db.exception.ApplicationEXContainer;
 import com.example.finalprojectpm.db.exception.DBException;
-import com.example.finalprojectpm.db.exception.MySQLEXContainer;
 import com.example.finalprojectpm.db.mysql.MySQLDAOFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -156,7 +155,7 @@ public class TaxiServiceCar {
     /**
      * Returns categories' number
      * @return List of number categories by car
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException
+     * @throws ApplicationEXContainer.ApplicationCanNotChangeException  if some exception arises in dao methods
      */
     public List<Integer> findNumberCarByCat() throws ApplicationEXContainer.ApplicationCanNotChangeException {
         List<Integer> categoryNumbers;

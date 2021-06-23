@@ -17,7 +17,7 @@ public class MyOrders implements Action{
     private static final Logger LOGGER = LogManager.getLogger(MyOrders.class);
     @Override
     public void execute(View view) throws Exception {
-        LOGGER.info("LoginAction is invoked");
+        LOGGER.info("MyOrders Action is invoked");
         HttpServletRequest request = view.getRequest();
         DAOFactory dao =(MySQLDAOFactory)request.getServletContext().getAttribute("MySQLFactory");
         OrderDao orderDao = dao.getOrderDao();
@@ -48,7 +48,6 @@ public class MyOrders implements Action{
         List<Order> orders = taxiServiceOrder.findOrdersByUser(((int)(request.getSession().getAttribute("userId"))),startRow,rowsPerPage);
         int orderCount = taxiServiceOrder.orderCountByUser(((int)(request.getSession().getAttribute("userId"))));
         int numOfPages = (int)(Math.ceil(orderCount/ (double) rowsPerPage));
-        System.out.println("startRow "+startRow+" currentPage "+currentPage+" total order "+numOfPages+" rowsPerPage"+rowsPerPage);
           request.setAttribute("myOrders",orders);
           request.setAttribute("startRow",startRow);
           request.setAttribute("currentPage",currentPage);
