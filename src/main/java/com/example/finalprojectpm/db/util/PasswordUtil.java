@@ -26,7 +26,7 @@ public class PasswordUtil {
      * This method validate password with stored password in database
      * @param originalPassword check this password with previously hashed
      * @param storedPassword hashed password
-     * @return true if password is in database and false otherwise
+     * @return true if password in database is the same and false otherwise
      */
     public static boolean validatePassword(String originalPassword, String storedPassword)
     {

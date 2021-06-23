@@ -75,6 +75,10 @@
                 <div class="column justify-center">
                     <div class="text-h6"><fmt:localeValue key="indexSettings"/></div>
                     <q-btn  color="primary" @click="profilePage()" stretch flat label="<fmt:localeValue key="loggedProfile"/>"></q-btn>
+                    <c:if test="${!sessionScope.userType.equals('administrator')}">
+                        <q-btn color="primary" @click="myOrders()" stretch flat label="<fmt:localeValue key="myOrders"/>">
+                        </q-btn>
+                    </c:if>
                 </div>
 
                 <q-separator vertical inset class="q-mx-lg"></q-separator>
@@ -98,7 +102,7 @@
             </c:if>
         </div>
     </q-btn-dropdown>
-    <c:if test="${sessionScope.Login!=null&&!sessionScope.Login.equals('administrator')}">
+    <c:if test="${sessionScope.Login!=null&&!sessionScope.userType.equals('administrator')}">
         <q-btn size="md" @click="makeOrder()" stretch flat label="<fmt:localeValue key="headerMakeOrder"/>"></q-btn>
     </c:if>
     <q-separator dark vertical></q-separator>

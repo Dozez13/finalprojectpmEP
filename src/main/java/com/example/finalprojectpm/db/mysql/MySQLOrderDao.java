@@ -4,6 +4,7 @@ package com.example.finalprojectpm.db.mysql;
 import com.example.finalprojectpm.db.Fields;
 import com.example.finalprojectpm.db.OrderDao;
 import com.example.finalprojectpm.db.entity.Order;
+import com.example.finalprojectpm.db.exception.DBException;
 import com.example.finalprojectpm.db.exception.MySQLEXContainer;
 import com.example.finalprojectpm.db.util.ConnectionUtil;
 import com.example.finalprojectpm.db.util.QueriesUtil;
@@ -280,6 +281,67 @@ public class MySQLOrderDao implements OrderDao {
             LOGGER.debug(Fields.LOG_CLOSE_RESOURCES);
         }
         return count;
+    }
+
+    @Override
+    public int orderCountByUser(Connection connection,int userId) throws DBException, SQLException {
+        LOGGER.debug("Order Count by user Is started");
+        ResultSet resultSet = null;
+        Connection con;
+        PreparedStatement statement = null;
+        int count=0;
+        try {
+            String query = QueriesUtil.getQuery("orderCountByUser");
+            con = connection;
+            statement = con.prepareStatement(query);
+            statement.setInt(1,userId);
+            resultSet = statement.executeQuery();
+            if(resultSet.next()){
+                count = resultSet.getInt(1);
+            }
+
+        }catch (SQLException e){
+            LOGGER.error(e);
+            throw new MySQLEXContainer.MySQLDBExecutionException(e.getMessage(),e);
+        }finally {
+            ConnectionUtil.closeResources(resultSet,statement,null);
+            LOGGER.debug(Fields.LOG_CLOSE_RESOURCES);
+        }
+        return count;
+    }
+
+    @Override
+    public List<Order> findOrdersByUser(Connection connection, int userId,int startRow, int rowsPerPage) throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
+        LOGGER.debug("Find All User Orders Is started");
+        ResultSet resultSet = null;
+        Connection con;
+        PreparedStatement statement = null;
+        List<Order> orders = new ArrayList<>();
+        try {
+            String query = QueriesUtil.getQuery("findOrdersByUser");
+            con = connection;
+            statement = con.prepareStatement(query);
+            statement.setInt(1,userId);
+            statement.setInt(2,startRow);
+            statement.setInt(3,rowsPerPage);
+            resultSet = statement.executeQuery();
+            while(resultSet.next()){
+                Order order = new Order();
+                order.setUserAddress(resultSet.getString(Fields.ORDER_USER_ADDRESS));
+                order.setUserDestination(resultSet.getString(Fields.ORDER_DEST_ADDRESS));
+                order.setOrderCost(resultSet.getDouble(Fields.ORDER_ORDER_COST));
+                order.setOrderDate(resultSet.getTimestamp(Fields.ORDER_ORDER_DATE).toLocalDateTime());
+                orders.add(order);
+            }
+
+        } catch (SQLException e) {
+            LOGGER.error(e);
+            throw new MySQLEXContainer.MySQLDBExecutionException(e.getMessage(),e);
+        }finally {
+            ConnectionUtil.closeResources(resultSet,statement,null);
+            LOGGER.debug(Fields.LOG_CLOSE_RESOURCES);
+        }
+        return orders;
     }
 
     /**

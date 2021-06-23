@@ -6,7 +6,6 @@ import com.example.finalprojectpm.db.OrderDao;
 import com.example.finalprojectpm.db.entity.Order;
 import com.example.finalprojectpm.db.exception.ApplicationEXContainer;
 import com.example.finalprojectpm.db.exception.DBException;
-import com.example.finalprojectpm.db.exception.MySQLEXContainer;
 import com.example.finalprojectpm.db.mysql.MySQLDAOFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -151,7 +150,18 @@ public class TaxiServiceOrder {
         }
         return orders;
     }
-
+    public List<Order> findOrdersByUser(int userId,int startRow, int rowsPerPage)throws ApplicationEXContainer.ApplicationCanNotChangeException{
+        List<Order> orders;
+        try(Connection connection = MySQLDAOFactory.getConnection();
+            AutoRollback autoRollback = new AutoRollback(connection)){
+            orders =orderDao.findOrdersByUser(connection,userId,startRow,rowsPerPage);
+            autoRollback.commit();
+        } catch (SQLException | NamingException | DBException throwables) {
+            LOGGER.error(throwables.getMessage());
+            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+        }
+        return orders;
+    }
 
     /**
      * Returns orders' number
@@ -172,7 +182,18 @@ public class TaxiServiceOrder {
         return count;
     }
 
-
+public int orderCountByUser(int userId)throws ApplicationEXContainer.ApplicationCanNotChangeException{
+    int count;
+    try(Connection connection = MySQLDAOFactory.getConnection();
+        AutoRollback autoRollback = new AutoRollback(connection)){
+        count = orderDao.orderCountByUser(connection,userId);
+        autoRollback.commit();
+    } catch (SQLException | NamingException | DBException throwables) {
+        LOGGER.error(throwables.getMessage());
+        throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+    }
+    return count;
+}
     /**
      * This method returns List of orders that went through filtering and sorting.
      * @param filters Map object that contains columns names as key and by which value it should be filtered as value

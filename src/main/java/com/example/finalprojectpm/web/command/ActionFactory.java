@@ -32,6 +32,7 @@ public class ActionFactory {
         actions.put("GET/user/profile",new ProfileAction());
         actions.put("GET/user/addMoney",new AddMoneyAction());
         actions.put("POST/user/addMoneyM",new AddMoneyMAction());
+        actions.put("GET/user/myOrders",new MyOrders());
     }
     public Action getAction(HttpServletRequest request) {
         Action action;

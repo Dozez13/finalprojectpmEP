@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html lang="${lang}">
 <head>
-    <title>Title</title>
+    <title>Orders</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
     <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet" type="text/css">
     <link href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css" rel="stylesheet" type="text/css">
@@ -261,6 +261,9 @@
             },
             makeOrder(){
                 window.location.href='${pageContext.request.contextPath}'+'/pages/user/order?lang=${sessionScope.lang}';
+            },
+            myOrders(){
+                window.location.href='${pageContext.request.contextPath}'+'/pages/user/myOrders?lang=${sessionScope.lang}';
             },
             checkOrders(){
                 window.location.href='${pageContext.request.contextPath}'+'/pages/admin/orders?lang=${sessionScope.lang}';

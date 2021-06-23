@@ -2,15 +2,17 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="/WEB-INF/ResourceBundleUTF.tld"%>
 <%@taglib prefix="log" uri="http://logging.apache.org/log4j/tld/log"%>
-<log:setLogger logger="profile" var="profileJsp"/>
-<log:log level="info" logger="${profileJsp}" message="Profile jsp has been visited"/>
+<%@taglib prefix="numberHelper"   tagdir="/WEB-INF/tags/numberHelper"%>
+
+<log:setLogger logger="myOrders" var="myOrders"/>
+<log:log level="info" logger="${myOrders}" message="Index jsp has been visited"/>
 <c:set var="lang" value="${not empty param.lang ? param.lang : not empty lang ? lang :pageContext.request.locale.language}" scope="session" />
 <fmt:setLocale name="${lang}" />
 <fmt:setBundle basename="resources" />
 <!DOCTYPE html>
 <html lang="${lang}">
 <head>
-    <title>Profile</title>
+    <title>MyOrders</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
     <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet" type="text/css">
     <link href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css" rel="stylesheet" type="text/css">
@@ -34,87 +36,69 @@
 <body>
 <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/quasar@1.15.13/dist/quasar.umd.modern.min.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <div id="q-app">
     <div>
         <%@include file="../fichiers/headerHome.jsp"%>
     </div>
-    <div class="q-pa-md row justify-begin">
-        <div class="col-6">
-            <q-card  class="q-ma-md col">
-                <q-card-section class="text-center text-h5 q-pt-none">
-                    <fmt:localeValue key="profileInfo"/>
-                </q-card-section>
-            </q-card>
-            <q-card  class="q-ma-md col">
-                <q-card-section class="text-center bg-primary text-white">
-                   <fmt:localeValue key="dialogFirstName"/>
-                </q-card-section>
-                <q-separator></q-separator>
-                <q-card-section class="text-center text-h5 q-pt-none">
-                   ${requestScope.profileFirstName}
-                </q-card-section>
-                <q-card-section class="text-center bg-primary text-white">
-                    <fmt:localeValue key="dialogSurName"/>
-                </q-card-section>
-                <q-separator></q-separator>
-                <q-card-section class="text-center text-h5 q-pt-none">
-                    ${requestScope.profileSurName}
-                </q-card-section>
-                <q-card-section class="text-center bg-primary text-white">
-                    <fmt:localeValue key="profileRegistrationDate"/>
-                </q-card-section>
-                <q-separator></q-separator>
-                <q-card-section class="text-center text-h5 q-pt-none">
-                    ${requestScope.profileRegistrationDate}
-                </q-card-section>
-                <q-card-section class="text-center bg-primary text-white">
-                    <fmt:localeValue key="profileRegistrationDate"/>
-                </q-card-section>
-                <q-separator></q-separator>
-                <q-card-section class="text-center text-h5 q-pt-none">
-                    ${requestScope.profileRegistrationDate}
-                </q-card-section>
-                <q-card-section class="text-center bg-primary text-white">
-                    <fmt:localeValue key="profileAccountBalance"/>
-                </q-card-section>
-                <q-separator></q-separator>
-                <q-card-section class="text-center text-h5 q-pt-none">
-                    ${requestScope.profileAccountBalance}
-                </q-card-section>
+    <div class="q-pa-md row justify-center q-gutter-md">
+        <q-card>
+            <c:forEach items="${requestScope.myOrders}" var="myOrder" >
 
-                <q-btn label="<fmt:localeValue key="addMoneyToAccount"/>" @click="addMoney()"></q-btn>
-            </q-card>
+            <q-card-section horizontal class="bg-purple text-white">
+                <q-card-section class="bg-primary text-white">
+                    <div class="text-h6"><fmt:localeValue key="orderAddress"/></div>
+                    <q-separator color="black" spaced size="5px"></q-separator>
+                    <div class="text-h6">${myOrder.userAddress}</div>
+                </q-card-section>
+                <q-card-section class="bg-green-9 text-white">
+                    <div class="text-h6"><fmt:localeValue key="orderDestinationAddressTitle"/></div>
+                    <q-separator color="black" spaced size="5px"></q-separator>
+                    <div class="text-h6">${myOrder.userDestination}</div>
+                </q-card-section>
+                <q-card-section class="bg-teal-8 text-white">
+                    <div class="text-h6"><fmt:localeValue key="ordersLabelOrderCost"/></div>
+                    <q-separator color="black" spaced size="5px"></q-separator>
+                    <div class="text-h6">${myOrder.orderCost}</div>
+                </q-card-section>
+                <q-card-section class="bg-blue-10 text-white">
+                    <div class="text-h6"><fmt:localeValue key="ordersLabelOrderDate"/></div>
+                    <q-separator color="black" spaced size="5px"></q-separator>
+                    <div class="text-h6">${myOrder.orderDate}</div>
+                </q-card-section>
+            </q-card-section>
+            <q-separator color="white" size="5px"></q-separator>
+            </c:forEach>
+            <q-card-section align="right">
 
-        </div>
-
+                <q-btn :disabled="lessPage" type="a" href="${pageContext.request.contextPath}/pages/user/myOrders?lang=${sessionScope.lang}&startRow=${requestScope.startRow-3}&currentPage=${requestScope.currentPage-1}" label="
+&#8656;" ></q-btn>
+                <span>${requestScope.currentPage}</span>
+                <q-btn :disabled="morePage" type="a" href="${pageContext.request.contextPath}/pages/user/myOrders?lang=${sessionScope.lang}&startRow=${requestScope.startRow+3}&currentPage=${requestScope.currentPage+1}" label="
+&#8658;"></q-btn>
+            </q-card-section>
+        </q-card>
     </div>
 </div>
+
+
 </body>
 <script>
     new Vue({
         el: '#q-app',
         data () {
             return {
+                lessPage:${requestScope.currentPage==1},
+                morePage:${requestScope.currentPage==requestScope.totalOrders},
                 Eng:'',
                 Ua:'',
-                Ru:''
+                Ru:'',
+
 
             }
         },
         methods:{
             goHome(){
-                window.location.replace('${pageContext.request.contextPath}'+'/pages/index?lang=${sessionScope.lang}');
-            },
-            registrationPage(){
-                window.location.href ='${pageContext.request.contextPath}'+'/pages/guest/registration?lang=${sessionScope.lang}';
-
-            },
-            addMoney(){
-                window.location.href ='${pageContext.request.contextPath}'+'/pages/user/addMoney?lang=${sessionScope.lang}';
-            },
-            profilePage(){
-                window.location.href ='${pageContext.request.contextPath}'+'/pages/user/profile?lang=${sessionScope.lang}';
+                window.location.href ='${pageContext.request.contextPath}'+'/pages/index?lang=${sessionScope.lang}';
             },
             makeOrder(){
                 window.location.href='${pageContext.request.contextPath}'+'/pages/user/order?lang=${sessionScope.lang}';
@@ -124,6 +108,9 @@
             },
             checkOrders(){
                 window.location.href='${pageContext.request.contextPath}'+'/pages/admin/orders?lang=${sessionScope.lang}';
+            },
+            profilePage(){
+                window.location.href ='${pageContext.request.contextPath}'+'/pages/user/profile?lang=${sessionScope.lang}';
             },
             changeToEng(){
                 window.location.href = window.location.href+'?lang=en'
@@ -137,6 +124,13 @@
         },
         mounted: function(){
             window.history.pushState({}, document.title,window.location.href.split(/[?#]/)[0]);
+            if('${param.NotAvailable}'!=='') {
+                alert
+                this.style = {
+                    width: 'auto',
+                    height:'auto'
+                }
+            }
             switch ('${sessionScope.lang}'){
                 case 'en':{
                     this.Eng='black'
@@ -154,6 +148,5 @@
             }
         }
     })
-
 </script>
 </html>

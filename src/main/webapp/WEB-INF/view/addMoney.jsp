@@ -4,20 +4,36 @@
 <%@taglib prefix="log" uri="http://logging.apache.org/log4j/tld/log"%>
 <%@taglib prefix="image"   tagdir="/WEB-INF/tags/imageHelper"%>
 
-<log:setLogger logger="indexJsp" var="indexJsp"/>
-<log:log level="info" logger="${indexJsp}" message="Index jsp has been visited"/>
+<log:setLogger logger="addmoney" var="addmoney"/>
+<log:log level="info" logger="${addmoney}" message="Index jsp has been visited"/>
 <c:set var="lang" value="${not empty param.lang ? param.lang : not empty lang ? lang :pageContext.request.locale.language}" scope="session" />
 <fmt:setLocale name="${lang}" />
 <fmt:setBundle basename="resources" />
+<!DOCTYPE html>
 <html lang="${lang}">
 <head>
-    <title>Title</title>
+    <title>Add money</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
     <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet" type="text/css">
     <link href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/animate.css@^4.0.0/animate.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/quasar@1.15.13/dist/quasar.min.css" rel="stylesheet" type="text/css">
+    <script>
+        window.quasarConfig = {
+            brand: {
+                primary: '#003cd4',
+                secondary: '#26a679',
+                accent: '#9C27B0',
+                dark: '#1d1d1d',
+                positive: '#e3ffc9',
+                negative: '#C10015',
+                info: '#32eda5',
+                warning: '#ffbb00'
+            }
+        }
+    </script>
 </head>
+
 <body>
 <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/quasar@1.15.13/dist/quasar.umd.modern.min.js"></script>
@@ -83,6 +99,9 @@
                 },
                 makeOrder(){
                     window.location.href='${pageContext.request.contextPath}'+'/pages/user/order?lang=${sessionScope.lang}';
+                },
+                myOrders(){
+                window.location.href='${pageContext.request.contextPath}'+'/pages/user/myOrders?lang=${sessionScope.lang}';
                 },
                 checkOrders(){
                     window.location.href='${pageContext.request.contextPath}'+'/pages/admin/orders?lang=${sessionScope.lang}';
