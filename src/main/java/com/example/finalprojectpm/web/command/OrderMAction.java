@@ -30,7 +30,7 @@ public class OrderMAction implements Action{
         String[] stingNumbers = request.getParameterValues("numOfPas");
         String[] categories = request.getParameterValues("categories");
         if(stingNumbers != null && stingNumbers.length > 0&&categories != null && categories.length > 0) {
-            String message ="";
+            String message;
             TaxiServiceMakeOrder orderService = new TaxiServiceMakeOrder(dao.getCarDao(),dao.getOrderDao(),dao.getCarCategoryDao(),dao.getUserDao(),dao.getProfileDao());
             try{
                 message = orderService.makeOrder(stingNumbers,categories,userAddress,userDestination,login);

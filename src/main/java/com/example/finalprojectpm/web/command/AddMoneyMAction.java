@@ -22,7 +22,6 @@ public class AddMoneyMAction implements Action{
     public void execute(View view) throws Exception {
         HttpServletRequest request = view.getRequest();
         int amount = Integer.parseInt(request.getParameter("amountM"));
-        String cardNumber = request.getParameter("cardNum");
         HttpSession session = request.getSession();
         DAOFactory factory =(MySQLDAOFactory)request.getServletContext().getAttribute("MySQLFactory");
         UserDao userDao =  factory.getUserDao();
