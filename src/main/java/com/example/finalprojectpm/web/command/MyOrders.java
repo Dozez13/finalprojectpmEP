@@ -12,7 +12,10 @@ import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-
+/**
+ * MyOrders action
+ * @author Pavlo Manuilenko
+ */
 public class MyOrders implements Action{
     private static final Logger LOGGER = LogManager.getLogger(MyOrders.class);
     @Override

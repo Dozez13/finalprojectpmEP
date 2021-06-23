@@ -150,6 +150,15 @@ public class TaxiServiceOrder {
         }
         return orders;
     }
+
+    /**
+     * Return specific Orders by user
+     * @param userId id for user searched orders
+     * @param startRow start row for searching
+     * @param rowsPerPage number of rows
+     * @return orders by user if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCanNotChangeException
+     */
     public List<Order> findOrdersByUser(int userId,int startRow, int rowsPerPage)throws ApplicationEXContainer.ApplicationCanNotChangeException{
         List<Order> orders;
         try(Connection connection = MySQLDAOFactory.getConnection();
@@ -182,6 +191,12 @@ public class TaxiServiceOrder {
         return count;
     }
 
+    /**
+     * Returns user order's number
+     * @param userId id for user searched orders
+     * @return number of User orders
+     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     */
 public int orderCountByUser(int userId)throws ApplicationEXContainer.ApplicationCanNotChangeException{
     int count;
     try(Connection connection = MySQLDAOFactory.getConnection();

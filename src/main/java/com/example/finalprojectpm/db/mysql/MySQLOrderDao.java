@@ -4,7 +4,6 @@ package com.example.finalprojectpm.db.mysql;
 import com.example.finalprojectpm.db.Fields;
 import com.example.finalprojectpm.db.OrderDao;
 import com.example.finalprojectpm.db.entity.Order;
-import com.example.finalprojectpm.db.exception.DBException;
 import com.example.finalprojectpm.db.exception.MySQLEXContainer;
 import com.example.finalprojectpm.db.util.ConnectionUtil;
 import com.example.finalprojectpm.db.util.QueriesUtil;
@@ -283,8 +282,16 @@ public class MySQLOrderDao implements OrderDao {
         return count;
     }
 
+    /**
+     * Returns user order's number
+     * @param connection  object with database
+     * @param userId id for user searched orders
+     * @return number of User orders
+     * @throws MySQLEXContainer.MySQLDBExecutionException if SQLException at execution query arises
+     * @throws SQLException if resources can't be closed
+     */
     @Override
-    public int orderCountByUser(Connection connection,int userId) throws DBException, SQLException {
+    public int orderCountByUser(Connection connection,int userId) throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
         LOGGER.debug("Order Count by user Is started");
         ResultSet resultSet = null;
         Connection con;
@@ -310,6 +317,16 @@ public class MySQLOrderDao implements OrderDao {
         return count;
     }
 
+    /**
+     * Return specific Orders by user
+     * @param connection  object with database
+     * @param userId id for user searched orders
+     * @param startRow start row for searching
+     * @param rowsPerPage number of rows
+     * @return orders by user
+     * @throws MySQLEXContainer.MySQLDBExecutionException if SQLException at execution query arises
+     * @throws SQLException if resources can't be closed
+     */
     @Override
     public List<Order> findOrdersByUser(Connection connection, int userId,int startRow, int rowsPerPage) throws MySQLEXContainer.MySQLDBExecutionException, SQLException {
         LOGGER.debug("Find All User Orders Is started");
