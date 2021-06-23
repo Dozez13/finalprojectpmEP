@@ -12,7 +12,7 @@ CREATE TABLE `user_info`
 (
     `userId`       int NOT NULL AUTO_INCREMENT,
     `login`        varchar(20)  DEFAULT NULL,
-    `userPassword` varchar(60)  DEFAULT NULL,
+    `userPassword` char(60)  DEFAULT NULL,
     `userType`     enum('client','administrator') DEFAULT NULL,
     `userEmail`    varchar(320) DEFAULT NULL,
     PRIMARY KEY (`userId`),
