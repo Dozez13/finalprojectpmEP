@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="/WEB-INF/ResourceBundleUTF.tld"%>
 <%@taglib prefix="log" uri="http://logging.apache.org/log4j/tld/log"%>
-<%@taglib prefix="image"   tagdir="/WEB-INF/tags/imageHelper"%>
+
 
 <log:setLogger logger="addmoney" var="addmoney"/>
 <log:log level="info" logger="${addmoney}" message="Index jsp has been visited"/>

@@ -50,7 +50,9 @@ public class MyOrders implements Action{
         }
         List<Order> orders = taxiServiceOrder.findOrdersByUser(((int)(request.getSession().getAttribute("userId"))),startRow,rowsPerPage);
         int orderCount = taxiServiceOrder.orderCountByUser(((int)(request.getSession().getAttribute("userId"))));
+        System.out.println("Order Count"+orderCount);
         int numOfPages = (int)(Math.ceil(orderCount/ (double) rowsPerPage));
+        System.out.println("num +"+numOfPages);
           request.setAttribute("myOrders",orders);
           request.setAttribute("startRow",startRow);
           request.setAttribute("currentPage",currentPage);

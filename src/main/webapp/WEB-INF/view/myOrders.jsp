@@ -41,6 +41,7 @@
         <%@include file="../fichiers/headerHome.jsp"%>
     </div>
     <div class="q-pa-md row justify-center q-gutter-md">
+        <c:if test="${requestScope.totalOrders!=0}">
         <q-card>
             <c:forEach items="${requestScope.myOrders}" var="myOrder" >
 
@@ -77,7 +78,16 @@
 &#8658;"></q-btn>
             </q-card-section>
         </q-card>
+        </c:if>
+        <c:if test="${requestScope.totalOrders==0}">
+            <q-card>
+                <q-card-section class="bg-blue-10 text-white">
+                    <fmt:localeValue key="ordersNotFoundMessage"/>
+                </q-card-section>
+            </q-card>
+        </c:if>
     </div>
+
 </div>
 
 
@@ -124,13 +134,6 @@
         },
         mounted: function(){
             window.history.pushState({}, document.title,window.location.href.split(/[?#]/)[0]);
-            if('${param.NotAvailable}'!=='') {
-                alert
-                this.style = {
-                    width: 'auto',
-                    height:'auto'
-                }
-            }
             switch ('${sessionScope.lang}'){
                 case 'en':{
                     this.Eng='black'
