@@ -75,16 +75,12 @@ k
 ;src/main/java/com/example/finalprojectpm/db/DAOFactory.java,4\9\497f5a4c18906cbc5c8203febbdeecffa7fb6cad
 g
 7src/main/java/com/example/finalprojectpm/db/Fields.java,e\a\ea69da0d58d593312eed27241302b03d33eb64a3
-j
-:src/main/webapp/WEB-INF/fichiers/headerforregistration.jsp,7\9\79526360c1a6ca7f5d24a1a173d3afec4167496e
 [
 +src/main/webapp/WEB-INF/view/ordersJson.jsp,3\d\3db530a7609a76288bc21168c381d02e407bf6b3
 Z
 *src/main/webapp/WEB-INF/tags/setLocale.tag,b\f\bf1c4203db48135c40eba312065dd8a04c5374cb
 ]
 -src/main/webapp/WEB-INF/view/registration.jsp,5\1\51f3e03ccaf2cf667b2008bf04b14dd68d5c200f
-_
-/src/main/webapp/WEB-INF/fichiers/headerHome.jsp,e\a\ea9ade46eb8b0067a235c25a7b82902d0d34b309
 i
 9src/main/java/com/example/finalprojectpm/db/OrderDao.java,5\2\529d23458dad6ed87358e3ece8440c71db02084b
 f

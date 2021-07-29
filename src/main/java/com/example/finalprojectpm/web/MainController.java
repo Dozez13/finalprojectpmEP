@@ -3,8 +3,6 @@ package com.example.finalprojectpm.web;
 import com.example.finalprojectpm.db.*;
 import com.example.finalprojectpm.db.entity.*;
 import com.example.finalprojectpm.db.exception.ApplicationEXContainer;
-import com.example.finalprojectpm.db.mysql.MySQLCarDao;
-import com.example.finalprojectpm.db.mysql.MySQLDAOFactory;
 import com.example.finalprojectpm.db.service.*;
 import com.example.finalprojectpm.db.util.ImageUtil;
 import com.example.finalprojectpm.web.model.ToggleButton;
@@ -15,9 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.View;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
@@ -185,7 +181,7 @@ public class MainController {
     @PostMapping("/guest/login")
     public ModelAndView loginIn(@RequestParam("login") String login,@RequestParam("psw") String password){
         //LOGGER.info("LoginAction is invoked");
-
+               System.out.println(login+" "+password);
         ModelAndView modelAndView = new ModelAndView();
         DAOFactory dao =DAOFactory.getDAOFactory(1);
         UserDao userDao = dao.getUserDao();
@@ -228,9 +224,13 @@ public class MainController {
     @PostMapping("/user/logOut")
     public String logOut(HttpSession session, SessionStatus status){
         //LOGGER.info("LogOutAction is invoked");
+        System.out.println("I'm here");
+        System.out.println(session.getAttribute("Login"));
         status.setComplete();
+        System.out.println(session.getAttribute("Login"));
         if (session != null) {
            // LOGGER.info("Invalidated user {}",session.getAttribute("Login"));
+            System.out.println(session.getAttribute("Login"));
             session.removeAttribute("Login");
             session.invalidate();
 
