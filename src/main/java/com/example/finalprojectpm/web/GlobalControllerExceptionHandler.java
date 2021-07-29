@@ -20,11 +20,9 @@ public class GlobalControllerExceptionHandler {
     }
     @ExceptionHandler(ApplicationEXContainer.ApplicationSendRegistrationMessageException.class)
     public ModelAndView handleError(HttpServletRequest req, Exception ex) {
-
         ModelAndView mav = new ModelAndView();
-        mav.addObject("exception", ex);
-        mav.addObject("url", req.getRequestURL());
-        mav.setViewName("error");
+        mav.addObject("registrationMessage", ex.getMessage());
+        mav.setViewName("registration");
         return mav;
     }
     @ExceptionHandler(ApplicationEXContainer.ApplicationSendOrderMessageException.class)

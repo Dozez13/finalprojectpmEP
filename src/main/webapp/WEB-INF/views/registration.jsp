@@ -171,10 +171,10 @@
         },
         mounted: function(){
             window.history.pushState({}, document.title,window.location.href.split(/[?#]/)[0]);
-            if('${param.registrationMessage}'!==''){
+            if('${requestScope.registrationMessage}'!==''){
                 this.$q.notify({
                     type: 'negative',
-                    message: '<fmt:LValueParam checkParam="false" message="registrNotUnique" params="${param.registrationMessage}"/>',
+                    message: '<fmt:LValueParam checkParam="false" message="registrNotUnique" params="${requestScope.registrationMessage}"/>',
                     position:'center',
                     icon: 'report_problem'
                 })
