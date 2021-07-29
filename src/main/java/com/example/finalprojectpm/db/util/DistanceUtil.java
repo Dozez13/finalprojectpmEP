@@ -44,6 +44,7 @@ public class DistanceUtil {
      * @return distance between two places
      */
     public static double getDistance(String clientLocation, String destinationLocation){
+
         JOpenCageGeocoder jOpenCageGeocoder = new JOpenCageGeocoder("5f4c8e3760644cc58af1d9492c17cdec");
         JOpenCageForwardRequest clientLocationRequest = new JOpenCageForwardRequest(clientLocation);
         JOpenCageForwardRequest destinationLocationRequest = new JOpenCageForwardRequest(destinationLocation);
@@ -53,8 +54,12 @@ public class DistanceUtil {
         destinationLocationRequest.setBounds(22.19238, 43.61222, 40.25391, 52.42922);
         JOpenCageResponse clientL = jOpenCageGeocoder.forward(clientLocationRequest);
         JOpenCageResponse clientD = jOpenCageGeocoder.forward(destinationLocationRequest);
+
         JOpenCageLatLng firstResultLatLng = clientL.getFirstPosition();
         JOpenCageLatLng secondResultLatLng = clientD.getFirstPosition();
+
+        System.out.println(firstResultLatLng.getLat()+ " " +firstResultLatLng.getLng()+" "+secondResultLatLng.getLat()+" "+secondResultLatLng.getLng());
+
         return haversine(firstResultLatLng.getLat(), firstResultLatLng.getLng(), secondResultLatLng.getLat(), secondResultLatLng.getLng());
     }
 

@@ -195,10 +195,10 @@
         },
         mounted: function(){
             window.history.pushState({}, document.title,window.location.href.split(/[?#]/)[0]);
-            if('${param.errorMessage}'!==''){
+            if('${errorMessage}'!==''){
                 this.$q.notify({
                     type: 'negative',
-                    message: '${param.errorMessage}',
+                    message: '${errorMessage}',
                     position:'center',
                     icon: 'report_problem'
                 })

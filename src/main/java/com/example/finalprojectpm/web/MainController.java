@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -182,24 +183,22 @@ public class MainController {
         return modelAndView;
     }
     @PostMapping("/guest/login")
-    public ModelAndView loginIn(@RequestParam("login") String login,@RequestParam("psw") String password){
+    public ModelAndView loginIn(@RequestParam("login") String login, @RequestParam("psw") String password, RedirectAttributes redirectAttributes){
         //LOGGER.info("LoginAction is invoked");
-               System.out.println(login+" "+password);
-        ModelAndView modelAndView = new ModelAndView();
+        ModelAndView modelAndView = new ModelAndView("redirect:/index");
 
         User user = taxiServiceUser.findUser(login);
         if(user!=null&&taxiServiceUser.validateUser(login,password)) {
            // LOGGER.debug("Get Login from user, Login Is {}",login);
             //LOGGER.debug("Get Password from user, Password Is {}",psw);
+            System.out.println("here");
             modelAndView.addObject("Login",login);
             modelAndView.addObject("userType",user.getUserType());
             modelAndView.addObject("userId",user.getUserId());
-            modelAndView.setViewName("redirect:/index");
             //view.setView(request.getContextPath()+"/pages/index");
         } else{
             String error= "Your login or password is wrong";
-            modelAndView.addObject("errorMessage",error);
-            modelAndView.setViewName("redirect:/index?errorMessage="+error);
+            redirectAttributes.addFlashAttribute("errorMessage",error);
         }
         return modelAndView;
     }
@@ -227,20 +226,15 @@ public class MainController {
     }
     @PostMapping("/user/doOrder")
     public ModelAndView doOrder(@SessionAttribute("Login") String login,@RequestParam("userAddress") String userAddress,@RequestParam("userDestination")String userDestination,
-                                @RequestParam("numOfPas") String[]stingNumbers,@RequestParam("categories")String[] categories){
+                                @RequestParam("numOfPas") String[]stingNumbers,@RequestParam("categories")String[] categories, RedirectAttributes redirectAttributes){
         //LOGGER.info("OrderMAction is invoked");
 
-        ModelAndView modelAndView = new ModelAndView();
+        ModelAndView modelAndView = new ModelAndView("redirect:/order");
 
         if(stingNumbers != null && stingNumbers.length > 0&&categories != null && categories.length > 0) {
-            String message;
-
-                message = taxiServiceMakeOrder.makeOrder(stingNumbers,categories,userAddress,userDestination,login);
-                modelAndView.setViewName("redirect:/order?takenTime="+message);
-
-
+            String message = taxiServiceMakeOrder.makeOrder(stingNumbers,categories,userAddress,userDestination,login);
+                redirectAttributes.addFlashAttribute("takenTime",message);
                 //LOGGER.error(e.getMessage());
-
         }
         return modelAndView;
     }

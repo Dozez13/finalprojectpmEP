@@ -54,8 +54,8 @@
                     </q-card-section>
 
                     <q-card-section class="q-pt-none">
-                        <c:if test="${requestScope.takenTime!=null}">
-                            <fmt:LValueParam checkParam="true" message="orderTakenTime" params="${requestScope.takenTime}"/>
+                        <c:if test="${takenTime!=null}">
+                            <fmt:LValueParam checkParam="true" message="orderTakenTime" params="${takenTime}"/>
                         </c:if>
                     </q-card-section>
                     <q-card-actions align="right" class="bg-white text-teal">
@@ -66,12 +66,12 @@
             <div :style="style">
                 <q-card :class="{col:hasError, 'text-h6': hasError, 'bg-amber-10': hasError }">
                     <q-card-section class="text-center">
-                        <c:if test="${param.orderData!=null}">
-                            <c:if test="${param.orderData.equals('Account doesnt have money for order')}">
+                        <c:if test="${orderData!=null}">
+                            <c:if test="${orderData.equals('Account doesnt have money for order')}">
                                 <fmt:localeValue key="AccountMoneyFail"/>
                             </c:if>
-                            <c:if test="${!param.orderData.equals('Account doesnt have money for order')}">
-                                <fmt:LValueParam checkParam="true" message="orderFailMessage" params="${param.orderData}"/>
+                            <c:if test="${!orderData.equals('Account doesnt have money for order')}">
+                                <fmt:LValueParam checkParam="true" message="orderFailMessage" params="${orderData}"/>
                             </c:if>
                         </c:if>
                     </q-card-section>
@@ -160,11 +160,11 @@
                 Eng:'',
                 Ua:'',
                 Ru:'',
-                hasError:'${param.NotAvailable}'!=='',
+                hasError:'${NotAvailable}'!=='',
                 style: { width: '0px', height: '0px' },
                 DHint:'<fmt:localeValue key="orderDAddressHint"/>',
                 YHint:'<fmt:localeValue key="orderAddressHint"/>',
-                Message:'${requestScope.takenTime}' !== '',
+                Message:'${takenTime}' !== '',
                 items:[
                     {
                         numOfPas:0,
@@ -212,7 +212,7 @@
         },
         mounted: function(){
             window.history.pushState({}, document.title,window.location.href.split(/[?#]/)[0]);
-            if('${param.NotAvailable}'!=='') {
+            if('${NotAvailable}'!=='') {
                 alert
                 this.style = {
                     width: 'auto',

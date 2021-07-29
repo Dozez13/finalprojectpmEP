@@ -1,8 +1,6 @@
 
 l
 <src/main/webapp/WEB-INF/tags/imageHelper/convertToBase64.tag,8\3\83fecf2c8123a99a4b4492bb4cede4b64c88db10
-]
--src/main/webapp/WEB-INF/ResourceBundleUTF.tld,2\3\235494df2f7077033931647b1f3b56fa288cd327
 o
 ?src/test/java/com/example/finalprojectpm/db/entity/CarTest.java,d\f\df6637f151d87f15483e78442d920c3827e37fae
 w
@@ -95,8 +93,6 @@ v
 Fsrc/main/java/com/example/finalprojectpm/db/exception/DBException.java,e\8\e8539974bad1db773c2822513d67a96d42814ffa
 t
 Dsrc/main/java/com/example/finalprojectpm/db/util/ConnectionUtil.java,c\7\c76ae7a94397e3e705944f8f15e4b1ccd89e6176
-r
-Bsrc/main/java/com/example/finalprojectpm/db/util/DistanceUtil.java,3\2\3216ec6ff8be24105460cec7b092f9bd7bd1413d
 o
 ?src/main/java/com/example/finalprojectpm/db/util/ImageUtil.java,1\e\1e615aa5f458c86196df687e3587ffa24fc63ead
 r
