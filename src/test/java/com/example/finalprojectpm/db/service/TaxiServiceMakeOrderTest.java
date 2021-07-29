@@ -7,17 +7,16 @@ import com.example.finalprojectpm.db.entity.Order;
 import com.example.finalprojectpm.db.entity.User;
 import com.example.finalprojectpm.db.exception.ApplicationEXContainer;
 import com.example.finalprojectpm.db.exception.DBException;
-import com.example.finalprojectpm.db.exception.MySQLEXContainer;
-import hthurow.tomcatjndi.TomcatJNDI;
+
+import com.example.finalprojectpm.db.mysql.MySQLDAOFactory;
 import org.junit.jupiter.api.*;
 
-import java.io.File;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.*;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -28,12 +27,10 @@ class TaxiServiceMakeOrderTest {
     private UserDao userDao;
     private ProfileDao profileDao;
     private TaxiServiceMakeOrder taxiServiceMakeOrder;
-    private static TomcatJNDI tomcatJNDI;
+
     @BeforeAll
-    static void initJNDI(){
-        tomcatJNDI = new TomcatJNDI();
-        tomcatJNDI.processContextXml(new File("src/main/webapp/META-INF/context.xml"));
-        tomcatJNDI.start();
+    static void initTestMode(){
+        MySQLDAOFactory.setTestOn();
     }
     @BeforeEach
     void initTaxiService() {
@@ -43,13 +40,15 @@ class TaxiServiceMakeOrderTest {
         categoryDao = mock(CarCategoryDao.class);
         profileDao = mock(ProfileDao.class);
         taxiServiceMakeOrder = new TaxiServiceMakeOrder(carDao,orderDao,categoryDao,userDao,profileDao);
+        Connection connection = mock(Connection.class);
+        MySQLDAOFactory.setTestConnection(connection);
     }
     @AfterAll
-    static void dataSourceClearEnv(){
-        tomcatJNDI.tearDown();
+    public static void setTestModeOff(){
+        MySQLDAOFactory.setTestOff();
     }
     @Test
-    void makeOrder() throws DBException, SQLException, ApplicationEXContainer.ApplicationCanNotChangeException, ApplicationEXContainer.ApplicationCanChangeException {
+    void makeOrder() throws DBException, SQLException, ApplicationEXContainer.ApplicationCantRecoverException {
         when(userDao.findUser(any(Connection.class),anyString())).thenReturn(new User());
         when(carDao.findCar(any(Connection.class), anyInt(),anyString())).thenReturn(new Car());
         when(carDao.updateCar(any(Connection.class), anyInt(), anyString())).thenReturn(true);
@@ -66,7 +65,7 @@ class TaxiServiceMakeOrderTest {
         when(categoryDao.findCarCategory(any(Connection.class),anyString())).thenReturn(new CarCategory());
         when(orderDao.insertOrder(any(Connection.class),any(Order.class))).thenReturn(true);
         when(profileDao.updateProfileSWithdrawBalance(any(Connection.class),anyInt(),anyDouble())).thenReturn(true);
-        Throwable thrown = assertThrows(ApplicationEXContainer.ApplicationCanChangeException.class,()->taxiServiceMakeOrder.makeOrder(new String[]{"5","5"},new String[]{"Business","Standard"},"Україна, Дніпро, Кулагіна вулиця, 33","Україна, Дніпро, Кулагіна вулиця, 33","Login"));
+        Throwable thrown = assertThrows(ApplicationEXContainer.ApplicationSendOrderMessageException.class,()->taxiServiceMakeOrder.makeOrder(new String[]{"5","5"},new String[]{"Business","Standard"},"Україна, Дніпро, Кулагіна вулиця, 33","Україна, Дніпро, Кулагіна вулиця, 33","Login"));
         assertEquals("Business 5",thrown.getMessage());
     }
 }

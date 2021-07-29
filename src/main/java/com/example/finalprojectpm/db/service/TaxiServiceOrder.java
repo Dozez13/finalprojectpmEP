@@ -34,9 +34,9 @@ public class TaxiServiceOrder {
      * Inserts order into table
      * @param order entity that should be inserted
      * @return true if insert operation went without exception and false otherwise
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
      */
-    public boolean insertOrder(Order order) throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public boolean insertOrder(Order order) throws ApplicationEXContainer.ApplicationCantRecoverException {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -44,7 +44,7 @@ public class TaxiServiceOrder {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
 
         return result;
@@ -55,9 +55,9 @@ public class TaxiServiceOrder {
      * Inserts orders into table
      * @param orders that should be inserted
      * @return true if all insert operations went without exception and false otherwise
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
      */
-    public boolean insertOrders(Order... orders) throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public boolean insertOrders(Order... orders) throws ApplicationEXContainer.ApplicationCantRecoverException {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -65,7 +65,7 @@ public class TaxiServiceOrder {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
         return result;
     }
@@ -75,9 +75,9 @@ public class TaxiServiceOrder {
      * Deletes order from table
      * @param order that should be deleted
      * @return true if delete operation went without exception and false otherwise
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
      */
-    public boolean deleteOrder(Order order) throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public boolean deleteOrder(Order order) throws ApplicationEXContainer.ApplicationCantRecoverException {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -85,7 +85,7 @@ public class TaxiServiceOrder {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
         return result;
     }
@@ -95,9 +95,9 @@ public class TaxiServiceOrder {
      * Finds order in table
      * @param order that should be found
      * @return Order if it exists in table and otherwise null
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
      */
-    public Order findOrder(Order order) throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public Order findOrder(Order order) throws ApplicationEXContainer.ApplicationCantRecoverException {
         Order foundOrder;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -105,7 +105,7 @@ public class TaxiServiceOrder {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
 
         return foundOrder;
@@ -117,9 +117,9 @@ public class TaxiServiceOrder {
      * @param order that should be updated
      * @param newCarId property that will be changed
      * @return true if update operation went without exception and false otherwise
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
      */
-    public boolean updateOrder(Order order, int newCarId) throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public boolean updateOrder(Order order, int newCarId) throws ApplicationEXContainer.ApplicationCantRecoverException {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -127,7 +127,7 @@ public class TaxiServiceOrder {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
         return result;
     }
@@ -136,9 +136,9 @@ public class TaxiServiceOrder {
     /**
      * Returns list of all orders
      * @return List of all orders
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
      */
-    public List<Order> findAllOrders() throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public List<Order> findAllOrders() throws ApplicationEXContainer.ApplicationCantRecoverException {
         List<Order> orders;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -146,7 +146,7 @@ public class TaxiServiceOrder {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
         return orders;
     }
@@ -157,9 +157,9 @@ public class TaxiServiceOrder {
      * @param startRow start row for searching
      * @param rowsPerPage number of rows
      * @return orders by user if some exception arises in dao methods
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException
      */
-    public List<Order> findOrdersByUser(int userId,int startRow, int rowsPerPage)throws ApplicationEXContainer.ApplicationCanNotChangeException{
+    public List<Order> findOrdersByUser(int userId,int startRow, int rowsPerPage)throws ApplicationEXContainer.ApplicationCantRecoverException {
         List<Order> orders;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -167,7 +167,7 @@ public class TaxiServiceOrder {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
         return orders;
     }
@@ -175,9 +175,9 @@ public class TaxiServiceOrder {
     /**
      * Returns orders' number
      * @return orders' number
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
      */
-    public int orderCount() throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public int orderCount() throws ApplicationEXContainer.ApplicationCantRecoverException {
         int count;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -185,7 +185,7 @@ public class TaxiServiceOrder {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
 
         return count;
@@ -195,9 +195,9 @@ public class TaxiServiceOrder {
      * Returns user order's number
      * @param userId id for user searched orders
      * @return number of User orders
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
      */
-public int orderCountByUser(int userId)throws ApplicationEXContainer.ApplicationCanNotChangeException{
+public int orderCountByUser(int userId)throws ApplicationEXContainer.ApplicationCantRecoverException {
     int count;
     try(Connection connection = MySQLDAOFactory.getConnection();
         AutoRollback autoRollback = new AutoRollback(connection)){
@@ -205,7 +205,7 @@ public int orderCountByUser(int userId)throws ApplicationEXContainer.Application
         autoRollback.commit();
     } catch (SQLException | NamingException | DBException throwables) {
         LOGGER.error(throwables.getMessage());
-        throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+        throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
     }
     return count;
 }
@@ -217,9 +217,9 @@ public int orderCountByUser(int userId)throws ApplicationEXContainer.Application
      * @param startRow start row as limit
      * @param rowsPerPage number of rows as offset
      * @return List of processed orders
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
      */
-    public List<Order> findFilSortOrders(Map<String, String> filters, String sortedColumn, boolean descending, int startRow, int rowsPerPage) throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public List<Order> findFilSortOrders(Map<String, String> filters, String sortedColumn, boolean descending, int startRow, int rowsPerPage) throws ApplicationEXContainer.ApplicationCantRecoverException {
         List<Order> orders;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -227,7 +227,7 @@ public int orderCountByUser(int userId)throws ApplicationEXContainer.Application
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
         return orders;
     }

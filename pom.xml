@@ -41,22 +41,20 @@
             <version>3.10.0</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
         <dependency>
-            <groupId>com.github.h-thurow</groupId>
-            <artifactId>tomcat8jndi</artifactId>
-            <version>1.0.0</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.3.9</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-dbcp -->
-        <dependency>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>tomcat-dbcp</artifactId>
-            <version>9.0.46</version>
-        </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.24</version>
+            <version>8.0.26</version>
             <scope>test</scope>
         </dependency>
 

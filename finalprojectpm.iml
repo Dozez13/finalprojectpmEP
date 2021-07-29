@@ -4,6 +4,7 @@
     <facet type="web" name="Web">
       <configuration>
         <descriptors>
+          <deploymentDescriptor name="context.xml" url="file://$MODULE_DIR$/src/main/webapp/META-INF/context.xml" />
           <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/src/main/webapp/WEB-INF/web.xml" />
         </descriptors>
         <webroots>
@@ -14,6 +15,9 @@
           <root url="file://$MODULE_DIR$/src/main/resources" />
         </sourceRoots>
       </configuration>
+    </facet>
+    <facet type="Spring" name="Spring">
+      <configuration />
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
@@ -39,13 +43,15 @@
     <orderEntry type="library" scope="TEST" name="Maven: net.bytebuddy:byte-buddy:1.11.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: net.bytebuddy:byte-buddy-agent:1.11.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.objenesis:objenesis:3.2" level="project" />
-    <orderEntry type="library" name="Maven: com.github.h-thurow:tomcat8jndi:1.0.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:8.0.47" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-annotations-api:8.0.47" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.tomcat.embed:tomcat-embed-logging-juli:8.0.47" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-dbcp:9.0.46" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-juli:9.0.46" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: mysql:mysql-connector-java:8.0.24" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:5.3.9" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.3.9" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.3.9" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-context:5.3.9" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-core:5.3.9" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.3.9" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.3.9" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-web:5.3.9" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: mysql:mysql-connector-java:8.0.26" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.google.protobuf:protobuf-java:3.11.4" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-nop:1.7.13" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.13" level="project" />

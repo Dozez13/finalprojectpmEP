@@ -42,10 +42,10 @@ public class TaxiServiceRegistration {
      * @param login login of new account
      * @param email email of new account
      * @param psw password of new account
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if dao methods throw exception
-     * @throws ApplicationEXContainer.ApplicationCanChangeException if dao methods throw exception with 1062,1406 error code
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if dao methods throw exception
+     * @throws ApplicationEXContainer.ApplicationSendRegistrationMessageException if dao methods throw exception with 1062,1406 error code
      */
-    public void doRegistration(String firstName,String surName,String login , String email,String psw) throws ApplicationEXContainer.ApplicationCanNotChangeException, ApplicationEXContainer.ApplicationCanChangeException {
+    public void doRegistration(String firstName,String surName,String login , String email,String psw) throws ApplicationEXContainer.ApplicationCantRecoverException, ApplicationEXContainer.ApplicationSendRegistrationMessageException {
 
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -64,10 +64,10 @@ public class TaxiServiceRegistration {
             autoRollback.commit();
         } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }catch (DBException mySQLDBExceptionCanChange) {
             LOGGER.error(mySQLDBExceptionCanChange.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanChangeException(mySQLDBExceptionCanChange.getMessage(),mySQLDBExceptionCanChange);
+            throw new ApplicationEXContainer.ApplicationSendRegistrationMessageException(mySQLDBExceptionCanChange.getMessage(),mySQLDBExceptionCanChange);
         }
 
 

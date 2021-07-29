@@ -1,6 +1,6 @@
 package com.example.finalprojectpm.db.exception;
 
-public abstract class ApplicationException extends Exception{
+public abstract class ApplicationException extends RuntimeException{
     protected ApplicationException(String message) {
         super (message);
 

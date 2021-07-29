@@ -2,37 +2,37 @@ package com.example.finalprojectpm.db.exception;
 
 public class ApplicationEXContainer {
     private ApplicationEXContainer(){}
-    public static class ApplicationCanChangeException extends ApplicationException{
-
-
-        private static final long serialVersionUID = 5623020744652767125L;
-
-        public ApplicationCanChangeException(String message) {
-            super(message);
-        }
-
-        public ApplicationCanChangeException(Throwable cause) {
-            super(cause);
-        }
-
-        public ApplicationCanChangeException(String message, Throwable cause) {
+    public static class ApplicationSendRegistrationMessageException extends ApplicationException{
+        public ApplicationSendRegistrationMessageException(String message, Throwable cause) {
             super(message, cause);
         }
     }
-    public static class ApplicationCanNotChangeException extends ApplicationException{
+    public static class ApplicationSendOrderMessageException extends ApplicationException{
+        public ApplicationSendOrderMessageException(String message, Throwable cause) {
+            super(message, cause);
+        }
+    }
+
+    public static class ApplicationNotEnoughException extends ApplicationException{
+        public ApplicationNotEnoughException(String message, Throwable cause) {
+            super(message, cause);
+        }
+    }
+
+    public static class ApplicationCantRecoverException extends ApplicationException{
 
 
         private static final long serialVersionUID = 8418291280811092712L;
 
-        public ApplicationCanNotChangeException(String message) {
+        public ApplicationCantRecoverException(String message) {
             super(message);
         }
 
-        public ApplicationCanNotChangeException(Throwable cause) {
+        public ApplicationCantRecoverException(Throwable cause) {
             super(cause);
         }
 
-        public ApplicationCanNotChangeException(String message, Throwable cause) {
+        public ApplicationCantRecoverException(String message, Throwable cause) {
             super(message, cause);
         }
     }

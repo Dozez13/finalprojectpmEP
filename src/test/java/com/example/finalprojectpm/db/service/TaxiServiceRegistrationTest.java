@@ -4,16 +4,15 @@ import com.example.finalprojectpm.db.ProfileDao;
 import com.example.finalprojectpm.db.UserDao;
 import com.example.finalprojectpm.db.entity.Profile;
 import com.example.finalprojectpm.db.entity.User;
-
 import com.example.finalprojectpm.db.exception.DBException;
-import com.example.finalprojectpm.db.exception.MySQLEXContainer;
-import hthurow.tomcatjndi.TomcatJNDI;
+
+import com.example.finalprojectpm.db.mysql.MySQLDAOFactory;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -26,22 +25,22 @@ class TaxiServiceRegistrationTest {
     private ProfileDao profileDao;
     private UserDao userDao;
     private TaxiServiceRegistration taxiServiceRegistration;
-    private static TomcatJNDI tomcatJNDI;
+
     @BeforeAll
-    static void initJNDI(){
-        tomcatJNDI = new TomcatJNDI();
-        tomcatJNDI.processContextXml(new File("src/main/webapp/META-INF/context.xml"));
-        tomcatJNDI.start();
+    static void initTestMode(){
+        MySQLDAOFactory.setTestOn();
     }
     @BeforeEach
     void initTaxiService() {
         profileDao = mock(ProfileDao.class);
         userDao = mock(UserDao.class);
         taxiServiceRegistration = new TaxiServiceRegistration(userDao,profileDao);
+        Connection connection = mock(Connection.class);
+        MySQLDAOFactory.setTestConnection(connection);
     }
     @AfterAll
-    static void dataSourceClearEnv(){
-        tomcatJNDI.tearDown();
+    public static void setTestModeOff(){
+        MySQLDAOFactory.setTestOff();
     }
     @Test
     void doRegistration() throws SQLException, DBException {

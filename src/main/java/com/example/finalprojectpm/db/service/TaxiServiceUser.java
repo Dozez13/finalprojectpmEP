@@ -35,10 +35,10 @@ public class TaxiServiceUser {
      * Inserts User into database table
      * @param user entity that should be inserted
      * @return true if insert operation went without exception and false otherwise
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if dao methods throw DBException
-     * @throws ApplicationEXContainer.ApplicationCanChangeException if dao methods throw exception with 1062,1406 error code
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if dao methods throw DBException
+     * @throws ApplicationEXContainer.ApplicationSendRegistrationMessageException if dao methods throw exception with 1062,1406 error code
      */
-    public boolean insertUser(User user) throws ApplicationEXContainer.ApplicationCanNotChangeException, ApplicationEXContainer.ApplicationCanChangeException {
+    public boolean insertUser(User user) throws ApplicationEXContainer.ApplicationCantRecoverException, ApplicationEXContainer.ApplicationSendRegistrationMessageException {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -46,10 +46,10 @@ public class TaxiServiceUser {
             autoRollback.commit();
         } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         } catch (DBException mySQLDBExceptionCanChange) {
             LOGGER.error(mySQLDBExceptionCanChange.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanChangeException(mySQLDBExceptionCanChange.getMessage(),mySQLDBExceptionCanChange);
+            throw new ApplicationEXContainer.ApplicationSendRegistrationMessageException(mySQLDBExceptionCanChange.getMessage(),mySQLDBExceptionCanChange);
         }
         return result;
     }
@@ -59,9 +59,9 @@ public class TaxiServiceUser {
      * Deletes User into database table
      * @param login property by which entity should be deleted
      * @return true if delete operation went without exception and false otherwise
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
      */
-    public boolean deleteUser(String login) throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public boolean deleteUser(String login) throws ApplicationEXContainer.ApplicationCantRecoverException {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -69,7 +69,7 @@ public class TaxiServiceUser {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
 
         return result;
@@ -81,9 +81,9 @@ public class TaxiServiceUser {
      * @param login property by which entity should be found
      * @param password property by which entity should be validated
      * @return true if validate operation user with these login and password exists
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
      */
-    public boolean validateUser(String login, String password) throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public boolean validateUser(String login, String password) throws ApplicationEXContainer.ApplicationCantRecoverException {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -91,7 +91,7 @@ public class TaxiServiceUser {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
         return result;
     }
@@ -101,9 +101,9 @@ public class TaxiServiceUser {
      * Finds User entity by login in database table
      * @param login property by which entity should be found
      * @return User object if it exists in table and otherwise null
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
      */
-    public User findUser(String login) throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public User findUser(String login) throws ApplicationEXContainer.ApplicationCantRecoverException {
         User user ;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -111,7 +111,7 @@ public class TaxiServiceUser {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
 
         return user;
@@ -123,9 +123,9 @@ public class TaxiServiceUser {
      * @param login property by which entity should be found
      * @param newPassword property that should be updated
      * @return true if update operation user with these login and password exists
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
      */
-    public boolean updateUser(String login, String newPassword) throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public boolean updateUser(String login, String newPassword) throws ApplicationEXContainer.ApplicationCantRecoverException {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -133,7 +133,7 @@ public class TaxiServiceUser {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
         return result;
     }
@@ -142,9 +142,9 @@ public class TaxiServiceUser {
     /**
      * Returns All users
      * @return list of all users
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
      */
-    public List<User> findAllUser() throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public List<User> findAllUser() throws ApplicationEXContainer.ApplicationCantRecoverException {
         List<User> users;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -152,7 +152,7 @@ public class TaxiServiceUser {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
         return users;
     }

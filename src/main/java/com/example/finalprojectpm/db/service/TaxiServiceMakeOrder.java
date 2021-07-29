@@ -53,10 +53,10 @@ public class TaxiServiceMakeOrder {
      * @param userDestination user destination
      * @param login user login
      * @return string message to client
-     * @throws ApplicationEXContainer.ApplicationCanChangeException if car not found
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if dao methods throw exception
+     * @throws ApplicationEXContainer.ApplicationSendOrderMessageException if car not found
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if dao methods throw exception
      */
-    public String makeOrder(String[] stingNumbers, String[] categories, String userAddress, String userDestination, String login) throws ApplicationEXContainer.ApplicationCanChangeException, ApplicationEXContainer.ApplicationCanNotChangeException {
+    public String makeOrder(String[] stingNumbers, String[] categories, String userAddress, String userDestination, String login) throws ApplicationEXContainer.ApplicationSendOrderMessageException, ApplicationEXContainer.ApplicationCantRecoverException {
         String messageTakenTime = null;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -92,10 +92,10 @@ public class TaxiServiceMakeOrder {
             autoRollback.commit();
         } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException|MySQLEXContainer.MySQLDBLargeDataException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables);
         }catch (DBException e){
             LOGGER.error(e.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanChangeException(e.getMessage(),e);
+            throw new ApplicationEXContainer.ApplicationSendOrderMessageException(e.getMessage(),e);
         }
         return messageTakenTime;
     }

@@ -35,9 +35,9 @@ public class TaxiServiceProfile {
      * Inserts profile into table
      * @param profile that should be inserted
      * @return true if insert operation went without exception and false otherwise
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
      */
-    public boolean insertProfile(Profile profile) throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public boolean insertProfile(Profile profile) throws ApplicationEXContainer.ApplicationCantRecoverException {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -45,7 +45,7 @@ public class TaxiServiceProfile {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
 
         return result;
@@ -55,9 +55,9 @@ public class TaxiServiceProfile {
      * Deletes profile from table
      * @param profile that should be updated
      * @return true if update operation went without exception and false otherwise
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
      */
-    public boolean deleteProfile(Profile profile) throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public boolean deleteProfile(Profile profile) throws ApplicationEXContainer.ApplicationCantRecoverException {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -65,7 +65,7 @@ public class TaxiServiceProfile {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
         return result;
     }
@@ -75,9 +75,9 @@ public class TaxiServiceProfile {
      * @param userId userId property by which Profile will be found
      * @param accountBalance money to add
      * @return true if update operation went without exception and false otherwise
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
      */
-    public boolean updateProfileAddBalance(int userId, double accountBalance) throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public boolean updateProfileAddBalance(int userId, double accountBalance) throws ApplicationEXContainer.ApplicationCantRecoverException {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -85,7 +85,7 @@ public class TaxiServiceProfile {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
 
         return result;
@@ -96,10 +96,10 @@ public class TaxiServiceProfile {
      * @param userId userId property by which Profile will be found
      * @param accountBalance money to withdraw
      * @return true if update operation went without exception and false otherwise
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
-     * @throws ApplicationEXContainer.ApplicationCanChangeException if Amount less then that withdraws
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationNotEnoughException if Amount less then that withdraws
      */
-    public boolean updateProfileSWithdrawBalance(int userId, double accountBalance) throws ApplicationEXContainer.ApplicationCanNotChangeException, ApplicationEXContainer.ApplicationCanChangeException {
+    public boolean updateProfileSWithdrawBalance(int userId, double accountBalance) throws ApplicationEXContainer.ApplicationCantRecoverException, ApplicationEXContainer.ApplicationNotEnoughException {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -107,10 +107,10 @@ public class TaxiServiceProfile {
             autoRollback.commit();
         } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         } catch (DBException e) {
             LOGGER.error(e.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanChangeException(e.getMessage(),e);
+            throw new ApplicationEXContainer.ApplicationNotEnoughException(e.getMessage(),e);
         }
 
         return result;
@@ -120,9 +120,9 @@ public class TaxiServiceProfile {
      * Finds Profile by profile id in database table
      * @param profileId property by which Profile will be found
      * @return Profile if it exists in table and otherwise null
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if Amount less then that withdraws
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if Amount less then that withdraws
      */
-    public Profile findProfile(int profileId) throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public Profile findProfile(int profileId) throws ApplicationEXContainer.ApplicationCantRecoverException {
        Profile profile;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -130,7 +130,7 @@ public class TaxiServiceProfile {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
         return profile;
     }
@@ -138,9 +138,9 @@ public class TaxiServiceProfile {
     /**
      * Returns All profiles as a list
      * @return list of all profiles
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if Amount less then that withdraws
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if Amount less then that withdraws
      */
-    public List<Profile> findAllProfiles() throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public List<Profile> findAllProfiles() throws ApplicationEXContainer.ApplicationCantRecoverException {
        List<Profile> profiles;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -148,7 +148,7 @@ public class TaxiServiceProfile {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
         return profiles;
     }

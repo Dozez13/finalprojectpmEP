@@ -3,6 +3,8 @@ package com.example.finalprojectpm.db.mysql;
 import com.example.finalprojectpm.db.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -16,9 +18,14 @@ import java.sql.SQLException;
  *Factory for creating DAOs and obtaining connection using Connection Pool JNDI with MYSQL
  * @author Pavlo Manuilenko
  */
+@Component
 public class MySQLDAOFactory extends DAOFactory {
     private static final Logger LOGGER = LogManager.getLogger(MySQLDAOFactory.class);
+    @Autowired
     private static DataSource dataSource;
+
+    private static Connection testConnection;
+    private static boolean testMode;
 
     /**
      * Initializes Connection Pool. Before using this
@@ -41,6 +48,9 @@ public class MySQLDAOFactory extends DAOFactory {
      * @throws SQLException if a database access error occurs
      */
     public static Connection getConnection() throws NamingException, SQLException {
+        if(testConnection!=null&& testMode){
+            return testConnection;
+        }
         if(dataSource==null){
             dataSourceInit();
         }
@@ -53,7 +63,15 @@ public class MySQLDAOFactory extends DAOFactory {
         }
         return connection;
     }
-
+    public static void setTestOn(){
+        testMode = true;
+    }
+    public static void setTestOff(){
+        testMode=false;
+    }
+    public static void setTestConnection(Connection connection){
+        testConnection = connection;
+    }
     /**
      * Returns MySQLCarDao object
      * @return MYSQL implementation of CarDao

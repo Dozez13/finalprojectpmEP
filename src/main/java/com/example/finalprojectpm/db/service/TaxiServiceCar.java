@@ -34,9 +34,9 @@ public class TaxiServiceCar {
      * Inserts car into table
      * @param car that object should be inserted into table
      * @return true if insert operation went without exception and false otherwise
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
      */
-    public boolean insertCar(Car car) throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public boolean insertCar(Car car)throws ApplicationEXContainer.ApplicationCantRecoverException {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -44,7 +44,7 @@ public class TaxiServiceCar {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
 
         return result;
@@ -55,9 +55,9 @@ public class TaxiServiceCar {
      * Deletes car from table
      * @param carId property by which car will be deleted
      * @return true if delete operation went without exception and false otherwise
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
      */
-    public boolean deleteCar(int carId) throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public boolean deleteCar(int carId) throws ApplicationEXContainer.ApplicationCantRecoverException {
         boolean result ;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -65,7 +65,7 @@ public class TaxiServiceCar {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
         return result;
     }
@@ -75,9 +75,9 @@ public class TaxiServiceCar {
      * Finds car in table
      * @param carId property by which car will be found
      * @return Car if it exists in table and otherwise return null
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
      */
-    public Car findCar(int carId) throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public Car findCar(int carId) throws ApplicationEXContainer.ApplicationCantRecoverException {
         Car car;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -85,7 +85,7 @@ public class TaxiServiceCar {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
         return car;
     }
@@ -96,9 +96,9 @@ public class TaxiServiceCar {
      * @param numOfPas property by which car will be found
      * @param carCategory property by which car will be found
      * @return Car if it exists in table and otherwise return null
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
      */
-    public Car findCar(int numOfPas, String carCategory) throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public Car findCar(int numOfPas, String carCategory) throws ApplicationEXContainer.ApplicationCantRecoverException {
         Car car ;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -106,7 +106,7 @@ public class TaxiServiceCar {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
         return car;
     }
@@ -117,9 +117,9 @@ public class TaxiServiceCar {
      * @param carId property by which car will be found
      * @param newCarCategory property that will be changed
      * @return true if update operation went without exception and false otherwise
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
      */
-    public boolean updateCar(int carId, String newCarCategory) throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public boolean updateCar(int carId, String newCarCategory) throws ApplicationEXContainer.ApplicationCantRecoverException {
         boolean result ;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -127,7 +127,7 @@ public class TaxiServiceCar {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
         return result;
     }
@@ -136,9 +136,9 @@ public class TaxiServiceCar {
     /**
      * Returns All cars
      * @return List of all cars
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException if some exception arises in dao methods
      */
-    public List<Car> findAllCars() throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public List<Car> findAllCars() throws ApplicationEXContainer.ApplicationCantRecoverException {
         List<Car>carList;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -146,7 +146,7 @@ public class TaxiServiceCar {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
         return carList;
     }
@@ -155,9 +155,9 @@ public class TaxiServiceCar {
     /**
      * Returns categories' number
      * @return List of number categories by car
-     * @throws ApplicationEXContainer.ApplicationCanNotChangeException  if some exception arises in dao methods
+     * @throws ApplicationEXContainer.ApplicationCantRecoverException  if some exception arises in dao methods
      */
-    public List<Integer> findNumberCarByCat() throws ApplicationEXContainer.ApplicationCanNotChangeException {
+    public List<Integer> findNumberCarByCat() throws ApplicationEXContainer.ApplicationCantRecoverException {
         List<Integer> categoryNumbers;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
@@ -165,7 +165,7 @@ public class TaxiServiceCar {
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
-            throw new ApplicationEXContainer.ApplicationCanNotChangeException(throwables.getMessage(),throwables);
+            throw new ApplicationEXContainer.ApplicationCantRecoverException(throwables.getMessage(),throwables);
         }
         return categoryNumbers;
     }
