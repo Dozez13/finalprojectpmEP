@@ -28,7 +28,7 @@ import java.util.stream.IntStream;
 @SessionAttributes({"Login","userType","userId"})
 public class MainController {
 
-    @GetMapping("/index")
+    @GetMapping({"/index","/"})
     public ModelAndView homePage(){
 //        LOGGER.info("HomeAction is invoked");
         ModelAndView modelAndView = new ModelAndView("index");
