@@ -19,12 +19,11 @@ public class GlobalControllerExceptionHandler {
     }
     @ExceptionHandler(ApplicationEXContainer.ApplicationSendOrderMessageException.class)
     public ModelAndView handleErrorOrder(HttpServletRequest req, Exception ex) {
+        ModelAndView mav = new ModelAndView("order");
+          mav.addObject("NotAvailable","fail");
+          mav.addObject("orderData",ex.getMessage());
+          return mav;
 
-        ModelAndView mav = new ModelAndView();
-        mav.addObject("exception", ex);
-        mav.addObject("url", req.getRequestURL());
-        mav.setViewName("error");
-        return mav;
     }
 
 

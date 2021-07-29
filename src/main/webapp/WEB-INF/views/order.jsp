@@ -66,12 +66,12 @@
             <div :style="style">
                 <q-card :class="{col:hasError, 'text-h6': hasError, 'bg-amber-10': hasError }">
                     <q-card-section class="text-center">
-                        <c:if test="${param.orderData!=null}">
-                            <c:if test="${param.orderData.equals('Account doesnt have money for order')}">
+                        <c:if test="${requestScope.orderData!=null}">
+                            <c:if test="${requestScope.orderData.equals('Account doesnt have money for order')}">
                                 <fmt:localeValue key="AccountMoneyFail"/>
                             </c:if>
-                            <c:if test="${!param.orderData.equals('Account doesnt have money for order')}">
-                                <fmt:LValueParam checkParam="true" message="orderFailMessage" params="${param.orderData}"/>
+                            <c:if test="${!requestScope.orderData.equals('Account doesnt have money for order')}">
+                                <fmt:LValueParam checkParam="true" message="orderFailMessage" params="${requestScope.orderData}"/>
                             </c:if>
                         </c:if>
                     </q-card-section>
@@ -160,7 +160,7 @@
                 Eng:'',
                 Ua:'',
                 Ru:'',
-                hasError:'${param.NotAvailable}'!=='',
+                hasError:'${requestScope.NotAvailable}'!=='',
                 style: { width: '0px', height: '0px' },
                 DHint:'<fmt:localeValue key="orderDAddressHint"/>',
                 YHint:'<fmt:localeValue key="orderAddressHint"/>',
@@ -212,7 +212,7 @@
         },
         mounted: function(){
             window.history.pushState({}, document.title,window.location.href.split(/[?#]/)[0]);
-            if('${param.NotAvailable}'!=='') {
+            if('${requestScope.NotAvailable}'!=='') {
                 alert
                 this.style = {
                     width: 'auto',
