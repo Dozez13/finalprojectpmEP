@@ -9,15 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @ControllerAdvice
 public class GlobalControllerExceptionHandler {
-    @ExceptionHandler(Exception.class)
-    public ModelAndView handleGeneralErrors(HttpServletRequest req, Exception ex) {
 
-        ModelAndView mav = new ModelAndView();
-        mav.addObject("exception", ex);
-        mav.addObject("url", req.getRequestURL());
-        mav.setViewName("error");
-        return mav;
-    }
     @ExceptionHandler(ApplicationEXContainer.ApplicationSendRegistrationMessageException.class)
     public ModelAndView handleError(HttpServletRequest req, Exception ex) {
         ModelAndView mav = new ModelAndView();
@@ -34,14 +26,6 @@ public class GlobalControllerExceptionHandler {
         mav.setViewName("error");
         return mav;
     }
-    @ExceptionHandler(ApplicationEXContainer.ApplicationNotEnoughException.class)
-    public ModelAndView handleErrorProfileAddMoney(HttpServletRequest req, Exception ex) {
 
-        ModelAndView mav = new ModelAndView();
-        mav.addObject("exception", ex);
-        mav.addObject("url", req.getRequestURL());
-        mav.setViewName("error");
-        return mav;
-    }
 
 }

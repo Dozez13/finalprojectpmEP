@@ -9,8 +9,6 @@ q
 Asrc/test/java/com/example/finalprojectpm/db/entity/OrderTest.java,4\1\41ed3301fb784a189d981507064c64ec8df8ada0
 p
 @src/test/java/com/example/finalprojectpm/db/entity/UserTest.java,f\6\f6d1ecb061d5372fa7cdb4f20b7494dcb517144e
-
-Osrc/test/java/com/example/finalprojectpm/web/filter/SessionAdminFilterTest.java,b\f\bf1661f86d54754df195967589d56db987920b27
 ~
 Nsrc/test/java/com/example/finalprojectpm/web/filter/SessionUserFilterTest.java,b\a\babca687e250aeb26c5ebb77ee43fa9cb0d64d1f
 q
@@ -55,6 +53,8 @@ h
 Qsrc/test/java/com/example/finalprojectpm/db/service/TaxiServiceMakeOrderTest.java,c\9\c95f9a2207d0d281e21ec4bdc48e7e7a1c12a9fa
 B
 finalprojectpm.iml,2\a\2a76b725b508d6874bc46bdda1fdc5656da3bb73
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 s
 Csrc/main/java/com/example/finalprojectpm/db/entity/CarCategory.java,7\8\7886038b650953c02d56fcc8e3c659a24414fb14
 m
@@ -65,6 +65,8 @@ l
 <src/main/java/com/example/finalprojectpm/db/entity/User.java,c\4\c4ad8a33da73b1f28e01656cb070b168cdeb2883
 ‚
 Rsrc/main/java/com/example/finalprojectpm/db/CustomLocalDateTimeJsonSerializer.java,6\1\61f1419dc8865a001e6d7af1d0c28bf86832f47b
+k
+;src/main/java/com/example/finalprojectpm/db/DAOFactory.java,4\9\497f5a4c18906cbc5c8203febbdeecffa7fb6cad
 g
 7src/main/java/com/example/finalprojectpm/db/Fields.java,e\a\ea69da0d58d593312eed27241302b03d33eb64a3
 j
@@ -107,6 +109,8 @@ m
 =src/main/java/com/example/finalprojectpm/db/AutoRollback.java,b\0\b026f282fac979bac94d2e2e7d5e0b5e021ac123
 |
 Lsrc/main/java/com/example/finalprojectpm/web/handler/LValueParamHandler.java,0\6\067757bf67b49a7c42863363edd37f6582cef70e
+
+Osrc/main/java/com/example/finalprojectpm/db/exception/ApplicationException.java,1\8\181d3116cc746e34dfa63362198b7009fa797a26
 w
 Gsrc/main/java/com/example/finalprojectpm/db/service/TaxiServiceCar.java,9\b\9bbaaaab61c3d3362bdc8eeaf1c691730059d029
 p
@@ -115,22 +119,10 @@ w
 Gsrc/main/java/com/example/finalprojectpm/web/command/ActionFactory.java,2\4\244fd58b7ba5499bc0cf3585a395932087b0d04d
 t
 Dsrc/main/java/com/example/finalprojectpm/web/command/HomeAction.java,7\1\71c0bc6490608df254f5301acc7ab2756a43f638
-u
-Esrc/main/java/com/example/finalprojectpm/web/command/LoginAction.java,4\9\49394724c5f865b34ac862ab0f31e640cd7b55ab
-v
-Fsrc/main/java/com/example/finalprojectpm/web/command/LogOutAction.java,c\7\c7532cd9427a07ecb6573ac38e3c69b4ead0f9b8
 v
 Fsrc/main/java/com/example/finalprojectpm/web/command/NoSuchAction.java,0\9\09d6336797f7b6ed9692dac6d6649c21f4990616
 v
 Fsrc/main/java/com/example/finalprojectpm/web/command/OrderGAction.java,e\b\eb728256b5c3d8fa971ec18cd420a83a88802d2b
-{
-Ksrc/main/java/com/example/finalprojectpm/web/command/OrdersCountAction.java,d\7\d7f095b5dddbe2d757bf32c5018b6407d191e9f0
-y
-Isrc/main/java/com/example/finalprojectpm/web/command/OrdersGetAction.java,5\e\5e3aad37b2d6479a4077ebcba8145579e2f99429
-w
-Gsrc/main/java/com/example/finalprojectpm/web/command/ProfileAction.java,5\b\5bca864b7c548882bca25a8b7d19cf3608f8214c
-|
-Lsrc/main/java/com/example/finalprojectpm/web/command/RegistrationAction.java,b\0\b011b4032b15ddb72a5c28632b41bfc17f4d18e4
 u
 Esrc/main/java/com/example/finalprojectpm/web/filter/LoggerFilter.java,4\6\466839a02fd87ab1cf7ecf7db8e3a24f22ef5336
 {
@@ -141,8 +133,6 @@ Jsrc/main/java/com/example/finalprojectpm/web/filter/SessionUserFilter.java,d\d
 Ksrc/main/java/com/example/finalprojectpm/web/handler/LocalValueHandler.java,b\c\bc1e50e76d299a113dcb08cf1760d1bdc47335c4
 €
 Psrc/main/java/com/example/finalprojectpm/web/filter/CharacterEncodingFilter.java,5\c\5c2edcf581e75bf02c585cdccab292bab02ea8f6
-v
-Fsrc/main/java/com/example/finalprojectpm/web/command/OrderMAction.java,6\2\622f7a9f6c6464cf27656bad124d7066b22d5c1a
 k
 ;src/main/java/com/example/finalprojectpm/web/view/View.java,2\1\21f02b65e0088424fa1130ce7af60b38dd064cfd
 y
