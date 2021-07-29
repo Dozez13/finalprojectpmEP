@@ -183,7 +183,7 @@ public class MainController {
         return modelAndView;
     }
     @PostMapping("/guest/login")
-    public ModelAndView loginIn(@RequestParam("login") String login, @RequestParam("psw") String password, RedirectAttributes redirectAttributes){
+    public ModelAndView loginIn(@RequestParam("login") String login, @RequestParam("psw") String password){
         //LOGGER.info("LoginAction is invoked");
         ModelAndView modelAndView = new ModelAndView("redirect:/index");
 
@@ -191,14 +191,14 @@ public class MainController {
         if(user!=null&&taxiServiceUser.validateUser(login,password)) {
            // LOGGER.debug("Get Login from user, Login Is {}",login);
             //LOGGER.debug("Get Password from user, Password Is {}",psw);
-            System.out.println("here");
             modelAndView.addObject("Login",login);
             modelAndView.addObject("userType",user.getUserType());
             modelAndView.addObject("userId",user.getUserId());
             //view.setView(request.getContextPath()+"/pages/index");
         } else{
             String error= "Your login or password is wrong";
-            redirectAttributes.addFlashAttribute("errorMessage",error);
+            modelAndView.setViewName("redirect:/index?errorMessage="+error);
+            //redirectAttributes.addFlashAttribute("errorMessage",error);
         }
         return modelAndView;
     }

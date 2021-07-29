@@ -7,7 +7,6 @@
     <q-space></q-space>
     <q-btn-dropdown size="md" icon="perm_identity" stretch flat label="<fmt:localeValue key="headerAccountSettings"/>" >
         <div class="row no-wrap q-pa-md justify-around">
-            <%System.out.println(session.getAttribute("Login"));%>
             <c:if test="${sessionScope.Login==null}">
             <q-btn label="<fmt:localeValue key="singIn"/>" color="primary" size="md" @click="() => { showDialogD = true }"></q-btn>
             <div>
