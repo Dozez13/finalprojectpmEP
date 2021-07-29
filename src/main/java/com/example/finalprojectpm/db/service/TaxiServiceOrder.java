@@ -9,6 +9,8 @@ import com.example.finalprojectpm.db.exception.DBException;
 import com.example.finalprojectpm.db.mysql.MySQLDAOFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.naming.NamingException;
 import java.sql.Connection;
@@ -18,16 +20,19 @@ import java.util.Map;
 /**
  * Service layer for Order entity
  */
+@Service
 public class TaxiServiceOrder {
     private static final Logger LOGGER = LogManager.getLogger(TaxiServiceOrder.class);
-    private final OrderDao orderDao;
+
+    private final OrderDao mySQLOrderDao;
 
     /**
      * Sets dao
-     * @param orderDao object which will be used
+     * @param mySQLOrderDao object which will be used
      */
-    public TaxiServiceOrder(OrderDao orderDao){
-        this.orderDao = orderDao;
+    @Autowired
+    public TaxiServiceOrder(OrderDao mySQLOrderDao){
+        this.mySQLOrderDao = mySQLOrderDao;
     }
 
     /**
@@ -40,7 +45,7 @@ public class TaxiServiceOrder {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            result = orderDao.insertOrder(connection,order);
+            result = mySQLOrderDao.insertOrder(connection,order);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
@@ -61,7 +66,7 @@ public class TaxiServiceOrder {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            result= orderDao.insertOrders(connection,orders);
+            result= mySQLOrderDao.insertOrders(connection,orders);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
@@ -81,7 +86,7 @@ public class TaxiServiceOrder {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            result= orderDao.deleteOrder(connection,order);
+            result= mySQLOrderDao.deleteOrder(connection,order);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
@@ -101,7 +106,7 @@ public class TaxiServiceOrder {
         Order foundOrder;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            foundOrder = orderDao.findOrder(connection,order);
+            foundOrder = mySQLOrderDao.findOrder(connection,order);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
@@ -123,7 +128,7 @@ public class TaxiServiceOrder {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            result = orderDao.updateOrder(connection,order,newCarId);
+            result = mySQLOrderDao.updateOrder(connection,order,newCarId);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
@@ -142,7 +147,7 @@ public class TaxiServiceOrder {
         List<Order> orders;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            orders =orderDao.findAllOrders(connection);
+            orders = mySQLOrderDao.findAllOrders(connection);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
@@ -163,7 +168,7 @@ public class TaxiServiceOrder {
         List<Order> orders;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            orders =orderDao.findOrdersByUser(connection,userId,startRow,rowsPerPage);
+            orders = mySQLOrderDao.findOrdersByUser(connection,userId,startRow,rowsPerPage);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
@@ -181,7 +186,7 @@ public class TaxiServiceOrder {
         int count;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            count = orderDao.orderCount(connection);
+            count = mySQLOrderDao.orderCount(connection);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
@@ -201,7 +206,7 @@ public int orderCountByUser(int userId)throws ApplicationEXContainer.Application
     int count;
     try(Connection connection = MySQLDAOFactory.getConnection();
         AutoRollback autoRollback = new AutoRollback(connection)){
-        count = orderDao.orderCountByUser(connection,userId);
+        count = mySQLOrderDao.orderCountByUser(connection,userId);
         autoRollback.commit();
     } catch (SQLException | NamingException | DBException throwables) {
         LOGGER.error(throwables.getMessage());
@@ -223,7 +228,7 @@ public int orderCountByUser(int userId)throws ApplicationEXContainer.Application
         List<Order> orders;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            orders = orderDao.findFilSortOrders(connection,filters,sortedColumn,descending,startRow,rowsPerPage);
+            orders = mySQLOrderDao.findFilSortOrders(connection,filters,sortedColumn,descending,startRow,rowsPerPage);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());

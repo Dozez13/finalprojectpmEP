@@ -11,6 +11,8 @@ import com.example.finalprojectpm.db.exception.MySQLEXContainer;
 import com.example.finalprojectpm.db.mysql.MySQLDAOFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.naming.NamingException;
 import java.sql.Connection;
@@ -20,19 +22,22 @@ import java.time.LocalDateTime;
 /**
  * Service layer for registration
  */
+@Service
 public class TaxiServiceRegistration {
     private static final Logger LOGGER = LogManager.getLogger(TaxiServiceRegistration.class);
-    private UserDao userDao;
-    private ProfileDao profileDao;
+
+    private UserDao mySQLUserDao;
+    private ProfileDao mySQLProfileDao;
 
     /**
      * Sets dao
-     * @param userDao object which will be used to manipulate User
-     * @param profileDao object which will be used to manipulate Profile
+     * @param mySQLUserDao object which will be used to manipulate User
+     * @param mySQLProfileDao object which will be used to manipulate Profile
      */
-    public TaxiServiceRegistration(UserDao userDao,ProfileDao profileDao){
-        this.userDao = userDao;
-        this.profileDao = profileDao;
+    @Autowired
+    public TaxiServiceRegistration(UserDao mySQLUserDao, ProfileDao mySQLProfileDao){
+        this.mySQLUserDao = mySQLUserDao;
+        this.mySQLProfileDao = mySQLProfileDao;
     }
 
     /**
@@ -54,13 +59,13 @@ public class TaxiServiceRegistration {
             user.setUserEmail(email);
             user.setPassword(psw);
             user.setUserType("client");
-            userDao.insertUser(connection,user);
+            mySQLUserDao.insertUser(connection,user);
             Profile profile = new Profile();
             profile.setUserRegistrationDate(LocalDateTime.now());
             profile.setUserId(user.getUserId());
             profile.setUserSurName(surName);
             profile.setUserFirstName(firstName);
-            profileDao.insertProfile(connection,profile);
+            mySQLProfileDao.insertProfile(connection,profile);
             autoRollback.commit();
         } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
             LOGGER.error(throwables.getMessage());

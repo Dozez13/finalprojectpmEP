@@ -5,6 +5,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -18,6 +19,7 @@ import java.sql.SQLException;
  *Factory for creating DAOs and obtaining connection using Connection Pool JNDI with MYSQL
  * @author Pavlo Manuilenko
  */
+@Repository
 @Component
 public class MySQLDAOFactory extends DAOFactory {
     private static final Logger LOGGER = LogManager.getLogger(MySQLDAOFactory.class);

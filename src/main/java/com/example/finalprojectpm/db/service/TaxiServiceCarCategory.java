@@ -9,6 +9,8 @@ import com.example.finalprojectpm.db.exception.DBException;
 import com.example.finalprojectpm.db.mysql.MySQLDAOFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.naming.NamingException;
 import java.sql.Connection;
@@ -18,16 +20,19 @@ import java.util.List;
 /**
  * Service layer for CarCategory entity
  */
+@Service
 public class TaxiServiceCarCategory {
     private static final Logger LOGGER = LogManager.getLogger(TaxiServiceCarCategory.class);
-    private final CarCategoryDao categoryDao;
+
+    private final CarCategoryDao mySQLCarCategoryDao;
 
     /**
      * Sets dao
      * @param carCategoryDao object which will be used
      */
+    @Autowired
     public TaxiServiceCarCategory(CarCategoryDao carCategoryDao){
-        this.categoryDao = carCategoryDao;
+        this.mySQLCarCategoryDao = carCategoryDao;
     }
 
     /**
@@ -40,7 +45,7 @@ public class TaxiServiceCarCategory {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            result = categoryDao.insertCarCategory(connection,carCategory);
+            result = mySQLCarCategoryDao.insertCarCategory(connection,carCategory);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
@@ -59,7 +64,7 @@ public class TaxiServiceCarCategory {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            result= categoryDao.deleteCarCategory(connection,carCategory);
+            result= mySQLCarCategoryDao.deleteCarCategory(connection,carCategory);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
@@ -78,7 +83,7 @@ public class TaxiServiceCarCategory {
         CarCategory foundCarCategory;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            foundCarCategory = categoryDao.findCarCategory(connection,carCategory);
+            foundCarCategory = mySQLCarCategoryDao.findCarCategory(connection,carCategory);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
@@ -98,7 +103,7 @@ public class TaxiServiceCarCategory {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            result= categoryDao.updateCarCategory(connection,carCategory,newPrice);
+            result= mySQLCarCategoryDao.updateCarCategory(connection,carCategory,newPrice);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
@@ -116,7 +121,7 @@ public class TaxiServiceCarCategory {
         List<CarCategory> carCategoryList;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            carCategoryList= categoryDao.findAllCarC(connection);
+            carCategoryList= mySQLCarCategoryDao.findAllCarC(connection);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
@@ -134,7 +139,7 @@ public class TaxiServiceCarCategory {
         List<CarCategory> existingCarC;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            existingCarC = categoryDao.findExistingCarC(connection);
+            existingCarC = mySQLCarCategoryDao.findExistingCarC(connection);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());

@@ -9,6 +9,7 @@ import com.example.finalprojectpm.db.util.ImageUtil;
 import com.example.finalprojectpm.db.util.QueriesUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,6 +21,7 @@ import java.util.List;
 /**
  * Data access object for CarCategory related entities
  */
+@Repository
 public class MySQLCarCategoryDao implements CarCategoryDao {
     private static final Logger LOGGER = LogManager.getLogger(MySQLCarCategoryDao.class);
 

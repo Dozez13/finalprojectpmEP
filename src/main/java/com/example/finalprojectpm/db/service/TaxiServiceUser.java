@@ -10,6 +10,8 @@ import com.example.finalprojectpm.db.exception.MySQLEXContainer;
 import com.example.finalprojectpm.db.mysql.MySQLDAOFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.naming.NamingException;
 import java.sql.Connection;
@@ -19,16 +21,19 @@ import java.util.List;
 /**
  * Service layer for Car entity
  */
+@Service
 public class TaxiServiceUser {
     private static final Logger LOGGER = LogManager.getLogger(TaxiServiceUser.class);
-    private final UserDao userDao;
+
+    private final UserDao mySQLUserDao;
 
     /**
      * Sets Dao
-     * @param userDao object which will manipulate on Users entities
+     * @param mySQLUserDao object which will manipulate on Users entities
      */
-    public TaxiServiceUser(UserDao userDao){
-        this.userDao = userDao;
+    @Autowired
+    public TaxiServiceUser(UserDao mySQLUserDao){
+        this.mySQLUserDao = mySQLUserDao;
     }
 
     /**
@@ -42,7 +47,7 @@ public class TaxiServiceUser {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            result =  userDao.insertUser(connection,user);
+            result =  mySQLUserDao.insertUser(connection,user);
             autoRollback.commit();
         } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
             LOGGER.error(throwables.getMessage());
@@ -65,7 +70,7 @@ public class TaxiServiceUser {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            result = userDao.deleteUser(connection,login);
+            result = mySQLUserDao.deleteUser(connection,login);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
@@ -87,7 +92,7 @@ public class TaxiServiceUser {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            result = userDao.validateUser(connection,login,password);
+            result = mySQLUserDao.validateUser(connection,login,password);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
@@ -107,7 +112,7 @@ public class TaxiServiceUser {
         User user ;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            user = userDao.findUser(connection,login);
+            user = mySQLUserDao.findUser(connection,login);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
@@ -129,7 +134,7 @@ public class TaxiServiceUser {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            result = userDao.updateUser(connection,login,newPassword);
+            result = mySQLUserDao.updateUser(connection,login,newPassword);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
@@ -148,7 +153,7 @@ public class TaxiServiceUser {
         List<User> users;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            users = userDao.findAllUser(connection);
+            users = mySQLUserDao.findAllUser(connection);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());

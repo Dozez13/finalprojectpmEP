@@ -93,14 +93,6 @@ k
 Qsrc/main/java/com/example/finalprojectpm/db/exception/ApplicationEXContainer.java,6\d\6db31b958d3d463af27731eb5e127a682387b7ff
 v
 Fsrc/main/java/com/example/finalprojectpm/db/exception/DBException.java,e\8\e8539974bad1db773c2822513d67a96d42814ffa
-
-Osrc/main/java/com/example/finalprojectpm/db/service/TaxiServiceCarCategory.java,9\c\9c64c9683a48290761d15639fce13dad5ed1e81e
-}
-Msrc/main/java/com/example/finalprojectpm/db/service/TaxiServiceMakeOrder.java,7\1\719684b8cf3c972e2688634761b293c481cd2b60
-€
-Psrc/main/java/com/example/finalprojectpm/db/service/TaxiServiceRegistration.java,d\a\da248fedaa5dbe6d0897e73a7b137d5545700199
-x
-Hsrc/main/java/com/example/finalprojectpm/db/service/TaxiServiceUser.java,5\0\5081f967737ce9d4ea562e79de678373859a94fe
 t
 Dsrc/main/java/com/example/finalprojectpm/db/util/ConnectionUtil.java,c\7\c76ae7a94397e3e705944f8f15e4b1ccd89e6176
 r
@@ -117,10 +109,6 @@ m
 Lsrc/main/java/com/example/finalprojectpm/web/handler/LValueParamHandler.java,0\6\067757bf67b49a7c42863363edd37f6582cef70e
 
 Osrc/main/java/com/example/finalprojectpm/db/exception/ApplicationException.java,1\8\181d3116cc746e34dfa63362198b7009fa797a26
-w
-Gsrc/main/java/com/example/finalprojectpm/db/service/TaxiServiceCar.java,9\b\9bbaaaab61c3d3362bdc8eeaf1c691730059d029
-{
-Ksrc/main/java/com/example/finalprojectpm/db/service/TaxiServiceProfile.java,c\d\cd026e412db24f493e6f641485f29a6de4434ab4
 p
 @src/main/java/com/example/finalprojectpm/web/command/Action.java,5\5\55af88478b0f541cab387b53cbe0eb8ddb32aa05
 w
@@ -147,10 +135,6 @@ t
 Dsrc/main/java/com/example/finalprojectpm/web/model/ToggleButton.java,9\8\9819391116b00a29730ae8c44a8895e3f23f990c
 k
 ;src/main/java/com/example/finalprojectpm/web/view/View.java,2\1\21f02b65e0088424fa1130ce7af60b38dd064cfd
-y
-Isrc/main/java/com/example/finalprojectpm/db/service/TaxiServiceOrder.java,b\0\b064747dd268e977ef9572a74cde3a639e61c7f2
-v
-Fsrc/main/java/com/example/finalprojectpm/db/mysql/MySQLDAOFactory.java,5\8\5846890c1856317306c6cc6d7f20fa3dd7f8185f
 q
 Asrc/main/java/com/example/finalprojectpm/web/FrontController.java,e\6\e6ee5e1e5e0fda187f09fdc4a3fe4ed35f1d79ab
 Y

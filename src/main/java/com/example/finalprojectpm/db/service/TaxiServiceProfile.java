@@ -10,6 +10,8 @@ import com.example.finalprojectpm.db.exception.MySQLEXContainer;
 import com.example.finalprojectpm.db.mysql.MySQLDAOFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.naming.NamingException;
 import java.sql.Connection;
@@ -19,16 +21,19 @@ import java.util.List;
 /**
  * Service layer for Profile entity
  */
+@Service
 public class TaxiServiceProfile {
     private static final Logger LOGGER = LogManager.getLogger(TaxiServiceProfile.class);
-    private final ProfileDao profileDao;
+
+    private final ProfileDao mySQLProfileDao;
 
     /**
      * Sets dao
-     * @param profileDao object which will be used
+     * @param mySQLProfileDao object which will be used
      */
-    public TaxiServiceProfile(ProfileDao profileDao){
-        this.profileDao = profileDao;
+    @Autowired
+    public TaxiServiceProfile(ProfileDao mySQLProfileDao){
+        this.mySQLProfileDao = mySQLProfileDao;
     }
 
     /**
@@ -41,7 +46,7 @@ public class TaxiServiceProfile {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            result =  profileDao.insertProfile(connection,profile);
+            result =  mySQLProfileDao.insertProfile(connection,profile);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
@@ -61,7 +66,7 @@ public class TaxiServiceProfile {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            result =  profileDao.deleteProfile(connection,profile);
+            result =  mySQLProfileDao.deleteProfile(connection,profile);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
@@ -81,7 +86,7 @@ public class TaxiServiceProfile {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            result =  profileDao.updateProfileAddBalance(connection,userId,accountBalance);
+            result =  mySQLProfileDao.updateProfileAddBalance(connection,userId,accountBalance);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
@@ -103,7 +108,7 @@ public class TaxiServiceProfile {
         boolean result;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            result =  profileDao.updateProfileSWithdrawBalance(connection,userId,accountBalance);
+            result =  mySQLProfileDao.updateProfileSWithdrawBalance(connection,userId,accountBalance);
             autoRollback.commit();
         } catch (SQLException | NamingException | MySQLEXContainer.MySQLDBExecutionException throwables) {
             LOGGER.error(throwables.getMessage());
@@ -126,7 +131,7 @@ public class TaxiServiceProfile {
        Profile profile;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            profile =  profileDao.findProfile(connection,profileId);
+            profile =  mySQLProfileDao.findProfile(connection,profileId);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());
@@ -144,7 +149,7 @@ public class TaxiServiceProfile {
        List<Profile> profiles;
         try(Connection connection = MySQLDAOFactory.getConnection();
             AutoRollback autoRollback = new AutoRollback(connection)){
-            profiles =  profileDao.findAllProfiles(connection);
+            profiles =  mySQLProfileDao.findAllProfiles(connection);
             autoRollback.commit();
         } catch (SQLException | NamingException | DBException throwables) {
             LOGGER.error(throwables.getMessage());

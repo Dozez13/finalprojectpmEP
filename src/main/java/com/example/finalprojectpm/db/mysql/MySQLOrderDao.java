@@ -9,6 +9,7 @@ import com.example.finalprojectpm.db.util.ConnectionUtil;
 import com.example.finalprojectpm.db.util.QueriesUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ import java.util.Map;
 /**
  * Data access object for Order related entities
  */
+@Repository
 public class MySQLOrderDao implements OrderDao {
     private static final Logger LOGGER = LogManager.getLogger(MySQLOrderDao.class);
 

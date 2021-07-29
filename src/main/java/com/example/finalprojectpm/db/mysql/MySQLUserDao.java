@@ -10,6 +10,7 @@ import com.example.finalprojectpm.db.util.PasswordUtil;
 import com.example.finalprojectpm.db.util.QueriesUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ import java.util.List;
 /**
  * Data access object for User related entities
  */
+@Repository
 public class MySQLUserDao implements UserDao {
     private static final Logger LOGGER = LogManager.getLogger(MySQLUserDao.class);
 

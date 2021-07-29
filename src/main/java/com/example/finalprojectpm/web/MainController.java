@@ -1,6 +1,6 @@
 package com.example.finalprojectpm.web;
 
-import com.example.finalprojectpm.db.*;
+
 import com.example.finalprojectpm.db.entity.*;
 import com.example.finalprojectpm.db.exception.ApplicationEXContainer;
 import com.example.finalprojectpm.db.service.*;
@@ -9,6 +9,7 @@ import com.example.finalprojectpm.web.model.ToggleButton;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
@@ -23,16 +24,34 @@ import java.util.stream.IntStream;
 @Controller
 @SessionAttributes({"Login","userType","userId"})
 public class MainController {
+      private TaxiServiceOrder taxiServiceOrder;
+      private TaxiServiceCar taxiServiceCar;
+      private TaxiServiceUser taxiServiceUser;
+      private TaxiServiceProfile taxiServiceProfile;
+      private TaxiServiceRegistration taxiServiceRegistration;
+      private TaxiServiceCarCategory taxiServiceCarCategory;
+      private TaxiServiceMakeOrder taxiServiceMakeOrder;
+    @Autowired
+    public MainController(TaxiServiceOrder taxiServiceOrder,
+                          TaxiServiceCar taxiServiceCar,
+                          TaxiServiceUser taxiServiceUser,
+                          TaxiServiceProfile taxiServiceProfile,
+                          TaxiServiceRegistration taxiServiceRegistration,
+                          TaxiServiceCarCategory taxiServiceCarCategory,
+                          TaxiServiceMakeOrder taxiServiceMakeOrder) {
+        this.taxiServiceOrder = taxiServiceOrder;
+        this.taxiServiceCar = taxiServiceCar;
+        this.taxiServiceUser = taxiServiceUser;
+        this.taxiServiceProfile = taxiServiceProfile;
+        this.taxiServiceRegistration = taxiServiceRegistration;
+        this.taxiServiceCarCategory = taxiServiceCarCategory;
+        this.taxiServiceMakeOrder = taxiServiceMakeOrder;
+    }
 
     @GetMapping({"/index","/"})
     public ModelAndView homePage(){
 //        LOGGER.info("HomeAction is invoked");
         ModelAndView modelAndView = new ModelAndView("index");
-        DAOFactory dao =DAOFactory.getDAOFactory(1);
-        CarDao carDao =  dao.getCarDao();
-        CarCategoryDao categoryDao = dao.getCarCategoryDao();
-        TaxiServiceCar taxiServiceCar = new TaxiServiceCar(carDao);
-        TaxiServiceCarCategory taxiServiceCarCategory = new TaxiServiceCarCategory(categoryDao);
         List<CarCategory> carCategories = taxiServiceCarCategory.findExistingCarC();
 //        LOGGER.debug("Get Existing CarCategories, number Is {}",carCategories.size());
         List<Car> cars = taxiServiceCar.findAllCars();
@@ -53,9 +72,6 @@ public class MainController {
     public ModelAndView orderPage() throws JsonProcessingException {
 //        LOGGER.info("OrderGAction is invoked");
         ModelAndView modelAndView = new ModelAndView("order");
-        DAOFactory dao =DAOFactory.getDAOFactory(1);
-        CarCategoryDao categoryDao = dao.getCarCategoryDao();
-        TaxiServiceCarCategory taxiServiceCarCategory = new TaxiServiceCarCategory(categoryDao);
         List<CarCategory> carCategories = taxiServiceCarCategory.findExistingCarC();
         //LOGGER.debug("Get Existing CarCategories, number Is {}",carCategories.size());
         List<ToggleButton> buttons = IntStream.range(0, carCategories.size())
@@ -79,9 +95,6 @@ public class MainController {
         //LOGGER.info("OrdersCountAction is invoked");
         //HttpServletRequest request = view.getRequest();
         ModelAndView modelAndView = new ModelAndView("orders");
-        DAOFactory dao =DAOFactory.getDAOFactory(1);
-        OrderDao daoOrder = dao.getOrderDao();
-        TaxiServiceOrder taxiServiceOrder = new TaxiServiceOrder(daoOrder);
         int count = taxiServiceOrder.orderCount();
         //LOGGER.info("Get Order count , count is {}",count);
         modelAndView.addObject("Count",count);
@@ -96,10 +109,8 @@ public class MainController {
                           @RequestParam int rowsPerPage) throws JsonProcessingException {
         //LOGGER.info("OrdersGetAction is invoked");
           ModelAndView modelAndView = new ModelAndView("ordersJson");
-        DAOFactory dao =DAOFactory.getDAOFactory(1);
+
         ObjectMapper mapper = new ObjectMapper();
-        OrderDao daoOrder = dao.getOrderDao();
-        TaxiServiceOrder taxiServiceOrder = new TaxiServiceOrder(daoOrder);
         Map<String,String> filters= null ;
         if(!filter.equals("{}")){
             filters = mapper.readValue(filter, new TypeReference<Map<String, String>>() {});
@@ -114,11 +125,6 @@ public class MainController {
     public ModelAndView profilePage(@SessionAttribute("Login") String login){
         //LOGGER.info("ProfileAction is invoked");
         ModelAndView modelAndView = new ModelAndView("profile");
-        DAOFactory dao =DAOFactory.getDAOFactory(1);
-        ProfileDao profileDao = dao.getProfileDao();
-        UserDao userDao = dao.getUserDao();
-        TaxiServiceProfile taxiServiceProfile = new TaxiServiceProfile(profileDao);
-        TaxiServiceUser taxiServiceUser = new TaxiServiceUser(userDao);
         User user = taxiServiceUser.findUser(login);
        // LOGGER.info("User has id {}",user.getUserId());
         Profile profile = taxiServiceProfile.findProfile(user.getUserId());
@@ -142,9 +148,6 @@ public class MainController {
         //LOGGER.info("MyOrders Action is invoked");
         //HttpServletRequest request = view.getRequest();
         ModelAndView modelAndView = new ModelAndView("myOrders");
-        DAOFactory dao =DAOFactory.getDAOFactory(1);
-        OrderDao orderDao = dao.getOrderDao();
-        TaxiServiceOrder taxiServiceOrder = new TaxiServiceOrder(orderDao);
         int startRow = 0;
         int rowsPerPage = 3;
         int currentPage = 1;
@@ -183,9 +186,6 @@ public class MainController {
         //LOGGER.info("LoginAction is invoked");
                System.out.println(login+" "+password);
         ModelAndView modelAndView = new ModelAndView();
-        DAOFactory dao =DAOFactory.getDAOFactory(1);
-        UserDao userDao = dao.getUserDao();
-        TaxiServiceUser taxiServiceUser = new TaxiServiceUser(userDao);
 
         User user = taxiServiceUser.findUser(login);
         if(user!=null&&taxiServiceUser.validateUser(login,password)) {
@@ -207,12 +207,7 @@ public class MainController {
     public ModelAndView doRegistration(@RequestParam("firstName")String firstName,@RequestParam("surName")String surName,@RequestParam("login")String login,@RequestParam("Email") String email,
                                        @RequestParam("psw")String psw){
         //LOGGER.info("DoRegistrationAction is invoked");
-
         ModelAndView modelAndView = new ModelAndView("redirect:/index");
-        DAOFactory factory =DAOFactory.getDAOFactory(1);
-        UserDao userDao =  factory.getUserDao();
-        ProfileDao profileDao = factory.getProfileDao();
-        TaxiServiceRegistration taxiServiceRegistration = new TaxiServiceRegistration(userDao,profileDao);
         //view.setView(request.getContextPath() + "/pages/index");
             taxiServiceRegistration.doRegistration(firstName,surName,login,email,psw);
           //  view.setView(request.getContextPath() + "/pages/guest/registration?registrationMessage=" + e.getMessage());
@@ -222,16 +217,11 @@ public class MainController {
     @PostMapping("/user/logOut")
     public String logOut(HttpSession session, SessionStatus status){
         //LOGGER.info("LogOutAction is invoked");
-        System.out.println("I'm here");
-        System.out.println(session.getAttribute("Login"));
         status.setComplete();
-        System.out.println(session.getAttribute("Login"));
         if (session != null) {
            // LOGGER.info("Invalidated user {}",session.getAttribute("Login"));
-            System.out.println(session.getAttribute("Login"));
             session.removeAttribute("Login");
             session.invalidate();
-
         }
         return "redirect:/index";
     }
@@ -241,12 +231,11 @@ public class MainController {
         //LOGGER.info("OrderMAction is invoked");
 
         ModelAndView modelAndView = new ModelAndView();
-        DAOFactory daoFactory =DAOFactory.getDAOFactory(1);
+
         if(stingNumbers != null && stingNumbers.length > 0&&categories != null && categories.length > 0) {
             String message;
-            TaxiServiceMakeOrder orderService = new TaxiServiceMakeOrder(daoFactory.getCarDao(),daoFactory.getOrderDao(),daoFactory.getCarCategoryDao(),daoFactory.getUserDao(),daoFactory.getProfileDao());
 
-                message = orderService.makeOrder(stingNumbers,categories,userAddress,userDestination,login);
+                message = taxiServiceMakeOrder.makeOrder(stingNumbers,categories,userAddress,userDestination,login);
                 modelAndView.setViewName("redirect:/order?takenTime="+message);
 
 
@@ -259,11 +248,6 @@ public class MainController {
     public ModelAndView addMoneyAction(@RequestParam("amountM") int amount,@SessionAttribute("Login") String login){
 
         ModelAndView modelAndView = new ModelAndView("redirect:/index");
-        DAOFactory factory =DAOFactory.getDAOFactory(1);
-        UserDao userDao =  factory.getUserDao();
-        ProfileDao profileDao = factory.getProfileDao();
-        TaxiServiceUser taxiServiceUser = new TaxiServiceUser(userDao);
-        TaxiServiceProfile taxiServiceProfile = new TaxiServiceProfile(profileDao);
         User user = taxiServiceUser.findUser(login);
         taxiServiceProfile.updateProfileAddBalance(user.getUserId(),amount);
         return modelAndView;

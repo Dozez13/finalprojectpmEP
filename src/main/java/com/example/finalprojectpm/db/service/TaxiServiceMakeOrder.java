@@ -13,6 +13,8 @@ import com.example.finalprojectpm.db.mysql.MySQLDAOFactory;
 import com.example.finalprojectpm.db.util.DistanceUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.naming.NamingException;
 import java.sql.Connection;
@@ -22,28 +24,31 @@ import java.util.stream.Stream;
 /**
  * Service layer for all entity
  */
+@Service
 public class TaxiServiceMakeOrder {
     private static final Logger LOGGER = LogManager.getLogger(TaxiServiceMakeOrder.class);
-    private final CarDao carDao;
-    private final OrderDao orderDao;
-    private final CarCategoryDao categoryDao;
-    private final UserDao userDao;
-    private final ProfileDao profileDao;
+
+    private final CarDao mySQLCarDao;
+    private final OrderDao mySQLOrderDao;
+    private final CarCategoryDao mySQLCarCategoryDao;
+    private final UserDao mySQLUserDao;
+    private final ProfileDao mySQLProfileDao;
 
     /**
      * Set all dao
-     * @param carDao object which will be used to manipulate Car
-     * @param orderDao object which will be used to manipulate Order
-     * @param categoryDao object which will be used to manipulate CarCategory
-     * @param userDao object which will be used to manipulate User
-     * @param profileDao object which will be used to manipulate Profile
+     * @param mySQLCarDao object which will be used to manipulate Car
+     * @param mySQLOrderDao object which will be used to manipulate Order
+     * @param mySQLCarCategoryDao object which will be used to manipulate CarCategory
+     * @param mySQLUserDao object which will be used to manipulate User
+     * @param mySQLProfileDao object which will be used to manipulate Profile
      */
-    public TaxiServiceMakeOrder(CarDao carDao, OrderDao orderDao, CarCategoryDao categoryDao, UserDao userDao,ProfileDao profileDao){
-        this.carDao = carDao;
-        this.orderDao = orderDao;
-        this.categoryDao = categoryDao;
-        this.userDao = userDao;
-        this.profileDao =profileDao;
+    @Autowired
+    public TaxiServiceMakeOrder(CarDao mySQLCarDao, OrderDao mySQLOrderDao, CarCategoryDao mySQLCarCategoryDao, UserDao mySQLUserDao, ProfileDao mySQLProfileDao){
+        this.mySQLCarDao = mySQLCarDao;
+        this.mySQLOrderDao = mySQLOrderDao;
+        this.mySQLCarCategoryDao = mySQLCarCategoryDao;
+        this.mySQLUserDao = mySQLUserDao;
+        this.mySQLProfileDao = mySQLProfileDao;
     }
 
     /**
@@ -62,16 +67,16 @@ public class TaxiServiceMakeOrder {
             AutoRollback autoRollback = new AutoRollback(connection)){
             int[] numbers = Stream.of(stingNumbers).mapToInt(Integer::parseInt).toArray();
             Car[] foundCars = new Car[categories.length];
-            User foundUser = userDao.findUser(connection,login);
+            User foundUser = mySQLUserDao.findUser(connection,login);
             for (int i = 0; i < foundCars.length; i++) {
-                foundCars[i] = carDao.findCar(connection,numbers[i], categories[i]);
+                foundCars[i] = mySQLCarDao.findCar(connection,numbers[i], categories[i]);
                 if (foundCars[i] == null) {
                     LOGGER.info("Car with  {} number of passenger and category {} Is not found",numbers[i],categories[i]);
                     throw new MySQLEXContainer.MySQLDBCarNotFoundException(String.format("%s %d", categories[i], numbers[i]));
                 }
-                carDao.updateCar(connection,foundCars[i].getCarId(), "on Order");
+                mySQLCarDao.updateCar(connection,foundCars[i].getCarId(), "on Order");
                 double distance = DistanceUtil.getDistance(userAddress, userDestination);
-                CarCategory foundCarCategory = categoryDao.findCarCategory(connection,categories[i]);
+                CarCategory foundCarCategory = mySQLCarCategoryDao.findCarCategory(connection,categories[i]);
                 double discount = foundCarCategory.getDiscount();
                 double costPerKilo = foundCarCategory.getCostPerOneKilometer();
                 int scale = (int) Math.pow(10, 1);
@@ -83,8 +88,8 @@ public class TaxiServiceMakeOrder {
                 order.setUserAddress(userAddress);
                 order.setUserDestination(userDestination);
                 order.setOrderCost(orderCost);
-                profileDao.updateProfileSWithdrawBalance(connection,foundUser.getUserId(),orderCost);
-                orderDao.insertOrder(connection,order);
+                mySQLProfileDao.updateProfileSWithdrawBalance(connection,foundUser.getUserId(),orderCost);
+                mySQLOrderDao.insertOrder(connection,order);
                 if (messageTakenTime == null) {
                     messageTakenTime = DistanceUtil.takenTime(distance);
                 }
