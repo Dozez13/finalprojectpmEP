@@ -57,7 +57,7 @@
                     ref="carousel"
                     padding
             >
-                 <%System.out.println(request.getAttribute("categories"));%>
+
                 <c:forEach items="${categories}" var="categories" varStatus="loop">
                     <q-carousel-slide :name="${loop.index+1}">
                         <c:forEach items="${cars}" var="car" >
@@ -195,10 +195,10 @@
         },
         mounted: function(){
             window.history.pushState({}, document.title,window.location.href.split(/[?#]/)[0]);
-            if('${requestScope.errorMessage}'!==''){
+            if('${param.errorMessage}'!==''){
                 this.$q.notify({
                     type: 'negative',
-                    message: '${requestScope.errorMessage}',
+                    message: '${param.errorMessage}',
                     position:'center',
                     icon: 'report_problem'
                 })

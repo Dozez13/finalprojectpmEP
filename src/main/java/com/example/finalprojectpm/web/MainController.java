@@ -137,7 +137,7 @@ public class MainController {
         return "addMoney";
     }
     @GetMapping("/user/myOrders")
-    public ModelAndView myOrdersPage(@RequestParam("startRow") String startRowSTR,@RequestParam("currentPage") String currentPageSTR,
+    public ModelAndView myOrdersPage(@RequestParam(value = "startRow",required = false) String startRowSTR,@RequestParam(value = "currentPage",required = false) String currentPageSTR,
                                      @SessionAttribute("userId") int userId){
         //LOGGER.info("MyOrders Action is invoked");
         //HttpServletRequest request = view.getRequest();
@@ -194,14 +194,12 @@ public class MainController {
             modelAndView.addObject("Login",login);
             modelAndView.addObject("userType",user.getUserType());
             modelAndView.addObject("userId",user.getUserId());
-            modelAndView.setViewName("index");
-
+            modelAndView.setViewName("redirect:/index");
             //view.setView(request.getContextPath()+"/pages/index");
         } else{
             String error= "Your login or password is wrong";
-            modelAndView.setViewName("index");
             modelAndView.addObject("errorMessage",error);
-            //view.setView(request.getContextPath()+"/pages/index?errorMessage="+error);
+            modelAndView.setViewName("redirect:/index?errorMessage="+error);
         }
         return modelAndView;
     }
@@ -210,7 +208,7 @@ public class MainController {
                                        @RequestParam("psw")String psw){
         //LOGGER.info("DoRegistrationAction is invoked");
 
-        ModelAndView modelAndView = new ModelAndView("index");
+        ModelAndView modelAndView = new ModelAndView("redirect:/index");
         DAOFactory factory =DAOFactory.getDAOFactory(1);
         UserDao userDao =  factory.getUserDao();
         ProfileDao profileDao = factory.getProfileDao();
@@ -235,21 +233,22 @@ public class MainController {
             session.invalidate();
 
         }
-        return "index";
+        return "redirect:/index";
     }
     @PostMapping("/user/doOrder")
     public ModelAndView doOrder(@SessionAttribute("Login") String login,@RequestParam("userAddress") String userAddress,@RequestParam("userDestination")String userDestination,
                                 @RequestParam("numOfPas") String[]stingNumbers,@RequestParam("categories")String[] categories){
         //LOGGER.info("OrderMAction is invoked");
 
-        ModelAndView modelAndView = new ModelAndView("order");
+        ModelAndView modelAndView = new ModelAndView();
         DAOFactory daoFactory =DAOFactory.getDAOFactory(1);
         if(stingNumbers != null && stingNumbers.length > 0&&categories != null && categories.length > 0) {
             String message;
             TaxiServiceMakeOrder orderService = new TaxiServiceMakeOrder(daoFactory.getCarDao(),daoFactory.getOrderDao(),daoFactory.getCarCategoryDao(),daoFactory.getUserDao(),daoFactory.getProfileDao());
 
                 message = orderService.makeOrder(stingNumbers,categories,userAddress,userDestination,login);
-                modelAndView.addObject("takenTime",message);
+                modelAndView.setViewName("redirect:/order?takenTime="+message);
+
 
                 //LOGGER.error(e.getMessage());
 
@@ -259,7 +258,7 @@ public class MainController {
     @PostMapping("/user/addMoneyM")
     public ModelAndView addMoneyAction(@RequestParam("amountM") int amount,@SessionAttribute("Login") String login){
 
-        ModelAndView modelAndView = new ModelAndView("index");
+        ModelAndView modelAndView = new ModelAndView("redirect:/index");
         DAOFactory factory =DAOFactory.getDAOFactory(1);
         UserDao userDao =  factory.getUserDao();
         ProfileDao profileDao = factory.getProfileDao();

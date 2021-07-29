@@ -13,13 +13,12 @@ public class GlobalControllerExceptionHandler {
     @ExceptionHandler(ApplicationEXContainer.ApplicationSendRegistrationMessageException.class)
     public ModelAndView handleError(HttpServletRequest req, Exception ex) {
         ModelAndView mav = new ModelAndView();
-        mav.addObject("registrationMessage", ex.getMessage());
-        mav.setViewName("registration");
+        mav.setViewName("redirect:/registration?registrationMessage="+ex.getMessage());
         return mav;
     }
     @ExceptionHandler(ApplicationEXContainer.ApplicationSendOrderMessageException.class)
     public ModelAndView handleErrorOrder(HttpServletRequest req, Exception ex) {
-        ModelAndView mav = new ModelAndView("order");
+        ModelAndView mav = new ModelAndView("redirect:order?NotAvailable=fail&orderData"+ex.getMessage());
           mav.addObject("NotAvailable","fail");
           mav.addObject("orderData",ex.getMessage());
           return mav;
